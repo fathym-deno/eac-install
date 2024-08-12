@@ -1,4 +1,4 @@
-import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
+import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac-runtime';
 import Counter from '../islands/Counter.tsx';
 
 export const handler: EaCRuntimeHandlerResult = {

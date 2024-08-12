@@ -5,7 +5,7 @@ import {
   FathymAzureContainerCheckPlugin,
   FathymDFSFileHandlerPlugin,
   FathymEaCServicesPlugin,
-} from '@fathym/eac/runtime';
+} from '@fathym/eac-runtime';
 import { EaCSynapticCircuitsProcessor, FathymSynapticPlugin } from '@fathym/synaptic';
 import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
 import MyCoreSynapticPlugin from './MyCoreSynapticPlugin.ts';

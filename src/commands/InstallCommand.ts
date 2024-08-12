@@ -1,3 +1,4 @@
+import { EaCRuntimeInstallerFlags } from '../../install.ts';
 import {
   exists,
   existsSync,
@@ -6,7 +7,6 @@ import {
   path,
   toText,
 } from '../install.deps.ts';
-import { EaCRuntimeInstallerFlags } from '../../../install.ts';
 import { Command } from './Command.ts';
 
 export class InstallCommand implements Command {
@@ -55,7 +55,10 @@ export class InstallCommand implements Command {
     ],
     atomic: [
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      ['../files/.shared/.vscode/.library/launch.json', './.vscode/launch.json'],
+      [
+        '../files/.shared/.vscode/.library/launch.json',
+        './.vscode/launch.json',
+      ],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
       ['../files/.shared/README.md', './README.md'],
       ['../files/.shared/.gitignore', './.gitignore'],
@@ -172,7 +175,10 @@ export class InstallCommand implements Command {
     ],
     library: [
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      ['../files/.shared/.vscode/.library/launch.json', './.vscode/launch.json'],
+      [
+        '../files/.shared/.vscode/.library/launch.json',
+        './.vscode/launch.json',
+      ],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
       ['../files/.shared/README.md', './README.md'],
       ['../files/.shared/.gitignore', './.gitignore'],
@@ -378,13 +384,9 @@ export class InstallCommand implements Command {
     if (this.flags.template !== 'atomic' && this.flags.template !== 'library') {
       config = mergeWithArrays(config, {
         imports: {
-          '@fathym/common': 'https://deno.land/x/fathym_common@v0.0.185/mod.ts',
+          '@fathym/common': 'jsr:@fathym/common@0',
           '@fathym/eac': loadEverythingAsCodeMetaUrl('../../mod.ts'),
-          '@fathym/eac/runtime': import.meta.resolve('../../../mod.ts'),
-          '@fathym/eac/runtime/': import.meta.resolve('../../../'),
-          '@fathym/eac/runtime/browser': import.meta.resolve(
-            '../../../browser.ts',
-          ),
+          '@fathym/eac-runtime': 'jsr:@fathym/eac-runtime@0',
         },
       });
     }
@@ -395,7 +397,7 @@ export class InstallCommand implements Command {
     ) {
       config = mergeWithArrays(config, {
         imports: {
-          '@fathym/ioc': 'https://deno.land/x/fathym_ioc@v0.0.10/mod.ts',
+          '@fathym/ioc': 'jsr:@fathym/ioc@0',
         },
       });
     }
@@ -403,13 +405,10 @@ export class InstallCommand implements Command {
     if (this.flags.template === 'preact') {
       config = mergeWithArrays(config, {
         imports: {
-          '@fathym/atomic': 'https://deno.land/x/fathym_atomic_design_kit@v0.0.134/mod.ts',
-          '@fathym/atomic/': 'https://deno.land/x/fathym_atomic_design_kit@v0.0.134/',
-          '@fathym/atomic-icons': 'https://deno.land/x/fathym_atomic_icons@v0.0.44/mod.ts',
-          '@fathym/atomic-icons/browser':
-            'https://deno.land/x/fathym_atomic_icons@v0.0.44/browser.ts',
-          '@fathym/atomic-icons/plugin':
-            'https://deno.land/x/fathym_atomic_icons@v0.0.44/plugin.ts',
+          '@fathym/atomic': 'jsr:@fathym/atomic-design-kit@0',
+          '@fathym/atomic-icons': 'jsr:@fathym/atomic-icons@0',
+          '@fathym/atomic-icons/browser': 'jsr:@fathym/atomic-icons@0/browser',
+          '@fathym/atomic-icons/plugin': 'jsr:@fathym/atomic-icons@0/plugin',
         },
       });
     }
@@ -417,8 +416,7 @@ export class InstallCommand implements Command {
     if (this.flags.template === 'synaptic') {
       config = mergeWithArrays(config, {
         imports: {
-          '@fathym/synaptic': 'https://deno.land/x/fathym_synaptic@v0.0.99/mod.ts',
-          '@fathym/synaptic/': 'https://deno.land/x/fathym_synaptic@v0.0.99/',
+          '@fathym/synaptic': 'jsr:@fathym/synaptic@0',
         },
       });
     }
@@ -426,9 +424,8 @@ export class InstallCommand implements Command {
     if (this.flags.preact && this.flags.template !== 'library') {
       config = mergeWithArrays(config, {
         imports: {
-          preact: 'https://esm.sh/preact@10.20.1',
-          'preact/': 'https://esm.sh/preact@10.20.1/',
-          'preact-render-to-string': 'https://esm.sh/*preact-render-to-string@6.4.0',
+          preact: 'npm:preact@10.20.1',
+          'preact/jsx-runtime': 'npm:preact@10.20.1/jsx-runtime',
         },
         compilerOptions: {
           jsx: 'react-jsx',

@@ -1,4 +1,4 @@
-import { DefaultEaCConfig, defineEaCConfig, EaCRuntime } from '@fathym/eac/runtime';
+import { DefaultEaCConfig, defineEaCConfig, EaCRuntime } from '@fathym/eac-runtime';
 import MyCoreRuntimePlugin from '../src/plugins/MyCoreRuntimePlugin.ts';
 
 export const config = defineEaCConfig({

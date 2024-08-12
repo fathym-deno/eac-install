@@ -3,7 +3,7 @@ import {
   defineEaCConfig,
   EaCRuntime,
   FathymDemoPlugin,
-} from '@fathym/eac/runtime';
+} from '@fathym/eac-runtime';
 
 export const config = defineEaCConfig({
   Plugins: [...(DefaultEaCConfig.Plugins || []), new FathymDemoPlugin()],

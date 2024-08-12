@@ -3,7 +3,7 @@ import {
   EaCApplicationProcessorConfig,
   EaCRuntimeEaC,
   ProcessorHandlerResolver,
-} from '@fathym/eac/runtime';
+} from '@fathym/eac-runtime';
 import { IoCContainer } from '@fathym/ioc';
 import { DefaultAtomicIconsProcessorHandlerResolver } from '@fathym/atomic-icons/plugin';
 

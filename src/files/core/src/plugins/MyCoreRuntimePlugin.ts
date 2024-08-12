@@ -1,4 +1,4 @@
-import { EaCRuntimeConfig, EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac/runtime';
+import { EaCRuntimeConfig, EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac-runtime';
 
 export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
   constructor() {}

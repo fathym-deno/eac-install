@@ -1,7 +1,7 @@
-import { colors, parseArgs } from './src/install/install.deps.ts';
-import { Command } from './src/install/commands/Command.ts';
-import { HelpCommand } from './src/install/commands/HelpCommand.ts';
-import { InstallCommand } from './src/install/commands/InstallCommand.ts';
+import { colors, parseArgs } from './src/install.deps.ts';
+import { Command } from './src/commands/Command.ts';
+import { HelpCommand } from './src/commands/HelpCommand.ts';
+import { InstallCommand } from './src/commands/InstallCommand.ts';
 
 export const fathymGreen: colors.Rgb = { r: 74, g: 145, b: 142 };
 
