@@ -13,24 +13,7 @@
     "publish:check": "deno publish --dry-run --allow-dirty",
     "test": "deno test -A ./tests/tests.ts --coverage=cov"
   },
-  "imports": {
-    "@fathym/atomic": "https://deno.land/x/fathym_atomic_design_kit@v0.0.155/mod.ts",
-    "@fathym/atomic/": "https://deno.land/x/fathym_atomic_design_kit@v0.0.155/",
-    "@fathym/atomic-icons": "https://deno.land/x/fathym_atomic_icons@v0.0.44/mod.ts",
-    "@fathym/atomic-icons/browser": "https://deno.land/x/fathym_atomic_icons@v0.0.44/browser.ts",
-    "@fathym/atomic-icons/plugin": "https://deno.land/x/fathym_atomic_icons@v0.0.44/plugin.ts",
-    "@fathym/common": "https://deno.land/x/fathym_common@v0.0.185/mod.ts",
-    "@fathym/eac": "https://deno.land/x/fathym_everything_as_code@v0.0.415/mod.ts",
-    "@fathym/eac/runtime": "./mod.ts",
-    "@fathym/eac/runtime/": "./",
-    "@fathym/ioc": "https://deno.land/x/fathym_ioc@v0.0.10/mod.ts",
-    "@fathym/synaptic": "https://deno.land/x/fathym_synaptic@v0.0.99/mod.ts",
-    "@fathym/synaptic/": "https://deno.land/x/fathym_synaptic@v0.0.99/",
-    "tailwindcss": "npm:tailwindcss@3.4.1",
-    "tailwindcss/": "npm:/tailwindcss@3.4.1/",
-    "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
-    "tailwindcss/unimportant": "npm:tailwindcss-unimportant@2.1.1"
-  },
+  "imports": {},
   "exclude": ["**/_eac-runtime/*"],
   "lint": {
     "include": ["apps/", "configs/", "src/", "tests/"],
