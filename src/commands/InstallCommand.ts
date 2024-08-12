@@ -387,6 +387,7 @@ export class InstallCommand implements Command {
           '@fathym/common': 'jsr:@fathym/common@0',
           '@fathym/eac': loadEverythingAsCodeMetaUrl('../../mod.ts'),
           '@fathym/eac-runtime': 'jsr:@fathym/eac-runtime@0',
+          '@fathym/eac-runtime/workers': 'jsr:@fathym/eac-runtime@0/workers',
         },
       });
     }
