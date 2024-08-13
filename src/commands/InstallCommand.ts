@@ -1,12 +1,5 @@
 import { EaCRuntimeInstallerFlags } from '../../install.ts';
-import {
-  exists,
-  existsSync,
-  loadEverythingAsCodeMetaUrl,
-  mergeWithArrays,
-  path,
-  toText,
-} from '../install.deps.ts';
+import { exists, existsSync, mergeWithArrays, path, toText } from '../install.deps.ts';
 import { Command } from './Command.ts';
 
 export class InstallCommand implements Command {
@@ -385,7 +378,7 @@ export class InstallCommand implements Command {
       config = mergeWithArrays(config, {
         imports: {
           '@fathym/common': 'jsr:@fathym/common@0',
-          '@fathym/eac': loadEverythingAsCodeMetaUrl('../../mod.ts'),
+          '@fathym/eac': 'jsr:@fathym/eac@0',
           '@fathym/eac-runtime': 'jsr:@fathym/eac-runtime@0',
           '@fathym/eac-runtime/workers': 'jsr:@fathym/eac-runtime@0/workers',
         },
