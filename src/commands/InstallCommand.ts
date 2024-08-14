@@ -9,6 +9,7 @@ export class InstallCommand implements Command {
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
       ['../files/.shared/README.md', './README.md'],
+      ['../files/.shared/.dockerignore', './.dockerignore'],
       ['../files/.shared/.gitignore', './.gitignore'],
       [
         '../files/.shared/.github/workflows/.deploy/container.deploy.yml',
@@ -94,6 +95,7 @@ export class InstallCommand implements Command {
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
       ['../files/.shared/README.md', './README.md'],
+      ['../files/.shared/.dockerignore', './.dockerignore'],
       ['../files/.shared/.gitignore', './.gitignore'],
       [
         '../files/.shared/.github/workflows/.deploy/container.deploy.yml',
@@ -126,6 +128,7 @@ export class InstallCommand implements Command {
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
       ['../files/.shared/README.md', './README.md'],
+      ['../files/.shared/.dockerignore', './.dockerignore'],
       ['../files/.shared/.gitignore', './.gitignore'],
       ['../files/.shared/dev.ts', './dev.ts'],
       ['../files/.shared/main.ts', './main.ts'],
@@ -205,6 +208,7 @@ export class InstallCommand implements Command {
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
       ['../files/.shared/README.md', './README.md'],
+      ['../files/.shared/.dockerignore', './.dockerignore'],
       ['../files/.shared/.gitignore', './.gitignore'],
       [
         '../files/.shared/.github/workflows/.deploy/container.deploy.yml',
@@ -256,6 +260,7 @@ export class InstallCommand implements Command {
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
       ['../files/.shared/README.md', './README.md'],
+      ['../files/.shared/.dockerignore', './.dockerignore'],
       ['../files/.shared/.gitignore', './.gitignore'],
       [
         '../files/.shared/.github/workflows/.deploy/container.deploy.yml',
@@ -380,7 +385,6 @@ export class InstallCommand implements Command {
           '@fathym/common': 'jsr:@fathym/common@0',
           '@fathym/eac': 'jsr:@fathym/eac@0',
           '@fathym/eac-runtime': 'jsr:@fathym/eac-runtime@0',
-          '@fathym/eac-runtime/workers': 'jsr:@fathym/eac-runtime@0/workers',
         },
       });
     }
@@ -401,8 +405,6 @@ export class InstallCommand implements Command {
         imports: {
           '@fathym/atomic': 'jsr:@fathym/atomic-design-kit@0',
           '@fathym/atomic-icons': 'jsr:@fathym/atomic-icons@0',
-          '@fathym/atomic-icons/browser': 'jsr:@fathym/atomic-icons@0/browser',
-          '@fathym/atomic-icons/plugin': 'jsr:@fathym/atomic-icons@0/plugin',
         },
       });
     }
@@ -419,7 +421,7 @@ export class InstallCommand implements Command {
       config = mergeWithArrays(config, {
         imports: {
           preact: 'npm:preact@10.20.1',
-          'preact/jsx-runtime': 'npm:preact@10.20.1/jsx-runtime',
+          // 'preact/jsx-runtime': 'npm:preact@10.20.1/jsx-runtime',
         },
         compilerOptions: {
           jsx: 'react-jsx',
