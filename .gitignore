@@ -11,3 +11,4 @@ denoKv/
 
 # Testing
 cov/
+local_test/

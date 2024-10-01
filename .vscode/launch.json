@@ -14,6 +14,20 @@
         "tests/tests.ts"
       ],
       "attachSimplePort": 9229
+    },
+    {
+      "request": "launch",
+      "name": "Launch Local Test",
+      "type": "node",
+      "cwd": "${workspaceFolder}/local_test",
+      "runtimeExecutable": "deno.exe",
+      "runtimeArgs": [
+        "test",
+        "--inspect-wait",
+        "-A",
+        "${workspaceFolder}/install.ts"
+      ],
+      "attachSimplePort": 9229
     }
   ]
 }

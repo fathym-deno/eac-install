@@ -365,7 +365,9 @@ export class InstallCommand implements Command {
           create: true,
         });
       } else {
-        await Deno.writeFile(outputTo, file, {
+        const fileContents = await toText(file);
+
+        await Deno.writeTextFile(outputTo, fileContents, {
           append: false,
           create: true,
         });
