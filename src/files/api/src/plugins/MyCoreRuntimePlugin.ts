@@ -48,7 +48,7 @@ export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
             } as EaCAPIProcessor,
           },
         },
-        DFS: {
+        DFSs: {
           'local:apps/api': {
             Details: {
               Type: 'Local',

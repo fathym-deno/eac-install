@@ -115,7 +115,7 @@ export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
             } as EaCTailwindProcessor,
           },
         },
-        DFS: {
+        DFSs: {
           'local:apps/components': {
             Details: {
               Type: 'Local',
