@@ -5,6 +5,11 @@ import { Command } from './Command.ts';
 export class InstallCommand implements Command {
   private fileSets: Record<string, typeof this.filesToCreate> = {
     api: [
+      [
+        '../files/.shared/deno.template.jsonc',
+        './deno.jsonc',
+        (contents: string) => this.ensureDenoConfigSetup(contents),
+      ],
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
@@ -18,13 +23,6 @@ export class InstallCommand implements Command {
       [
         '../files/.shared/.github/workflows/.deploy/deno.deploy.yml',
         './.github/workflows/deno.deploy.yml',
-      ],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
       ],
       ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
       ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
@@ -46,8 +44,15 @@ export class InstallCommand implements Command {
       ],
       ['../files/api/apps/api/_middleware.ts', './apps/api/_middleware.ts'],
       ['../files/api/apps/api/index.ts', './apps/api/index.ts'],
+      ['../files/.shared/dev.ts', './dev.ts'],
+      ['../files/.shared/main.ts', './main.ts'],
     ],
     atomic: [
+      [
+        '../files/atomic/deno.template.jsonc',
+        './deno.jsonc',
+        (contents: string) => this.ensureDenoConfigSetup(contents),
+      ],
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
       [
         '../files/.shared/.vscode/.library/launch.json',
@@ -60,15 +65,11 @@ export class InstallCommand implements Command {
         '../files/.shared/.github/workflows/.build/build.yaml',
         './.github/workflows/build.yaml',
       ],
-      [
-        '../files/atomic/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
       ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
       ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
       ['../files/atomic/mod.ts', './mod.ts'],
       ['../files/atomic/tailwind.config.js', './tailwind.config.js'],
+      ['../files/atomic/src/src.deps.ts', './src/src.deps.ts'],
       [
         '../files/atomic/src/atoms/forms/.exports.ts',
         './src/atoms/forms/.exports.ts',
@@ -88,9 +89,13 @@ export class InstallCommand implements Command {
       ],
       ['../files/atomic/src/utils/.exports.ts', './src/utils/.exports.ts'],
       ['../files/atomic/src/.exports.ts', './src/.exports.ts'],
-      ['../files/atomic/src/src.deps.ts', './src/src.deps.ts'],
     ],
     core: [
+      [
+        '../files/.shared/deno.template.jsonc',
+        './deno.jsonc',
+        (contents: string) => this.ensureDenoConfigSetup(contents),
+      ],
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
@@ -105,13 +110,6 @@ export class InstallCommand implements Command {
         '../files/.shared/.github/workflows/.deploy/deno.deploy.yml',
         './.github/workflows/deno.deploy.yml',
       ],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
       ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
       ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
       [
@@ -122,21 +120,21 @@ export class InstallCommand implements Command {
         '../files/core/src/plugins/MyCoreRuntimePlugin.ts',
         './src/plugins/MyCoreRuntimePlugin.ts',
       ],
+      ['../files/.shared/dev.ts', './dev.ts'],
+      ['../files/.shared/main.ts', './main.ts'],
     ],
     demo: [
+      [
+        '../files/.shared/deno.template.jsonc',
+        './deno.jsonc',
+        (contents: string) => this.ensureDenoConfigSetup(contents),
+      ],
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
       ['../files/.shared/README.md', './README.md'],
       ['../files/.shared/.dockerignore', './.dockerignore'],
       ['../files/.shared/.gitignore', './.gitignore'],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
       ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
       ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
       [
@@ -168,8 +166,15 @@ export class InstallCommand implements Command {
         '../files/demo/apps/tailwind/tailwind.config.ts',
         './apps/tailwind/tailwind.config.ts',
       ],
+      ['../files/.shared/dev.ts', './dev.ts'],
+      ['../files/.shared/main.ts', './main.ts'],
     ],
     library: [
+      [
+        '../files/library/deno.template.jsonc',
+        './deno.jsonc',
+        (contents: string) => this.ensureDenoConfigSetup(contents),
+      ],
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
       [
         '../files/.shared/.vscode/.library/launch.json',
@@ -181,11 +186,6 @@ export class InstallCommand implements Command {
       [
         '../files/.shared/.github/workflows/.build/build.yaml',
         './.github/workflows/build.yaml',
-      ],
-      [
-        '../files/library/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
       ],
       ['../files/library/tests/tests.ts', './tests/tests.ts'],
       ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
@@ -204,6 +204,11 @@ export class InstallCommand implements Command {
       ['../files/library/src/src.deps.ts', './src/src.deps.ts'],
     ],
     preact: [
+      [
+        '../files/.shared/deno.template.jsonc',
+        './deno.jsonc',
+        (contents: string) => this.ensureDenoConfigSetup(contents),
+      ],
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
@@ -217,13 +222,6 @@ export class InstallCommand implements Command {
       [
         '../files/.shared/.github/workflows/.deploy/deno.deploy.yml',
         './.github/workflows/deno.deploy.yml',
-      ],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
       ],
       ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
       ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
@@ -254,8 +252,15 @@ export class InstallCommand implements Command {
         './apps/tailwind/styles.css',
       ],
       ['../files/preact/tailwind.config.ts', './tailwind.config.ts'],
+      ['../files/.shared/dev.ts', './dev.ts'],
+      ['../files/.shared/main.ts', './main.ts'],
     ],
     synaptic: [
+      [
+        '../files/.shared/deno.template.jsonc',
+        './deno.jsonc',
+        (contents: string) => this.ensureDenoConfigSetup(contents),
+      ],
       ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
       ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
       ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
@@ -269,13 +274,6 @@ export class InstallCommand implements Command {
       [
         '../files/.shared/.github/workflows/.deploy/deno.deploy.yml',
         './.github/workflows/deno.deploy.yml',
-      ],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
       ],
       ['../files/synaptic/tests/tests.ts', './tests/tests.ts'],
       ['../files/synaptic/tests/tests.deps.ts', './tests/tests.deps.ts'],
@@ -307,6 +305,8 @@ export class InstallCommand implements Command {
         '../files/synaptic/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts',
         './src/plugins/DefaultMyCoreProcessorHandlerResolver.ts',
       ],
+      ['../files/.shared/dev.ts', './dev.ts'],
+      ['../files/.shared/main.ts', './main.ts'],
     ],
   };
 
@@ -326,7 +326,7 @@ export class InstallCommand implements Command {
       this.flags.template !== 'atomic' &&
       this.flags.template !== 'library'
     ) {
-      this.filesToCreate.push(['../files/DOCKERFILE', './DOCKERFILE']);
+      this.filesToCreate.push(['../files/.shared/DOCKERFILE', './DOCKERFILE']);
     }
 
     await this.ensureFilesCreated(installDirectory);
