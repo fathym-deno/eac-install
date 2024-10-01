@@ -1,5 +1,6 @@
 import { EaCRuntimeConfig, EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac-runtime';
-import { EaCAPIProcessor, EaCLocalDistributedFileSystem } from '@fathym/eac';
+import { EaCAPIProcessor } from '@fathym/eac/applications';
+import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
 
 export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
   constructor() {}
@@ -49,11 +50,13 @@ export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
         },
         DFS: {
           'local:apps/api': {
-            Type: 'Local',
-            FileRoot: './apps/api/',
-            DefaultFile: 'index.ts',
-            Extensions: ['ts'],
-          } as EaCLocalDistributedFileSystem,
+            Details: {
+              Type: 'Local',
+              FileRoot: './apps/api/',
+              DefaultFile: 'index.ts',
+              Extensions: ['ts'],
+            } as EaCLocalDistributedFileSystemDetails,
+          },
         },
       },
     };

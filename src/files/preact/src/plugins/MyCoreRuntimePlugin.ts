@@ -2,10 +2,10 @@ import { EaCRuntimeConfig, EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fat
 import {
   EaCBaseHREFModifierDetails,
   EaCKeepAliveModifierDetails,
-  EaCLocalDistributedFileSystem,
   EaCPreactAppProcessor,
   EaCTailwindProcessor,
-} from '@fathym/eac';
+} from '@fathym/eac/applications';
+import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
 import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
 import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
 import { IoCContainer } from '@fathym/ioc';
@@ -117,21 +117,27 @@ export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
         },
         DFS: {
           'local:apps/components': {
-            Type: 'Local',
-            FileRoot: './apps/components/',
-            Extensions: ['tsx'],
-          } as EaCLocalDistributedFileSystem,
+            Details: {
+              Type: 'Local',
+              FileRoot: './apps/components/',
+              Extensions: ['tsx'],
+            } as EaCLocalDistributedFileSystemDetails,
+          },
           'local:apps/home': {
-            Type: 'Local',
-            FileRoot: './apps/home/',
-            DefaultFile: 'index.tsx',
-            Extensions: ['tsx'],
-          } as EaCLocalDistributedFileSystem,
+            Details: {
+              Type: 'Local',
+              FileRoot: './apps/home/',
+              DefaultFile: 'index.tsx',
+              Extensions: ['tsx'],
+            } as EaCLocalDistributedFileSystemDetails,
+          },
           'local:apps/islands': {
-            Type: 'Local',
-            FileRoot: './apps/islands/',
-            Extensions: ['tsx'],
-          } as EaCLocalDistributedFileSystem,
+            Details: {
+              Type: 'Local',
+              FileRoot: './apps/islands/',
+              Extensions: ['tsx'],
+            } as EaCLocalDistributedFileSystemDetails,
+          },
         },
         Modifiers: {
           baseHref: {
