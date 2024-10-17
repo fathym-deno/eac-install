@@ -52,9 +52,14 @@ export class InstallCommand implements Command {
 
       const file = await this.openTemplateFile(filePath);
 
-      if (transformer) {
-        const fileContents = await toText(file);
+      const fileContents = await toText(file);
 
+      if (filePath.endsWith('dev.ts')) {
+        console.log('Template');
+        console.log(fileContents);
+      }
+
+      if (transformer) {
         const transformed = transformer(fileContents);
 
         await Deno.writeTextFile(outputTo, transformed, {
@@ -62,12 +67,16 @@ export class InstallCommand implements Command {
           create: true,
         });
       } else {
-        const fileContents = await toText(file);
-
         await Deno.writeTextFile(outputTo, fileContents, {
           append: false,
           create: true,
         });
+      }
+
+      if (filePath.endsWith('dev.ts')) {
+        const devTs = Deno.readTextFileSync(path.resolve('./dev.ts'));
+        console.log('Copied');
+        console.log(devTs);
       }
     } else {
       console.log(`Skipping file ${outputTo}, because it already exists.`);
