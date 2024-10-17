@@ -1,333 +1,26 @@
 import { EaCRuntimeInstallerFlags } from '../../install.ts';
-import { exists, existsSync, mergeWithArrays, path, toText } from '../install.deps.ts';
+import { exists, existsSync, mergeWithArrays, parseJsonc, path, toText } from '../install.deps.ts';
 import { Command } from './Command.ts';
 
 export class InstallCommand implements Command {
-  private fileSets: Record<string, typeof this.filesToCreate> = {
-    api: [
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
-      ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
-      ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
-      ['../files/.shared/README.md', './README.md'],
-      ['../files/.shared/.dockerignore', './.dockerignore'],
-      ['../files/.shared/.gitignore', './.gitignore'],
-      [
-        '../files/.shared/.github/workflows/.deploy/container.deploy.yml',
-        './.github/workflows/container.deploy.yml',
-      ],
-      [
-        '../files/.shared/.github/workflows/.deploy/deno.deploy.yml',
-        './.github/workflows/deno.deploy.yml',
-      ],
-      ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
-      ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
-      [
-        '../files/api/configs/eac-runtime.config.ts',
-        './configs/eac-runtime.config.ts',
-      ],
-      [
-        '../files/api/src/plugins/MyCoreRuntimePlugin.ts',
-        './src/plugins/MyCoreRuntimePlugin.ts',
-      ],
-      [
-        '../files/api/apps/api/[slug]/_middleware.ts',
-        './apps/api/[slug]/_middleware.ts',
-      ],
-      [
-        '../files/api/apps/api/[slug]/another.ts',
-        './apps/api/[slug]/another.ts',
-      ],
-      ['../files/api/apps/api/_middleware.ts', './apps/api/_middleware.ts'],
-      ['../files/api/apps/api/index.ts', './apps/api/index.ts'],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-    ],
-    atomic: [
-      [
-        '../files/atomic/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
-      ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      [
-        '../files/.shared/.vscode/.library/launch.json',
-        './.vscode/launch.json',
-      ],
-      ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
-      ['../files/.shared/README.md', './README.md'],
-      ['../files/.shared/.gitignore', './.gitignore'],
-      [
-        '../files/.shared/.github/workflows/.build/build.yaml',
-        './.github/workflows/build.yaml',
-      ],
-      ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
-      ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
-      ['../files/atomic/mod.ts', './mod.ts'],
-      ['../files/atomic/tailwind.config.js', './tailwind.config.js'],
-      ['../files/atomic/src/src.deps.ts', './src/src.deps.ts'],
-      [
-        '../files/atomic/src/atoms/forms/.exports.ts',
-        './src/atoms/forms/.exports.ts',
-      ],
-      ['../files/atomic/src/atoms/.exports.ts', './src/atoms/.exports.ts'],
-      [
-        '../files/atomic/src/molecules/.exports.ts',
-        './src/molecules/.exports.ts',
-      ],
-      [
-        '../files/atomic/src/organisms/.exports.ts',
-        './src/organisms/.exports.ts',
-      ],
-      [
-        '../files/atomic/src/templates/.exports.ts',
-        './src/templates/.exports.ts',
-      ],
-      ['../files/atomic/src/utils/.exports.ts', './src/utils/.exports.ts'],
-      ['../files/atomic/src/.exports.ts', './src/.exports.ts'],
-    ],
-    core: [
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
-      ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
-      ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
-      ['../files/.shared/README.md', './README.md'],
-      ['../files/.shared/.dockerignore', './.dockerignore'],
-      ['../files/.shared/.gitignore', './.gitignore'],
-      [
-        '../files/.shared/.github/workflows/.deploy/container.deploy.yml',
-        './.github/workflows/container.deploy.yml',
-      ],
-      [
-        '../files/.shared/.github/workflows/.deploy/deno.deploy.yml',
-        './.github/workflows/deno.deploy.yml',
-      ],
-      ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
-      ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
-      [
-        '../files/core/configs/eac-runtime.config.ts',
-        './configs/eac-runtime.config.ts',
-      ],
-      [
-        '../files/core/src/plugins/MyCoreRuntimePlugin.ts',
-        './src/plugins/MyCoreRuntimePlugin.ts',
-      ],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-    ],
-    demo: [
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
-      ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
-      ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
-      ['../files/.shared/README.md', './README.md'],
-      ['../files/.shared/.dockerignore', './.dockerignore'],
-      ['../files/.shared/.gitignore', './.gitignore'],
-      ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
-      ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
-      [
-        '../files/demo/configs/eac-runtime.config.ts',
-        './configs/eac-runtime.config.ts',
-      ],
-      [
-        '../files/demo/apps/api/[slug]/_middleware.ts',
-        './apps/api/[slug]/_middleware.ts',
-      ],
-      [
-        '../files/demo/apps/api/[slug]/another.ts',
-        './apps/api/[slug]/another.ts',
-      ],
-      ['../files/demo/apps/api/_middleware.ts', './apps/api/_middleware.ts'],
-      ['../files/demo/apps/api/index.ts', './apps/api/index.ts'],
-      [
-        '../files/demo/apps/components/Button.tsx',
-        './apps/components/Button.tsx',
-      ],
-      [
-        '../files/demo/apps/components/Counter.tsx',
-        './apps/components/Counter.tsx',
-      ],
-      ['../files/demo/apps/home/_layout.tsx', './apps/home/_layout.tsx'],
-      ['../files/demo/apps/home/index.tsx', './apps/home/index.tsx'],
-      ['../files/demo/apps/tailwind/styles.css', './apps/tailwind/styles.css'],
-      [
-        '../files/demo/apps/tailwind/tailwind.config.ts',
-        './apps/tailwind/tailwind.config.ts',
-      ],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-    ],
-    library: [
-      [
-        '../files/library/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
-      ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      [
-        '../files/.shared/.vscode/.library/launch.json',
-        './.vscode/launch.json',
-      ],
-      ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
-      ['../files/.shared/README.md', './README.md'],
-      ['../files/.shared/.gitignore', './.gitignore'],
-      [
-        '../files/.shared/.github/workflows/.build/build.yaml',
-        './.github/workflows/build.yaml',
-      ],
-      ['../files/library/tests/tests.ts', './tests/tests.ts'],
-      ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
-      ['../files/library/tests/utils/.tests.ts', './tests/utils/.tests.ts'],
-      [
-        '../files/library/tests/utils/sampleFunction.tests.ts',
-        './tests/utils/sampleFunction.tests.ts',
-      ],
-      ['../files/library/mod.ts', './mod.ts'],
-      ['../files/library/src/utils/.exports.ts', './src/utils/.exports.ts'],
-      [
-        '../files/library/src/utils/sampleFunction.ts',
-        './src/utils/sampleFunction.ts',
-      ],
-      ['../files/library/src/.exports.ts', './src/.exports.ts'],
-      ['../files/library/src/src.deps.ts', './src/src.deps.ts'],
-    ],
-    preact: [
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
-      ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
-      ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
-      ['../files/.shared/README.md', './README.md'],
-      ['../files/.shared/.dockerignore', './.dockerignore'],
-      ['../files/.shared/.gitignore', './.gitignore'],
-      [
-        '../files/.shared/.github/workflows/.deploy/container.deploy.yml',
-        './.github/workflows/container.deploy.yml',
-      ],
-      [
-        '../files/.shared/.github/workflows/.deploy/deno.deploy.yml',
-        './.github/workflows/deno.deploy.yml',
-      ],
-      ['../files/.shared/tests/tests.ts', './tests/tests.ts'],
-      ['../files/.shared/tests/tests.deps.ts', './tests/tests.deps.ts'],
-      [
-        '../files/preact/src/plugins/MyCoreRuntimePlugin.ts',
-        './src/plugins/MyCoreRuntimePlugin.ts',
-      ],
-      [
-        '../files/preact/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts',
-        './src/plugins/DefaultMyCoreProcessorHandlerResolver.ts',
-      ],
-      [
-        '../files/preact/configs/eac-runtime.config.ts',
-        './configs/eac-runtime.config.ts',
-      ],
-      [
-        '../files/preact/apps/components/Button.tsx',
-        './apps/components/Button.tsx',
-      ],
-      [
-        '../files/preact/apps/islands/Counter.tsx',
-        './apps/islands/Counter.tsx',
-      ],
-      ['../files/preact/apps/home/_layout.tsx', './apps/home/_layout.tsx'],
-      ['../files/preact/apps/home/index.tsx', './apps/home/index.tsx'],
-      [
-        '../files/preact/apps/tailwind/styles.css',
-        './apps/tailwind/styles.css',
-      ],
-      ['../files/preact/tailwind.config.ts', './tailwind.config.ts'],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-    ],
-    synaptic: [
-      [
-        '../files/.shared/deno.template.jsonc',
-        './deno.jsonc',
-        (contents: string) => this.ensureDenoConfigSetup(contents),
-      ],
-      ['../files/.shared/.vscode/extensions.json', './.vscode/extensions.json'],
-      ['../files/.shared/.vscode/.app/launch.json', './.vscode/launch.json'],
-      ['../files/.shared/.vscode/settings.json', './.vscode/settings.json'],
-      ['../files/.shared/README.md', './README.md'],
-      ['../files/.shared/.dockerignore', './.dockerignore'],
-      ['../files/.shared/.gitignore', './.gitignore'],
-      [
-        '../files/.shared/.github/workflows/.deploy/container.deploy.yml',
-        './.github/workflows/container.deploy.yml',
-      ],
-      [
-        '../files/.shared/.github/workflows/.deploy/deno.deploy.yml',
-        './.github/workflows/deno.deploy.yml',
-      ],
-      ['../files/synaptic/tests/tests.ts', './tests/tests.ts'],
-      ['../files/synaptic/tests/tests.deps.ts', './tests/tests.deps.ts'],
-      [
-        '../files/synaptic/tests/test-eac-setup.ts',
-        './tests/test-eac-setup.ts',
-      ],
-      [
-        '../files/synaptic/tests/circuits/.tests.ts',
-        './tests/circuits/.tests.ts',
-      ],
-      [
-        '../files/synaptic/tests/circuits/simple-tool.tests.ts',
-        './tests/circuits/simple-tool.tests.ts',
-      ],
-      [
-        '../files/synaptic/configs/eac-runtime.config.ts',
-        './configs/eac-runtime.config.ts',
-      ],
-      [
-        '../files/synaptic/src/plugins/MyCoreRuntimePlugin.ts',
-        './src/plugins/MyCoreRuntimePlugin.ts',
-      ],
-      [
-        '../files/synaptic/src/plugins/MyCoreSynapticPlugin.ts',
-        './src/plugins/MyCoreSynapticPlugin.ts',
-      ],
-      [
-        '../files/synaptic/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts',
-        './src/plugins/DefaultMyCoreProcessorHandlerResolver.ts',
-      ],
-      ['../files/.shared/dev.ts', './dev.ts'],
-      ['../files/.shared/main.ts', './main.ts'],
-    ],
-  };
-
   protected filesToCreate: [string, string, ((contents: string) => string)?][];
 
   constructor(protected flags: EaCRuntimeInstallerFlags) {
-    this.filesToCreate = this.fileSets[flags.template ?? 'core'];
+    const fileSets = parseJsonc(
+      Deno.readTextFileSync('../config/installFiles.jsonc'),
+    ) as Record<string, typeof this.filesToCreate>;
+
+    this.filesToCreate = fileSets[flags.template ?? 'core'];
+
+    this.filesToCreate
+      .find(([_fromFile, toFile]) => toFile === './deno.jsonc')
+      ?.push((contents: string) => this.ensureDenoConfigSetup(contents));
   }
 
   public async Run(): Promise<void> {
     console.log(`Installing Fathym's EaC Runtime...`);
 
     const installDirectory = path.resolve('.');
-
-    if (
-      this.flags.docker &&
-      this.flags.template !== 'atomic' &&
-      this.flags.template !== 'library'
-    ) {
-      this.filesToCreate.push(['../files/.shared/DOCKERFILE', './DOCKERFILE']);
-    }
 
     await this.ensureFilesCreated(installDirectory);
   }
@@ -393,7 +86,8 @@ export class InstallCommand implements Command {
 
     if (
       this.flags.template === 'preact' ||
-      this.flags.template === 'synaptic'
+      this.flags.template === 'synaptic' ||
+      this.flags.template === 'sink'
     ) {
       config = mergeWithArrays(config, {
         imports: {
@@ -402,7 +96,7 @@ export class InstallCommand implements Command {
       });
     }
 
-    if (this.flags.template === 'preact') {
+    if (this.flags.template === 'preact' || this.flags.template === 'sink') {
       config = mergeWithArrays(config, {
         imports: {
           '@fathym/atomic': 'jsr:@fathym/atomic-design-kit@0',
@@ -411,7 +105,7 @@ export class InstallCommand implements Command {
       });
     }
 
-    if (this.flags.template === 'synaptic') {
+    if (this.flags.template === 'synaptic' || this.flags.template === 'sink') {
       config = mergeWithArrays(config, {
         imports: {
           '@fathym/synaptic': 'jsr:@fathym/synaptic@0',

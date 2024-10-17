@@ -1,0 +1,336 @@
+{
+  "api": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/api/configs/eac-runtime.config.ts",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts", "./dev.ts"],
+    ["../files/.shared/main.ts", "./main.ts"],
+
+    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    [
+      "../files/api/src/plugins/MyCoreRuntimePlugin.ts",
+      "./src/plugins/MyCoreRuntimePlugin.ts"
+    ],
+    [
+      "../files/api/apps/api/[slug]/_middleware.ts",
+      "./apps/api/[slug]/_middleware.ts"
+    ],
+    ["../files/api/apps/api/[slug]/another.ts", "./apps/api/[slug]/another.ts"],
+    ["../files/api/apps/api/_middleware.ts", "./apps/api/_middleware.ts"],
+    ["../files/api/apps/api/index.ts", "./apps/api/index.ts"]
+  ],
+  "atomic": [
+    ["../files/atomic/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.library/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/.github/workflows/.build/build.yaml",
+      "./.github/workflows/build.yaml"
+    ],
+    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    ["../files/atomic/mod.ts", "./mod.ts"],
+    ["../files/atomic/tailwind.config.js", "./tailwind.config.js"],
+    ["../files/atomic/src/src.deps.ts", "./src/src.deps.ts"],
+    [
+      "../files/atomic/src/atoms/forms/.exports.ts",
+      "./src/atoms/forms/.exports.ts"
+    ],
+    ["../files/atomic/src/atoms/.exports.ts", "./src/atoms/.exports.ts"],
+    [
+      "../files/atomic/src/molecules/.exports.ts",
+      "./src/molecules/.exports.ts"
+    ],
+    [
+      "../files/atomic/src/organisms/.exports.ts",
+      "./src/organisms/.exports.ts"
+    ],
+    [
+      "../files/atomic/src/templates/.exports.ts",
+      "./src/templates/.exports.ts"
+    ],
+    ["../files/atomic/src/utils/.exports.ts", "./src/utils/.exports.ts"],
+    ["../files/atomic/src/.exports.ts", "./src/.exports.ts"]
+  ],
+  "core": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/core/configs/eac-runtime.config.ts",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts", "./dev.ts"],
+    ["../files/.shared/main.ts", "./main.ts"],
+    
+    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    [
+      "../files/core/src/plugins/MyCoreRuntimePlugin.ts",
+      "./src/plugins/MyCoreRuntimePlugin.ts"
+    ]
+  ],
+  "demo": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/demo/configs/eac-runtime.config.ts",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts", "./dev.ts"],
+    ["../files/.shared/main.ts", "./main.ts"],
+
+    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    [
+      "../files/demo/apps/api/[slug]/_middleware.ts",
+      "./apps/api/[slug]/_middleware.ts"
+    ],
+    [
+      "../files/demo/apps/api/[slug]/another.ts",
+      "./apps/api/[slug]/another.ts"
+    ],
+    ["../files/demo/apps/api/_middleware.ts", "./apps/api/_middleware.ts"],
+    ["../files/demo/apps/api/index.ts", "./apps/api/index.ts"],
+    [
+      "../files/demo/apps/components/Button.tsx",
+      "./apps/components/Button.tsx"
+    ],
+    [
+      "../files/demo/apps/components/Counter.tsx",
+      "./apps/components/Counter.tsx"
+    ],
+    ["../files/demo/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
+    ["../files/demo/apps/home/index.tsx", "./apps/home/index.tsx"],
+    ["../files/demo/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
+    [
+      "../files/demo/apps/tailwind/tailwind.config.ts",
+      "./apps/tailwind/tailwind.config.ts"
+    ]
+  ],
+  "library": [
+    ["../files/library/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.library/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/.github/workflows/.build/build.yaml",
+      "./.github/workflows/build.yaml"
+    ],
+    ["../files/library/tests/tests.ts", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    ["../files/library/tests/utils/.tests.ts", "./tests/utils/.tests.ts"],
+    [
+      "../files/library/tests/utils/sampleFunction.tests.ts",
+      "./tests/utils/sampleFunction.tests.ts"
+    ],
+    ["../files/library/mod.ts", "./mod.ts"],
+    ["../files/library/src/utils/.exports.ts", "./src/utils/.exports.ts"],
+    [
+      "../files/library/src/utils/sampleFunction.ts",
+      "./src/utils/sampleFunction.ts"
+    ],
+    ["../files/library/src/.exports.ts", "./src/.exports.ts"],
+    ["../files/library/src/src.deps.ts", "./src/src.deps.ts"]
+  ],
+  "preact": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/preact/configs/eac-runtime.config.ts",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts", "./dev.ts"],
+    ["../files/.shared/main.ts", "./main.ts"],
+
+    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    [
+      "../files/preact/src/plugins/MyCoreRuntimePlugin.ts",
+      "./src/plugins/MyCoreRuntimePlugin.ts"
+    ],
+    [
+      "../files/preact/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts",
+      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
+    ],
+    [
+      "../files/preact/apps/components/Button.tsx",
+      "./apps/components/Button.tsx"
+    ],
+    ["../files/preact/apps/islands/Counter.tsx", "./apps/islands/Counter.tsx"],
+    ["../files/preact/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
+    ["../files/preact/apps/home/index.tsx", "./apps/home/index.tsx"],
+    ["../files/preact/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
+    ["../files/preact/tailwind.config.ts", "./tailwind.config.ts"]
+  ],
+  "sink": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/sink/configs/eac-runtime.config.ts",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts", "./dev.ts"],
+    ["../files/.shared/main.ts", "./main.ts"],
+
+    ["../files/sink/tests/tests.ts", "./tests/tests.ts"],
+    ["../files/sink/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    ["../files/sink/tests/test-eac-setup.ts", "./tests/test-eac-setup.ts"],
+    [
+      "../files/sink/tests/circuits/.tests.ts",
+      "./tests/circuits/.tests.ts"
+    ],
+    [
+      "../files/sink/tests/circuits/simple-tool.tests.ts",
+      "./tests/circuits/simple-tool.tests.ts"
+    ],
+    [
+      "../files/sink/src/plugins/RuntimePlugin.ts",
+      "./src/plugins/RuntimePlugin.ts"
+    ],
+    [
+      "../files/sink/src/plugins/SynapticPlugin.ts",
+      "./src/plugins/SynapticPlugin.ts"
+    ],
+    [
+      "../files/sink/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts",
+      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
+    ],
+    ["../files/sink/circuits/simple/index.ts", "./circuits/simple/index.ts"],
+    [
+      "../files/sink/apps/components/Button.tsx",
+      "./apps/components/Button.tsx"
+    ],
+    ["../files/sink/apps/islands/Counter.tsx", "./apps/islands/Counter.tsx"],
+    ["../files/sink/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
+    ["../files/sink/apps/home/index.tsx", "./apps/home/index.tsx"],
+    ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
+    ["../files/sink/tailwind.config.ts", "./tailwind.config.ts"],
+    [
+      "../files/sink/apps/api/[slug]/_middleware.ts",
+      "./apps/api/[slug]/_middleware.ts"
+    ],
+    ["../files/sink/apps/api/[slug]/another.ts", "./apps/api/[slug]/another.ts"],
+    ["../files/sink/apps/api/_middleware.ts", "./apps/api/_middleware.ts"],
+    ["../files/sink/apps/api/index.ts", "./apps/api/index.ts"]
+  ],
+  "synaptic": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/synaptic/configs/eac-runtime.config.ts",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts", "./dev.ts"],
+    ["../files/.shared/main.ts", "./main.ts"],
+
+    ["../files/synaptic/tests/tests.ts", "./tests/tests.ts"],
+    ["../files/synaptic/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    ["../files/synaptic/tests/test-eac-setup.ts", "./tests/test-eac-setup.ts"],
+    [
+      "../files/synaptic/tests/circuits/.tests.ts",
+      "./tests/circuits/.tests.ts"
+    ],
+    [
+      "../files/synaptic/tests/circuits/simple-tool.tests.ts",
+      "./tests/circuits/simple-tool.tests.ts"
+    ],
+    [
+      "../files/synaptic/src/plugins/MyCoreRuntimePlugin.ts",
+      "./src/plugins/MyCoreRuntimePlugin.ts"
+    ],
+    [
+      "../files/synaptic/src/plugins/MyCoreSynapticPlugin.ts",
+      "./src/plugins/MyCoreSynapticPlugin.ts"
+    ],
+    [
+      "../files/synaptic/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts",
+      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
+    ],
+    ["../files/sink/circuits/simple/index.ts", "./circuits/simple/index.ts"]
+  ]
+}

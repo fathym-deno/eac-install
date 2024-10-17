@@ -1,11 +1,11 @@
 import { EaCRuntimeConfig, EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac-runtime';
 
-export default class MyCoreSynapticPlugin implements EaCRuntimePlugin {
+export default class SynapticPlugin implements EaCRuntimePlugin {
   constructor() {}
 
   public Setup(_config: EaCRuntimeConfig) {
     const pluginConfig: EaCRuntimePluginConfig = {
-      Name: MyCoreSynapticPlugin.name,
+      Name: SynapticPlugin.name,
       Plugins: [],
       EaC: {},
     };

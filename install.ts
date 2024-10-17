@@ -8,7 +8,6 @@ export const fathymGreen: colors.Rgb = { r: 74, g: 145, b: 142 };
 // TODO(mcgear): Check that minimum deno version is met
 
 export type EaCRuntimeInstallerFlags = {
-  docker?: boolean;
   force?: boolean;
   help?: boolean;
   preact?: boolean;
@@ -17,10 +16,9 @@ export type EaCRuntimeInstallerFlags = {
 };
 
 const flags: EaCRuntimeInstallerFlags = parseArgs(Deno.args, {
-  boolean: ['docker', 'force', 'help', 'preact', 'tailwind'],
+  boolean: ['force', 'help', 'preact', 'tailwind'],
   string: ['template'],
   default: {
-    docker: true,
     force: undefined,
     preact: true,
     tailwind: true,
