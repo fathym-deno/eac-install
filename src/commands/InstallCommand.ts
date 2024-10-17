@@ -15,6 +15,10 @@ export class InstallCommand implements Command {
     this.filesToCreate
       .find(([_fromFile, toFile]) => toFile === './deno.jsonc')
       ?.push((contents: string) => this.ensureDenoConfigSetup(contents));
+
+    const devTs = Deno.readTextFileSync('./dev.ts');
+
+    console.log(devTs);
   }
 
   public async Run(): Promise<void> {
