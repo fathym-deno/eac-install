@@ -54,11 +54,6 @@ export class InstallCommand implements Command {
 
       const fileContents = await toText(file);
 
-      if (filePath.endsWith('dev.ts')) {
-        console.log('Template');
-        console.log(fileContents);
-      }
-
       if (transformer) {
         const transformed = transformer(fileContents);
 
@@ -71,12 +66,6 @@ export class InstallCommand implements Command {
           append: false,
           create: true,
         });
-      }
-
-      if (filePath.endsWith('dev.ts')) {
-        const devTs = Deno.readTextFileSync(path.resolve('./dev.ts'));
-        console.log('Copied');
-        console.log(devTs);
       }
     } else {
       console.log(`Skipping file ${outputTo}, because it already exists.`);
