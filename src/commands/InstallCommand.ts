@@ -52,7 +52,9 @@ export class InstallCommand implements Command {
 
       const file = await this.openTemplateFile(filePath);
 
-      const fileContents = await toText(file);
+      let fileContents = await toText(file);
+
+      fileContents = fileContents.replaceAll('.ts.template', '.ts');
 
       if (transformer) {
         const transformed = transformer(fileContents);
