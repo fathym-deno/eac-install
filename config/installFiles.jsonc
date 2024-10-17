@@ -9,7 +9,7 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
-      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
       "./src/logging/RuntimeLoggingProvider.ts"
     ],
     [
@@ -21,25 +21,25 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/api/configs/eac-runtime.config.ts",
+      "../files/api/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
-    ["../files/.shared/dev.ts", "./dev.ts"],
-    ["../files/.shared/main.ts", "./main.ts"],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
 
-    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
-    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
     [
-      "../files/api/src/plugins/MyCoreRuntimePlugin.ts",
+      "../files/api/src/plugins/MyCoreRuntimePlugin.ts.template",
       "./src/plugins/MyCoreRuntimePlugin.ts"
     ],
     [
-      "../files/api/apps/api/[slug]/_middleware.ts",
+      "../files/api/apps/api/[slug]/_middleware.ts.template",
       "./apps/api/[slug]/_middleware.ts"
     ],
-    ["../files/api/apps/api/[slug]/another.ts", "./apps/api/[slug]/another.ts"],
-    ["../files/api/apps/api/_middleware.ts", "./apps/api/_middleware.ts"],
-    ["../files/api/apps/api/index.ts", "./apps/api/index.ts"]
+    ["../files/api/apps/api/[slug]/another.ts.template", "./apps/api/[slug]/another.ts"],
+    ["../files/api/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    ["../files/api/apps/api/index.ts.template", "./apps/api/index.ts"]
   ],
   "atomic": [
     ["../files/atomic/deno.template.jsonc", "./deno.jsonc"],
@@ -52,30 +52,30 @@
       "../files/.shared/.github/workflows/.build/build.yaml",
       "./.github/workflows/build.yaml"
     ],
-    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
-    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
-    ["../files/atomic/mod.ts", "./mod.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    ["../files/atomic/mod.ts.template", "./mod.ts"],
     ["../files/atomic/tailwind.config.js", "./tailwind.config.js"],
-    ["../files/atomic/src/src.deps.ts", "./src/src.deps.ts"],
+    ["../files/atomic/src/src.deps.ts.template", "./src/src.deps.ts"],
     [
-      "../files/atomic/src/atoms/forms/.exports.ts",
+      "../files/atomic/src/atoms/forms/.exports.ts.template",
       "./src/atoms/forms/.exports.ts"
     ],
-    ["../files/atomic/src/atoms/.exports.ts", "./src/atoms/.exports.ts"],
+    ["../files/atomic/src/atoms/.exports.ts.template", "./src/atoms/.exports.ts"],
     [
-      "../files/atomic/src/molecules/.exports.ts",
+      "../files/atomic/src/molecules/.exports.ts.template",
       "./src/molecules/.exports.ts"
     ],
     [
-      "../files/atomic/src/organisms/.exports.ts",
+      "../files/atomic/src/organisms/.exports.ts.template",
       "./src/organisms/.exports.ts"
     ],
     [
-      "../files/atomic/src/templates/.exports.ts",
+      "../files/atomic/src/templates/.exports.ts.template",
       "./src/templates/.exports.ts"
     ],
-    ["../files/atomic/src/utils/.exports.ts", "./src/utils/.exports.ts"],
-    ["../files/atomic/src/.exports.ts", "./src/.exports.ts"]
+    ["../files/atomic/src/utils/.exports.ts.template", "./src/utils/.exports.ts"],
+    ["../files/atomic/src/.exports.ts.template", "./src/.exports.ts"]
   ],
   "core": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -87,7 +87,7 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
-      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
       "./src/logging/RuntimeLoggingProvider.ts"
     ],
     [
@@ -99,16 +99,16 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/core/configs/eac-runtime.config.ts",
+      "../files/core/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
-    ["../files/.shared/dev.ts", "./dev.ts"],
-    ["../files/.shared/main.ts", "./main.ts"],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
 
-    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
-    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
     [
-      "../files/core/src/plugins/MyCoreRuntimePlugin.ts",
+      "../files/core/src/plugins/MyCoreRuntimePlugin.ts.template",
       "./src/plugins/MyCoreRuntimePlugin.ts"
     ]
   ],
@@ -122,28 +122,28 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
-      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
       "./src/logging/RuntimeLoggingProvider.ts"
     ],
     [
-      "../files/demo/configs/eac-runtime.config.ts",
+      "../files/demo/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
-    ["../files/.shared/dev.ts", "./dev.ts"],
-    ["../files/.shared/main.ts", "./main.ts"],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
 
-    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
-    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
     [
-      "../files/demo/apps/api/[slug]/_middleware.ts",
+      "../files/demo/apps/api/[slug]/_middleware.ts.template",
       "./apps/api/[slug]/_middleware.ts"
     ],
     [
-      "../files/demo/apps/api/[slug]/another.ts",
+      "../files/demo/apps/api/[slug]/another.ts.template",
       "./apps/api/[slug]/another.ts"
     ],
-    ["../files/demo/apps/api/_middleware.ts", "./apps/api/_middleware.ts"],
-    ["../files/demo/apps/api/index.ts", "./apps/api/index.ts"],
+    ["../files/demo/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    ["../files/demo/apps/api/index.ts.template", "./apps/api/index.ts"],
     [
       "../files/demo/apps/components/Button.tsx",
       "./apps/components/Button.tsx"
@@ -156,7 +156,7 @@
     ["../files/demo/apps/home/index.tsx", "./apps/home/index.tsx"],
     ["../files/demo/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
     [
-      "../files/demo/apps/tailwind/tailwind.config.ts",
+      "../files/demo/apps/tailwind/tailwind.config.ts.template",
       "./apps/tailwind/tailwind.config.ts"
     ]
   ],
@@ -171,21 +171,21 @@
       "../files/.shared/.github/workflows/.build/build.yaml",
       "./.github/workflows/build.yaml"
     ],
-    ["../files/library/tests/tests.ts", "./tests/tests.ts"],
-    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
-    ["../files/library/tests/utils/.tests.ts", "./tests/utils/.tests.ts"],
+    ["../files/library/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    ["../files/library/tests/utils/.tests.ts.template", "./tests/utils/.tests.ts"],
     [
-      "../files/library/tests/utils/sampleFunction.tests.ts",
+      "../files/library/tests/utils/sampleFunction.tests.ts.template",
       "./tests/utils/sampleFunction.tests.ts"
     ],
-    ["../files/library/mod.ts", "./mod.ts"],
-    ["../files/library/src/utils/.exports.ts", "./src/utils/.exports.ts"],
+    ["../files/library/mod.ts.template", "./mod.ts"],
+    ["../files/library/src/utils/.exports.ts.template", "./src/utils/.exports.ts"],
     [
-      "../files/library/src/utils/sampleFunction.ts",
+      "../files/library/src/utils/sampleFunction.ts.template",
       "./src/utils/sampleFunction.ts"
     ],
-    ["../files/library/src/.exports.ts", "./src/.exports.ts"],
-    ["../files/library/src/src.deps.ts", "./src/src.deps.ts"]
+    ["../files/library/src/.exports.ts.template", "./src/.exports.ts"],
+    ["../files/library/src/src.deps.ts.template", "./src/src.deps.ts"]
   ],
   "preact": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -197,7 +197,7 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
-      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
       "./src/logging/RuntimeLoggingProvider.ts"
     ],
     [
@@ -209,20 +209,20 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/preact/configs/eac-runtime.config.ts",
+      "../files/preact/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
-    ["../files/.shared/dev.ts", "./dev.ts"],
-    ["../files/.shared/main.ts", "./main.ts"],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
 
-    ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
-    ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
     [
-      "../files/preact/src/plugins/MyCoreRuntimePlugin.ts",
+      "../files/preact/src/plugins/MyCoreRuntimePlugin.ts.template",
       "./src/plugins/MyCoreRuntimePlugin.ts"
     ],
     [
-      "../files/preact/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts",
+      "../files/preact/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
       "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
     ],
     [
@@ -233,7 +233,7 @@
     ["../files/preact/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
     ["../files/preact/apps/home/index.tsx", "./apps/home/index.tsx"],
     ["../files/preact/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
-    ["../files/preact/tailwind.config.ts", "./tailwind.config.ts"]
+    ["../files/preact/tailwind.config.ts.template", "./tailwind.config.ts"]
   ],
   "sink": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -245,7 +245,7 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
-      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
       "./src/logging/RuntimeLoggingProvider.ts"
     ],
     [
@@ -257,55 +257,55 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/sink/configs/eac-runtime.config.ts",
+      "../files/sink/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
-    ["../files/.shared/dev.ts", "./dev.ts"],
-    ["../files/.shared/main.ts", "./main.ts"],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
 
-    ["../files/sink/tests/tests.ts", "./tests/tests.ts"],
-    ["../files/sink/tests/tests.deps.ts", "./tests/tests.deps.ts"],
-    ["../files/sink/tests/test-eac-setup.ts", "./tests/test-eac-setup.ts"],
-    ["../files/sink/tests/circuits/.tests.ts", "./tests/circuits/.tests.ts"],
+    ["../files/sink/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/sink/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    ["../files/sink/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
+    ["../files/sink/tests/circuits/.tests.ts.template", "./tests/circuits/.tests.ts"],
     [
-      "../files/sink/tests/circuits/simple-tool.tests.ts",
+      "../files/sink/tests/circuits/simple-tool.tests.ts.template",
       "./tests/circuits/simple-tool.tests.ts"
     ],
     [
-      "../files/sink/src/plugins/RuntimePlugin.ts",
+      "../files/sink/src/plugins/RuntimePlugin.ts.template",
       "./src/plugins/RuntimePlugin.ts"
     ],
     [
-      "../files/sink/src/plugins/SynapticPlugin.ts",
+      "../files/sink/src/plugins/SynapticPlugin.ts.template",
       "./src/plugins/SynapticPlugin.ts"
     ],
     [
-      "../files/sink/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts",
+      "../files/sink/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
       "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
     ],
     [
-      "../files/sink/src/state/CompanyAPIState.ts",
+      "../files/sink/src/state/CompanyAPIState.ts.template",
       "./src/state/CompanyAPIState.ts"
     ],
     [
-      "../files/sink/src/state/CompanyWebState.ts",
+      "../files/sink/src/state/CompanyWebState.ts.template",
       "./src/state/CompanyWebState.ts"
     ],
     [
-      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts",
+      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts.template",
       "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
     ],
     [
-      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts",
+      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts.template",
       "./src/circuits/company-chat/CompanyChatGraphState.ts"
     ],
-    ["../files/sink/circuits/simple/index.ts", "./circuits/simple/index.ts"],
+    ["../files/sink/circuits/simple/index.ts.template", "./circuits/simple/index.ts"],
     [
-      "../files/sink/circuits/company-chat/index.ts",
+      "../files/sink/circuits/company-chat/index.ts.template",
       "./circuits/company-chat/index.ts"
     ],
     [
-      "../files/sink/circuits/company-chat/rag.ts",
+      "../files/sink/circuits/company-chat/rag.ts.template",
       "./circuits/company-chat/rag.ts"
     ],
     [
@@ -318,21 +318,21 @@
       "./apps/islands/organisms/CompanyThinky.tsx"
     ],
     ["../files/sink/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
-    ["../files/sink/apps/home/_middleware.ts", "./apps/home/_middleware.ts"],
+    ["../files/sink/apps/home/_middleware.ts.template", "./apps/home/_middleware.ts"],
     ["../files/sink/apps/home/index.tsx", "./apps/home/index.tsx"],
     ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
-    ["../files/sink/tailwind.config.ts", "./tailwind.config.ts"],
+    ["../files/sink/tailwind.config.ts.template", "./tailwind.config.ts"],
     [
-      "../files/sink/apps/api/[slug]/_middleware.ts",
+      "../files/sink/apps/api/[slug]/_middleware.ts.template",
       "./apps/api/[slug]/_middleware.ts"
     ],
     [
-      "../files/sink/apps/api/[slug]/another.ts",
+      "../files/sink/apps/api/[slug]/another.ts.template",
       "./apps/api/[slug]/another.ts"
     ],
-    ["../files/sink/apps/api/_middleware.ts", "./apps/api/_middleware.ts"],
-    ["../files/sink/apps/api/index.ts", "./apps/api/index.ts"],
-    ["../files/sink/apps/api/state/index.ts", "./apps/api/state/index.ts"]
+    ["../files/sink/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    ["../files/sink/apps/api/index.ts.template", "./apps/api/index.ts"],
+    ["../files/sink/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
   ],
   "synaptic": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -344,7 +344,7 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
-      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
       "./src/logging/RuntimeLoggingProvider.ts"
     ],
     [
@@ -356,53 +356,53 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/synaptic/configs/eac-runtime.config.ts",
+      "../files/synaptic/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
-    ["../files/.shared/dev.ts", "./dev.ts"],
-    ["../files/.shared/main.ts", "./main.ts"],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
 
-    ["../files/synaptic/tests/tests.ts", "./tests/tests.ts"],
-    ["../files/synaptic/tests/tests.deps.ts", "./tests/tests.deps.ts"],
-    ["../files/synaptic/tests/test-eac-setup.ts", "./tests/test-eac-setup.ts"],
+    ["../files/synaptic/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/synaptic/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    ["../files/synaptic/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
     [
-      "../files/synaptic/tests/circuits/.tests.ts",
+      "../files/synaptic/tests/circuits/.tests.ts.template",
       "./tests/circuits/.tests.ts"
     ],
     [
-      "../files/synaptic/tests/circuits/simple-tool.tests.ts",
+      "../files/synaptic/tests/circuits/simple-tool.tests.ts.template",
       "./tests/circuits/simple-tool.tests.ts"
     ],
     [
-      "../files/synaptic/src/plugins/MyCoreRuntimePlugin.ts",
+      "../files/synaptic/src/plugins/MyCoreRuntimePlugin.ts.template",
       "./src/plugins/MyCoreRuntimePlugin.ts"
     ],
     [
-      "../files/synaptic/src/plugins/MyCoreSynapticPlugin.ts",
+      "../files/synaptic/src/plugins/MyCoreSynapticPlugin.ts.template",
       "./src/plugins/MyCoreSynapticPlugin.ts"
     ],
     [
-      "../files/synaptic/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts",
+      "../files/synaptic/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
       "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
     ],
     [
-      "../files/synaptic/circuits/simple/index.ts",
+      "../files/synaptic/circuits/simple/index.ts.template",
       "./circuits/simple/index.ts"
     ],
     [
-      "../files/synaptic/circuits/company-chat/index.ts",
+      "../files/synaptic/circuits/company-chat/index.ts.template",
       "./circuits/company-chat/index.ts"
     ],
     [
-      "../files/synaptic/circuits/company-chat/rag.ts",
+      "../files/synaptic/circuits/company-chat/rag.ts.template",
       "./circuits/company-chat/rag.ts"
     ],
     [
-      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts",
+      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts.template",
       "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
     ],
     [
-      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts",
+      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts.template",
       "./src/circuits/company-chat/CompanyChatGraphState.ts"
     ]
   ]
