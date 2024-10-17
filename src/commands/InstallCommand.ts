@@ -80,6 +80,7 @@ export class InstallCommand implements Command {
           '@fathym/common': 'jsr:@fathym/common@0',
           '@fathym/eac': 'jsr:@fathym/eac@0',
           '@fathym/eac-runtime': 'jsr:@fathym/eac-runtime@0',
+          '@std/log': 'jsr:@std/log@0.224.6',
         },
       });
     }
@@ -109,6 +110,12 @@ export class InstallCommand implements Command {
       config = mergeWithArrays(config, {
         imports: {
           '@fathym/synaptic': 'jsr:@fathym/synaptic@0',
+          'html-to-text': 'npm:html-to-text@9.0.5',
+          '@langchain/community': 'npm:@langchain/community@0.3.0',
+          '@langchain/core': 'npm:@langchain/core@0.3.1',
+          '@langchain/langgraph': 'npm:@langchain/langgraph@0.2.3',
+          'pdf-parse': 'npm:pdf-parse@1.1.1',
+          zod: 'npm:zod@3.23.8',
         },
       });
     }

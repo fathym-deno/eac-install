@@ -9,6 +9,10 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
       "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
       "./.github/workflows/container.deploy.yml"
     ],
@@ -83,6 +87,10 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
       "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
       "./.github/workflows/container.deploy.yml"
     ],
@@ -96,7 +104,7 @@
     ],
     ["../files/.shared/dev.ts", "./dev.ts"],
     ["../files/.shared/main.ts", "./main.ts"],
-    
+
     ["../files/.shared/tests/tests.ts", "./tests/tests.ts"],
     ["../files/.shared/tests/tests.deps.ts", "./tests/tests.deps.ts"],
     [
@@ -113,6 +121,10 @@
     ["../files/.shared/README.md", "./README.md"],
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
     [
       "../files/demo/configs/eac-runtime.config.ts",
       "./configs/eac-runtime.config.ts"
@@ -185,6 +197,10 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
       "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
       "./.github/workflows/container.deploy.yml"
     ],
@@ -229,6 +245,10 @@
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
       "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
       "./.github/workflows/container.deploy.yml"
     ],
@@ -246,10 +266,7 @@
     ["../files/sink/tests/tests.ts", "./tests/tests.ts"],
     ["../files/sink/tests/tests.deps.ts", "./tests/tests.deps.ts"],
     ["../files/sink/tests/test-eac-setup.ts", "./tests/test-eac-setup.ts"],
-    [
-      "../files/sink/tests/circuits/.tests.ts",
-      "./tests/circuits/.tests.ts"
-    ],
+    ["../files/sink/tests/circuits/.tests.ts", "./tests/circuits/.tests.ts"],
     [
       "../files/sink/tests/circuits/simple-tool.tests.ts",
       "./tests/circuits/simple-tool.tests.ts"
@@ -268,6 +285,22 @@
     ],
     ["../files/sink/circuits/simple/index.ts", "./circuits/simple/index.ts"],
     [
+      "../files/sink/circuits/company-chat/index.ts",
+      "./circuits/company-chat/index.ts"
+    ],
+    [
+      "../files/sink/circuits/company-chat/rag.ts",
+      "./circuits/company-chat/rag.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts",
+      "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts",
+      "./src/circuits/company-chat/CompanyChatGraphState.ts"
+    ],
+    [
       "../files/sink/apps/components/Button.tsx",
       "./apps/components/Button.tsx"
     ],
@@ -280,7 +313,10 @@
       "../files/sink/apps/api/[slug]/_middleware.ts",
       "./apps/api/[slug]/_middleware.ts"
     ],
-    ["../files/sink/apps/api/[slug]/another.ts", "./apps/api/[slug]/another.ts"],
+    [
+      "../files/sink/apps/api/[slug]/another.ts",
+      "./apps/api/[slug]/another.ts"
+    ],
     ["../files/sink/apps/api/_middleware.ts", "./apps/api/_middleware.ts"],
     ["../files/sink/apps/api/index.ts", "./apps/api/index.ts"]
   ],
@@ -293,6 +329,10 @@
     ["../files/.shared/README.md", "./README.md"],
     ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
     [
       "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
       "./.github/workflows/container.deploy.yml"
@@ -331,6 +371,25 @@
       "../files/synaptic/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts",
       "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
     ],
-    ["../files/sink/circuits/simple/index.ts", "./circuits/simple/index.ts"]
+    [
+      "../files/synaptic/circuits/simple/index.ts",
+      "./circuits/simple/index.ts"
+    ],
+    [
+      "../files/synaptic/circuits/company-chat/index.ts",
+      "./circuits/company-chat/index.ts"
+    ],
+    [
+      "../files/synaptic/circuits/company-chat/rag.ts",
+      "./circuits/company-chat/rag.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts",
+      "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts",
+      "./src/circuits/company-chat/CompanyChatGraphState.ts"
+    ]
   ]
 }

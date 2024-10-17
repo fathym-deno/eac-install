@@ -16,7 +16,7 @@ import {
   FathymSynapticPlugin,
 } from '@fathym/synaptic';
 import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
-import MyCoreSynapticPlugin from './MyCoreSynapticPlugin.ts';
+import SynapticPlugin from './SynapticPlugin.ts';
 
 export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
   constructor() {}
@@ -28,7 +28,7 @@ export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
         new FathymAzureContainerCheckPlugin(),
         new FathymEaCServicesPlugin(),
         new FathymDFSFileHandlerPlugin(),
-        new MyCoreSynapticPlugin(),
+        new SynapticPlugin(),
         new FathymSynapticPlugin(),
       ],
       IoC: new IoCContainer(),
