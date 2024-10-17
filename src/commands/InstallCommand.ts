@@ -15,10 +15,6 @@ export class InstallCommand implements Command {
     this.filesToCreate
       .find(([_fromFile, toFile]) => toFile === './deno.jsonc')
       ?.push((contents: string) => this.ensureDenoConfigSetup(contents));
-
-    const devTs = Deno.readTextFileSync(path.resolve('./dev.ts'));
-
-    console.log(devTs);
   }
 
   public async Run(): Promise<void> {
@@ -27,6 +23,10 @@ export class InstallCommand implements Command {
     const installDirectory = path.resolve('.');
 
     await this.ensureFilesCreated(installDirectory);
+
+    const devTs = Deno.readTextFileSync(path.resolve('./dev.ts'));
+
+    console.log(devTs);
   }
 
   protected async copyTemplateFile(
