@@ -283,6 +283,22 @@
       "../files/sink/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts",
       "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
     ],
+    [
+      "../files/sink/src/state/CompanyAPIState.ts",
+      "./src/state/CompanyAPIState.ts"
+    ],
+    [
+      "../files/sink/src/state/CompanyWebState.ts",
+      "./src/state/CompanyWebState.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts",
+      "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts",
+      "./src/circuits/company-chat/CompanyChatGraphState.ts"
+    ],
     ["../files/sink/circuits/simple/index.ts", "./circuits/simple/index.ts"],
     [
       "../files/sink/circuits/company-chat/index.ts",
@@ -293,19 +309,16 @@
       "./circuits/company-chat/rag.ts"
     ],
     [
-      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts",
-      "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
-    ],
-    [
-      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts",
-      "./src/circuits/company-chat/CompanyChatGraphState.ts"
-    ],
-    [
       "../files/sink/apps/components/Button.tsx",
       "./apps/components/Button.tsx"
     ],
     ["../files/sink/apps/islands/Counter.tsx", "./apps/islands/Counter.tsx"],
+    [
+      "../files/sink/apps/islands/organisms/CompanyThinky.tsx",
+      "./apps/islands/organisms/CompanyThinky.tsx"
+    ],
     ["../files/sink/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
+    ["../files/sink/apps/home/_middleware.ts", "./apps/home/_middleware.ts"],
     ["../files/sink/apps/home/index.tsx", "./apps/home/index.tsx"],
     ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
     ["../files/sink/tailwind.config.ts", "./tailwind.config.ts"],
@@ -318,7 +331,8 @@
       "./apps/api/[slug]/another.ts"
     ],
     ["../files/sink/apps/api/_middleware.ts", "./apps/api/_middleware.ts"],
-    ["../files/sink/apps/api/index.ts", "./apps/api/index.ts"]
+    ["../files/sink/apps/api/index.ts", "./apps/api/index.ts"],
+    ["../files/sink/apps/api/state/index.ts", "./apps/api/state/index.ts"]
   ],
   "synaptic": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],

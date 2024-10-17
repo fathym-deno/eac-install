@@ -14,7 +14,10 @@ import {
   EaCPreactAppProcessor,
   EaCTailwindProcessor,
 } from '@fathym/eac/applications';
-import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
+import {
+  EaCJSRDistributedFileSystemDetails,
+  EaCLocalDistributedFileSystemDetails,
+} from '@fathym/eac/dfs';
 import { EaCDenoKVDatabaseDetails } from '@fathym/eac/databases';
 import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
 import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
@@ -143,7 +146,10 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               AppDFSLookup: 'local:apps/home',
               ComponentDFSLookups: [
                 ['local:apps/components', ['tsx']],
+                ['local:apps/home', ['tsx']],
                 ['local:apps/islands', ['tsx']],
+                ['jsr:@fathym/atomic', ['tsx']],
+                ['jsr:@fathym/atomic-design-kit', ['tsx']],
               ],
             } as EaCPreactAppProcessor,
           },
@@ -158,6 +164,8 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
                 'local:apps/components',
                 'local:apps/home',
                 'local:apps/islands',
+                'jsr:@fathym/atomic',
+                'jsr:@fathym/atomic-design-kit',
               ],
               ConfigPath: './tailwind.config.ts',
               StylesTemplatePath: './apps/tailwind/styles.css',
@@ -222,22 +230,42 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               ),
             } as EaCLocalDistributedFileSystemDetails,
           },
-          Modifiers: {
-            baseHref: {
-              Details: {
-                Type: 'BaseHREF',
-                Name: 'Base HREF',
-                Description: 'Adjusts the base HREF of a response based on configureation.',
-              } as EaCBaseHREFModifierDetails,
-            },
-            keepAlive: {
-              Details: {
-                Type: 'KeepAlive',
-                Name: 'Deno KV Cache',
-                Description: 'Lightweight cache to use that stores data in a DenoKV database.',
-                KeepAlivePath: '/_eac/alive',
-              } as EaCKeepAliveModifierDetails,
-            },
+          'jsr:@fathym/atomic': {
+            Details: {
+              Type: 'JSR',
+              Package: '@fathym/atomic',
+              Version: '',
+              WorkerPath: import.meta.resolve(
+                '@fathym/eac-runtime/workers/jsr',
+              ),
+            } as EaCJSRDistributedFileSystemDetails,
+          },
+          'jsr:@fathym/atomic-design-kit': {
+            Details: {
+              Type: 'JSR',
+              Package: '@fathym/atomic-design-kit',
+              Version: '',
+              WorkerPath: import.meta.resolve(
+                '@fathym/eac-runtime/workers/jsr',
+              ),
+            } as EaCJSRDistributedFileSystemDetails,
+          },
+        },
+        Modifiers: {
+          baseHref: {
+            Details: {
+              Type: 'BaseHREF',
+              Name: 'Base HREF',
+              Description: 'Adjusts the base HREF of a response based on configureation.',
+            } as EaCBaseHREFModifierDetails,
+          },
+          keepAlive: {
+            Details: {
+              Type: 'KeepAlive',
+              Name: 'Deno KV Cache',
+              Description: 'Lightweight cache to use that stores data in a DenoKV database.',
+              KeepAlivePath: '/_eac/alive',
+            } as EaCKeepAliveModifierDetails,
           },
         },
       } as EaCRuntimeEaC | EverythingAsCodeSynaptic,
