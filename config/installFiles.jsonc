@@ -145,15 +145,15 @@
     ["../files/demo/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
     ["../files/demo/apps/api/index.ts.template", "./apps/api/index.ts"],
     [
-      "../files/demo/apps/components/Button.tsx",
+      "../files/demo/apps/components/Button.tsx.template",
       "./apps/components/Button.tsx"
     ],
     [
-      "../files/demo/apps/components/Counter.tsx",
+      "../files/demo/apps/components/Counter.tsx.template",
       "./apps/components/Counter.tsx"
     ],
-    ["../files/demo/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
-    ["../files/demo/apps/home/index.tsx", "./apps/home/index.tsx"],
+    ["../files/demo/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
+    ["../files/demo/apps/home/index.tsx.template", "./apps/home/index.tsx"],
     ["../files/demo/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
     [
       "../files/demo/apps/tailwind/tailwind.config.ts.template",
@@ -226,12 +226,12 @@
       "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
     ],
     [
-      "../files/preact/apps/components/Button.tsx",
+      "../files/preact/apps/components/Button.tsx.template",
       "./apps/components/Button.tsx"
     ],
-    ["../files/preact/apps/islands/Counter.tsx", "./apps/islands/Counter.tsx"],
-    ["../files/preact/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
-    ["../files/preact/apps/home/index.tsx", "./apps/home/index.tsx"],
+    ["../files/preact/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
+    ["../files/preact/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
+    ["../files/preact/apps/home/index.tsx.template", "./apps/home/index.tsx"],
     ["../files/preact/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
     ["../files/preact/tailwind.config.ts.template", "./tailwind.config.ts"]
   ],
@@ -309,17 +309,17 @@
       "./circuits/company-chat/rag.ts"
     ],
     [
-      "../files/sink/apps/components/Button.tsx",
+      "../files/sink/apps/components/Button.tsx.template",
       "./apps/components/Button.tsx"
     ],
-    ["../files/sink/apps/islands/Counter.tsx", "./apps/islands/Counter.tsx"],
+    ["../files/sink/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
     [
-      "../files/sink/apps/islands/organisms/CompanyThinky.tsx",
+      "../files/sink/apps/islands/organisms/CompanyThinky.tsx.template",
       "./apps/islands/organisms/CompanyThinky.tsx"
     ],
-    ["../files/sink/apps/home/_layout.tsx", "./apps/home/_layout.tsx"],
+    ["../files/sink/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
     ["../files/sink/apps/home/_middleware.ts.template", "./apps/home/_middleware.ts"],
-    ["../files/sink/apps/home/index.tsx", "./apps/home/index.tsx"],
+    ["../files/sink/apps/home/index.tsx.template", "./apps/home/index.tsx"],
     ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
     ["../files/sink/tailwind.config.ts.template", "./tailwind.config.ts"],
     [
