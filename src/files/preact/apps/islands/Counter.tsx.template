@@ -1,6 +1,6 @@
 import { JSX } from 'preact';
 import { useState } from 'preact/hooks';
-import Button from '../components/Button.tsx.template';
+import Button from '../components/Button.tsx';
 import { AddIcon } from '../../build/iconset/icons/AddIcon.tsx';
 
 export const IsIsland = true;

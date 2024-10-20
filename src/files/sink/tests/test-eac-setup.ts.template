@@ -3,7 +3,7 @@ import {
   EaCRuntimePlugin,
   EverythingAsCode,
   EverythingAsCodeSynaptic,
-} from './tests.deps.ts.template';
+} from './tests.deps.ts';
 import MyCoreRuntimePlugin from '../src/plugins/MyCoreRuntimePlugin.ts';
 
 export const AI_LOOKUP = 'core';

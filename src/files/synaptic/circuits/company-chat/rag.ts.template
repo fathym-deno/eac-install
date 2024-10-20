@@ -11,11 +11,11 @@ import {
   lastAiNotHumanMessages,
 } from '@fathym/synaptic';
 import { AzureAISearchQueryType } from '@langchain/community/vectorstores/azure_aisearch';
-import SynapticPlugin from '../../src/plugins/SynapticPlugin.ts.template';
-import { CompanyChatGraphState } from '../../src/circuits/company-chat/CompanyChatGraphState.ts.template';
+import SynapticPlugin from '../../src/plugins/SynapticPlugin.ts';
+import { CompanyChatGraphState } from '../../src/circuits/company-chat/CompanyChatGraphState.ts';
 import { END, START } from '@langchain/langgraph';
 import { BaseMessage, HumanMessage } from '@langchain/core/messages';
-import { CompanyChatCircuitInput } from '../../src/circuits/company-chat/CompanyChatCircuitInput.ts.template';
+import { CompanyChatCircuitInput } from '../../src/circuits/company-chat/CompanyChatCircuitInput.ts';
 
 export const Configure: CircuitConfiguration<'Graph'> = (
   ctx: CircuitContext,

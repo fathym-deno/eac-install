@@ -1,1 +1,1 @@
-import './simple-tool.tests.ts.template';
+import './simple-tool.tests.ts';

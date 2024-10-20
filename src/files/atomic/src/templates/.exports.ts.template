@@ -1,1 +1,1 @@
-export { BasicLayout, type BasicLayoutProps } from '../src.deps.ts.template';
+export { BasicLayout, type BasicLayoutProps } from '../src.deps.ts';

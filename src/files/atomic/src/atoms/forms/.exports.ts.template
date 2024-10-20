@@ -8,4 +8,4 @@ export {
   type SelectProps,
   SlideToggle,
   type SlideToggleProps,
-} from '../../src.deps.ts.template';
+} from '../../src.deps.ts';

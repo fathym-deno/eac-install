@@ -9,7 +9,7 @@ export {
   MenuButtonStyleTypes,
   ResponsiveSet,
   type ResponsiveSetProps,
-} from '../src.deps.ts.template';
+} from '../src.deps.ts';
 
 export {
   CloudCALZForm,
@@ -20,7 +20,7 @@ export {
   type CloudConnectExistingFormProps,
   CloudConnectNewSubForm,
   type CloudConnectNewSubFormProps,
-} from '../src.deps.ts.template';
+} from '../src.deps.ts';
 
 export {
   EaCManageCloudForm,
@@ -39,9 +39,9 @@ export {
   type EaCManageSecretFormProps,
   EaCManageSourceForm,
   type EaCManageSourceFormProps,
-} from '../src.deps.ts.template';
+} from '../src.deps.ts';
 
-export { CopyInput } from '../src.deps.ts.template';
+export { CopyInput } from '../src.deps.ts';
 
 export {
   ChatInput,
@@ -54,8 +54,8 @@ export {
   type ChatsProps,
   Thinky,
   type ThinkyProps,
-} from '../src.deps.ts.template';
+} from '../src.deps.ts';
 
-export { EnterpriseManagementItem } from '../src.deps.ts.template';
+export { EnterpriseManagementItem } from '../src.deps.ts';
 
-export { type Tab, Tabs, type TabsProps } from '../src.deps.ts.template';
+export { type Tab, Tabs, type TabsProps } from '../src.deps.ts';

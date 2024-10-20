@@ -1,1 +1,1 @@
-import './sampleFunction.tests.ts.template';
+import './sampleFunction.tests.ts';

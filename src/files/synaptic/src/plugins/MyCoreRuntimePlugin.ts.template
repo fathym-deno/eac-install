@@ -15,8 +15,8 @@ import {
   EverythingAsCodeSynaptic,
   FathymSynapticPlugin,
 } from '@fathym/synaptic';
-import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts.template';
-import SynapticPlugin from './SynapticPlugin.ts.template';
+import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
+import SynapticPlugin from './SynapticPlugin.ts';
 
 export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
   constructor() {}

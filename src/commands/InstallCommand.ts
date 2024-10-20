@@ -7,7 +7,11 @@ export class InstallCommand implements Command {
 
   constructor(protected flags: EaCRuntimeInstallerFlags) {
     const fileSets = parseJsonc(
-      Deno.readTextFileSync('../config/installFiles.jsonc'),
+      Deno.readTextFileSync(
+        import.meta
+          .resolve('../../config/installFiles.jsonc')
+          .replace('file:///', ''),
+      ),
     ) as Record<string, typeof this.filesToCreate>;
 
     this.filesToCreate = fileSets[flags.template ?? 'core'];

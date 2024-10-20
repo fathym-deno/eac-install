@@ -5,8 +5,8 @@ import {
   EaCDocumentsAsStringNeuron,
   EaCRetrieverNeuron,
 } from '@fathym/synaptic';
-import { CompanyChatGraphState } from '../../src/circuits/company-chat/CompanyChatGraphState.ts.template';
-import SynapticPlugin from '../../src/plugins/SynapticPlugin.ts.template';
+import { CompanyChatGraphState } from '../../src/circuits/company-chat/CompanyChatGraphState.ts';
+import SynapticPlugin from '../../src/plugins/SynapticPlugin.ts';
 
 export const Configure: CircuitConfiguration<'Linear'> = (
   _ctx: CircuitContext,

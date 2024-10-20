@@ -6,4 +6,4 @@ export {
   mergeDeep,
   useActionChildren,
   useDisplayChildren,
-} from '../src.deps.ts.template';
+} from '../src.deps.ts';

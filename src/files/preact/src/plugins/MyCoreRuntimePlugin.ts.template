@@ -7,7 +7,7 @@ import {
 } from '@fathym/eac/applications';
 import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
 import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
-import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts.template';
+import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
 import { IoCContainer } from '@fathym/ioc';
 import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
 

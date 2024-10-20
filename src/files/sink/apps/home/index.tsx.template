@@ -1,8 +1,8 @@
 import { ChatSet } from '@fathym/atomic';
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac-runtime';
-import Counter from '../islands/Counter.tsx.template';
-import CompanyThinky from '../islands/organisms/CompanyThinky.tsx.template';
-import { CompanyWebState } from '../../src/state/CompanyWebState.ts.template';
+import Counter from '../islands/Counter.tsx';
+import CompanyThinky from '../islands/organisms/CompanyThinky.tsx';
+import { CompanyWebState } from '../../src/state/CompanyWebState.ts';
 
 export const IsIsland = true;
 

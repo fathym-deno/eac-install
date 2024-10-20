@@ -1,6 +1,6 @@
 import { JSX } from 'preact';
 import { useState } from 'preact/hooks';
-import Button from './Button.tsx.template';
+import Button from './Button.tsx';
 
 type CounterProps = JSX.HTMLAttributes<HTMLDivElement>;
 

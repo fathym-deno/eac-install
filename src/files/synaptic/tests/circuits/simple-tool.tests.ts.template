@@ -4,7 +4,7 @@ import {
   buildTestIoC,
   EverythingAsCodeSynaptic,
   Runnable,
-} from '../tests.deps.ts.template';
+} from '../tests.deps.ts';
 
 Deno.test('Simple Tool Tests', async (t) => {
   const eac = {} as EverythingAsCodeSynaptic;

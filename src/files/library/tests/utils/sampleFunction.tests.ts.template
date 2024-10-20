@@ -1,5 +1,5 @@
 import { assert, assertEquals } from '../tests.deps.ts';
-import { sampleFunction } from '../../src/utils/sampleFunction.ts.template';
+import { sampleFunction } from '../../src/utils/sampleFunction.ts';
 
 Deno.test('sampleFunction Tests', async (t) => {
   await t.step('Success', () => {
