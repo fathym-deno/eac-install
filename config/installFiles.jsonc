@@ -98,15 +98,15 @@
       "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
       "./.github/workflows/deno.deploy.yml"
     ],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+
     [
       "../files/core/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
-    ["../files/.shared/dev.ts.template", "./dev.ts"],
-    ["../files/.shared/main.ts.template", "./main.ts"],
-
-    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
-    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
     [
       "../files/core/src/plugins/MyCoreRuntimePlugin.ts.template",
       "./src/plugins/MyCoreRuntimePlugin.ts"
@@ -159,6 +159,338 @@
       "../files/demo/apps/tailwind/tailwind.config.ts.template",
       "./apps/tailwind/tailwind.config.ts"
     ]
+  ],
+  "golden-core": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+
+    [
+      "../files/golden-core/configs/eac-runtime.config.ts.template",
+      "./configs/eac-runtime.config.ts"
+    ],
+    [
+      "../files/golden-core/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
+    ]
+  ],
+  "golden-api": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/sink/configs/eac-runtime.config.ts.template",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
+
+    ["../files/sink/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/sink/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    ["../files/sink/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
+    ["../files/sink/tests/circuits/.tests.ts.template", "./tests/circuits/.tests.ts"],
+    [
+      "../files/sink/tests/circuits/simple-tool.tests.ts.template",
+      "./tests/circuits/simple-tool.tests.ts"
+    ],
+    [
+      "../files/sink/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
+    ],
+    [
+      "../files/sink/src/plugins/SynapticPlugin.ts.template",
+      "./src/plugins/SynapticPlugin.ts"
+    ],
+    [
+      "../files/sink/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
+      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
+    ],
+    [
+      "../files/sink/src/state/CompanyAPIState.ts.template",
+      "./src/state/CompanyAPIState.ts"
+    ],
+    [
+      "../files/sink/src/state/CompanyWebState.ts.template",
+      "./src/state/CompanyWebState.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts.template",
+      "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts.template",
+      "./src/circuits/company-chat/CompanyChatGraphState.ts"
+    ],
+    ["../files/sink/circuits/simple/index.ts.template", "./circuits/simple/index.ts"],
+    [
+      "../files/sink/circuits/company-chat/index.ts.template",
+      "./circuits/company-chat/index.ts"
+    ],
+    [
+      "../files/sink/circuits/company-chat/rag.ts.template",
+      "./circuits/company-chat/rag.ts"
+    ],
+    [
+      "../files/sink/apps/components/Button.tsx.template",
+      "./apps/components/Button.tsx"
+    ],
+    ["../files/sink/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
+    [
+      "../files/sink/apps/islands/organisms/CompanyThinky.tsx.template",
+      "./apps/islands/organisms/CompanyThinky.tsx"
+    ],
+    ["../files/sink/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
+    ["../files/sink/apps/home/_middleware.ts.template", "./apps/home/_middleware.ts"],
+    ["../files/sink/apps/home/index.tsx.template", "./apps/home/index.tsx"],
+    ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
+    ["../files/sink/tailwind.config.ts.template", "./tailwind.config.ts"],
+    [
+      "../files/sink/apps/api/[slug]/_middleware.ts.template",
+      "./apps/api/[slug]/_middleware.ts"
+    ],
+    [
+      "../files/sink/apps/api/[slug]/another.ts.template",
+      "./apps/api/[slug]/another.ts"
+    ],
+    ["../files/sink/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    ["../files/sink/apps/api/index.ts.template", "./apps/api/index.ts"],
+    ["../files/sink/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
+  ],
+  "golden-synaptic": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/sink/configs/eac-runtime.config.ts.template",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
+
+    ["../files/sink/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/sink/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    ["../files/sink/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
+    ["../files/sink/tests/circuits/.tests.ts.template", "./tests/circuits/.tests.ts"],
+    [
+      "../files/sink/tests/circuits/simple-tool.tests.ts.template",
+      "./tests/circuits/simple-tool.tests.ts"
+    ],
+    [
+      "../files/sink/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
+    ],
+    [
+      "../files/sink/src/plugins/SynapticPlugin.ts.template",
+      "./src/plugins/SynapticPlugin.ts"
+    ],
+    [
+      "../files/sink/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
+      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
+    ],
+    [
+      "../files/sink/src/state/CompanyAPIState.ts.template",
+      "./src/state/CompanyAPIState.ts"
+    ],
+    [
+      "../files/sink/src/state/CompanyWebState.ts.template",
+      "./src/state/CompanyWebState.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts.template",
+      "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts.template",
+      "./src/circuits/company-chat/CompanyChatGraphState.ts"
+    ],
+    ["../files/sink/circuits/simple/index.ts.template", "./circuits/simple/index.ts"],
+    [
+      "../files/sink/circuits/company-chat/index.ts.template",
+      "./circuits/company-chat/index.ts"
+    ],
+    [
+      "../files/sink/circuits/company-chat/rag.ts.template",
+      "./circuits/company-chat/rag.ts"
+    ],
+    [
+      "../files/sink/apps/components/Button.tsx.template",
+      "./apps/components/Button.tsx"
+    ],
+    ["../files/sink/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
+    [
+      "../files/sink/apps/islands/organisms/CompanyThinky.tsx.template",
+      "./apps/islands/organisms/CompanyThinky.tsx"
+    ],
+    ["../files/sink/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
+    ["../files/sink/apps/home/_middleware.ts.template", "./apps/home/_middleware.ts"],
+    ["../files/sink/apps/home/index.tsx.template", "./apps/home/index.tsx"],
+    ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
+    ["../files/sink/tailwind.config.ts.template", "./tailwind.config.ts"],
+    [
+      "../files/sink/apps/api/[slug]/_middleware.ts.template",
+      "./apps/api/[slug]/_middleware.ts"
+    ],
+    [
+      "../files/sink/apps/api/[slug]/another.ts.template",
+      "./apps/api/[slug]/another.ts"
+    ],
+    ["../files/sink/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    ["../files/sink/apps/api/index.ts.template", "./apps/api/index.ts"],
+    ["../files/sink/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
+  ],
+  "golden-web": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/sink/configs/eac-runtime.config.ts.template",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
+
+    ["../files/sink/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/sink/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    ["../files/sink/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
+    ["../files/sink/tests/circuits/.tests.ts.template", "./tests/circuits/.tests.ts"],
+    [
+      "../files/sink/tests/circuits/simple-tool.tests.ts.template",
+      "./tests/circuits/simple-tool.tests.ts"
+    ],
+    [
+      "../files/sink/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
+    ],
+    [
+      "../files/sink/src/plugins/SynapticPlugin.ts.template",
+      "./src/plugins/SynapticPlugin.ts"
+    ],
+    [
+      "../files/sink/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
+      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
+    ],
+    [
+      "../files/sink/src/state/CompanyAPIState.ts.template",
+      "./src/state/CompanyAPIState.ts"
+    ],
+    [
+      "../files/sink/src/state/CompanyWebState.ts.template",
+      "./src/state/CompanyWebState.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts.template",
+      "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
+    ],
+    [
+      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts.template",
+      "./src/circuits/company-chat/CompanyChatGraphState.ts"
+    ],
+    ["../files/sink/circuits/simple/index.ts.template", "./circuits/simple/index.ts"],
+    [
+      "../files/sink/circuits/company-chat/index.ts.template",
+      "./circuits/company-chat/index.ts"
+    ],
+    [
+      "../files/sink/circuits/company-chat/rag.ts.template",
+      "./circuits/company-chat/rag.ts"
+    ],
+    [
+      "../files/sink/apps/components/Button.tsx.template",
+      "./apps/components/Button.tsx"
+    ],
+    ["../files/sink/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
+    [
+      "../files/sink/apps/islands/organisms/CompanyThinky.tsx.template",
+      "./apps/islands/organisms/CompanyThinky.tsx"
+    ],
+    ["../files/sink/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
+    ["../files/sink/apps/home/_middleware.ts.template", "./apps/home/_middleware.ts"],
+    ["../files/sink/apps/home/index.tsx.template", "./apps/home/index.tsx"],
+    ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
+    ["../files/sink/tailwind.config.ts.template", "./tailwind.config.ts"],
+    [
+      "../files/sink/apps/api/[slug]/_middleware.ts.template",
+      "./apps/api/[slug]/_middleware.ts"
+    ],
+    [
+      "../files/sink/apps/api/[slug]/another.ts.template",
+      "./apps/api/[slug]/another.ts"
+    ],
+    ["../files/sink/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    ["../files/sink/apps/api/index.ts.template", "./apps/api/index.ts"],
+    ["../files/sink/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
   ],
   "library": [
     ["../files/library/deno.template.jsonc", "./deno.jsonc"],
