@@ -1,0 +1,168 @@
+{
+  "api": {
+    "imports": {
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@std/log": "jsr:@std/log@0.224.6"
+    }
+  },
+  "atomic": {
+    "imports": {
+      "preact": "npm:preact@10.20.1"
+    },
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "jsxImportSource": "preact"
+    }
+  },
+  "core": {
+    "imports": {
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@std/log": "jsr:@std/log@0.224.6"
+    }
+  },
+  "demo": {
+    "imports": {
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "preact": "npm:preact@10.20.1",
+      "@std/log": "jsr:@std/log@0.224.6"
+    },
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "jsxImportSource": "preact"
+    }
+  },
+  "golden-atomic": {
+    "imports": {
+      "preact": "npm:preact@10.20.1"
+    },
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "jsxImportSource": "preact"
+    }
+  },
+  "golden-api": {
+    "imports": {
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "@std/log": "jsr:@std/log@0.224.6"
+    }
+  },
+  "golden-core": {
+    "imports": {
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "@std/log": "jsr:@std/log@0.224.6"
+    }
+  },
+  "golden-ref-arch": {},
+  "golden-synaptic": {
+    "imports": {
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0",
+      "html-to-text": "npm:html-to-text@9.0.5",
+      "@langchain/community": "npm:@langchain/community@0.3.0",
+      "@langchain/core": "npm:@langchain/core@0.3.1",
+      "@langchain/langgraph": "npm:@langchain/langgraph@0.2.3",
+      "pdf-parse": "npm:pdf-parse@1.1.1",
+      "@std/log": "jsr:@std/log@0.224.6",
+      "zod": "npm:zod@3.23.8"
+    }
+  },
+  "golden-web": {
+    "imports": {
+      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0",
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "preact": "npm:preact@10.20.1",
+      "@std/log": "jsr:@std/log@0.224.6",
+      "tailwindcss": "npm:tailwindcss@3.4.1",
+      "tailwindcss/": "npm:/tailwindcss@3.4.1/",
+      "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+      "tailwindcss/unimportant": "npm:tailwindcss-unimportant@2.1.1"
+    },
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "jsxImportSource": "preact"
+    }
+  },
+  "library": {},
+  "preact": {
+    "imports": {
+      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0",
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "preact": "npm:preact@10.20.1",
+      "@std/log": "jsr:@std/log@0.224.6",
+      "tailwindcss": "npm:tailwindcss@3.4.1",
+      "tailwindcss/": "npm:/tailwindcss@3.4.1/",
+      "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+      "tailwindcss/unimportant": "npm:tailwindcss-unimportant@2.1.1"
+    },
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "jsxImportSource": "preact"
+    }
+  },
+  "sink": {
+    "imports": {
+      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0",
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0",
+      "html-to-text": "npm:html-to-text@9.0.5",
+      "@langchain/community": "npm:@langchain/community@0.3.0",
+      "@langchain/core": "npm:@langchain/core@0.3.1",
+      "@langchain/langgraph": "npm:@langchain/langgraph@0.2.3",
+      "pdf-parse": "npm:pdf-parse@1.1.1",
+      "preact": "npm:preact@10.20.1",
+      "@std/log": "jsr:@std/log@0.224.6",
+      "tailwindcss": "npm:tailwindcss@3.4.1",
+      "tailwindcss/": "npm:/tailwindcss@3.4.1/",
+      "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+      "tailwindcss/unimportant": "npm:tailwindcss-unimportant@2.1.1",
+      "zod": "npm:zod@3.23.8"
+    },
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "jsxImportSource": "preact"
+    }
+  },
+  "synaptic": {
+    "imports": {
+      "@fathym/common": "jsr:@fathym/common@0",
+      "@fathym/eac": "jsr:@fathym/eac@0",
+      "@fathym/eac-runtime": "jsr:@fathym/eac-runtime@0",
+      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0",
+      "html-to-text": "npm:html-to-text@9.0.5",
+      "@langchain/community": "npm:@langchain/community@0.3.0",
+      "@langchain/core": "npm:@langchain/core@0.3.1",
+      "@langchain/langgraph": "npm:@langchain/langgraph@0.2.3",
+      "pdf-parse": "npm:pdf-parse@1.1.1",
+      "@std/log": "jsr:@std/log@0.224.6",
+      "zod": "npm:zod@3.23.8"
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { DenoConfig } from 'jsr:@fathym/common@0.2.160/build';
 import { EaCRuntimeInstallerFlags } from '../../install.ts';
 import { exists, existsSync, mergeWithArrays, parseJsonc, path, toText } from '../install.deps.ts';
 import { Command } from './Command.ts';
@@ -8,9 +9,16 @@ export class InstallCommand implements Command {
   public async Run(): Promise<void> {
     console.log(`Installing Fathym's EaC Runtime...`);
 
+    const configOverridesResp = await fetch(
+      import.meta.resolve('../../config/denoConfigOverrides.jsonc'),
+    );
+
+    const configOverrides = parseJsonc(
+      await configOverridesResp.text(),
+    ) as Record<string, Record<string, DenoConfig>>;
+
     const filesRes = await fetch(
-      import.meta
-        .resolve('../../config/installFiles.jsonc'),
+      import.meta.resolve('../../config/installFiles.jsonc'),
     );
 
     const fileSets = parseJsonc(await filesRes.text()) as Record<
@@ -18,11 +26,13 @@ export class InstallCommand implements Command {
       [string, string, ((contents: string) => string)?][]
     >;
 
+    const configToOverride = configOverrides[this.flags.template ?? 'core'];
+
     const filesToCreate = fileSets[this.flags.template ?? 'core'];
 
     filesToCreate
       .find(([_fromFile, toFile]) => toFile === './deno.jsonc')
-      ?.push((contents: string) => this.ensureDenoConfigSetup(contents));
+      ?.push((contents: string) => this.ensureDenoConfigSetup(contents, configToOverride));
 
     const installDirectory = path.resolve('.');
 
@@ -76,85 +86,14 @@ export class InstallCommand implements Command {
     }
   }
 
-  protected ensureDenoConfigSetup(contents: string): string {
+  protected ensureDenoConfigSetup(
+    contents: string,
+    denoConfigOverrides: Record<string, unknown>,
+  ): string {
     // Is there a Deno type that represents the configuration file?
     let config: Record<string, unknown> = JSON.parse(contents);
 
-    if (this.flags.template !== 'atomic' && this.flags.template !== 'library') {
-      config = mergeWithArrays(config, {
-        imports: {
-          '@fathym/common': 'jsr:@fathym/common@0',
-          '@fathym/eac': 'jsr:@fathym/eac@0',
-          '@fathym/eac-runtime': 'jsr:@fathym/eac-runtime@0',
-          '@std/log': 'jsr:@std/log@0.224.6',
-        },
-      });
-    }
-
-    if (
-      this.flags.template === 'preact' ||
-      this.flags.template === 'synaptic' ||
-      this.flags.template === 'sink'
-    ) {
-      config = mergeWithArrays(config, {
-        imports: {
-          '@fathym/ioc': 'jsr:@fathym/ioc@0',
-        },
-      });
-    }
-
-    if (this.flags.template === 'preact' || this.flags.template === 'sink') {
-      config = mergeWithArrays(config, {
-        imports: {
-          '@fathym/atomic': 'jsr:@fathym/atomic-design-kit@0',
-          '@fathym/atomic-icons': 'jsr:@fathym/atomic-icons@0',
-        },
-      });
-    }
-
-    if (this.flags.template === 'synaptic' || this.flags.template === 'sink') {
-      config = mergeWithArrays(config, {
-        imports: {
-          '@fathym/synaptic': 'jsr:@fathym/synaptic@0',
-          'html-to-text': 'npm:html-to-text@9.0.5',
-          '@langchain/community': 'npm:@langchain/community@0.3.0',
-          '@langchain/core': 'npm:@langchain/core@0.3.1',
-          '@langchain/langgraph': 'npm:@langchain/langgraph@0.2.3',
-          'pdf-parse': 'npm:pdf-parse@1.1.1',
-          zod: 'npm:zod@3.23.8',
-        },
-      });
-    }
-
-    if (this.flags.preact && this.flags.template !== 'library') {
-      config = mergeWithArrays(config, {
-        imports: {
-          preact: 'npm:preact@10.20.1',
-          // 'preact/jsx-runtime': 'npm:preact@10.20.1/jsx-runtime',
-        },
-        compilerOptions: {
-          jsx: 'react-jsx',
-          jsxImportSource: 'preact',
-        },
-      });
-    }
-
-    if (
-      this.flags.tailwind &&
-      this.flags.template !== 'api' &&
-      this.flags.template !== 'atomic' &&
-      this.flags.template !== 'library' &&
-      this.flags.template !== 'synaptic'
-    ) {
-      config = mergeWithArrays(config, {
-        imports: {
-          tailwindcss: 'npm:tailwindcss@3.4.1',
-          'tailwindcss/': 'npm:/tailwindcss@3.4.1/',
-          'tailwindcss/plugin': 'npm:/tailwindcss@3.4.1/plugin.js',
-          'tailwindcss/unimportant': 'npm:tailwindcss-unimportant@2.1.1',
-        },
-      });
-    }
+    config = mergeWithArrays(config, denoConfigOverrides ?? {});
 
     const configStr = JSON.stringify(config, null, 2) + '\n';
 
