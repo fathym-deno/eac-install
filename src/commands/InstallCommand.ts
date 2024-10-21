@@ -3,34 +3,30 @@ import { exists, existsSync, mergeWithArrays, parseJsonc, path, toText } from '.
 import { Command } from './Command.ts';
 
 export class InstallCommand implements Command {
-  protected filesToCreate: [string, string, ((contents: string) => string)?][];
-
-  constructor(protected flags: EaCRuntimeInstallerFlags) {
-    const fileSets = parseJsonc(
-      Deno.readTextFileSync(
-        import.meta
-          .resolve('../../config/installFiles.jsonc')
-          .replace('file:///', ''),
-      ),
-    ) as Record<string, typeof this.filesToCreate>;
-
-    this.filesToCreate = fileSets[flags.template ?? 'core'];
-
-    this.filesToCreate
-      .find(([_fromFile, toFile]) => toFile === './deno.jsonc')
-      ?.push((contents: string) => this.ensureDenoConfigSetup(contents));
-  }
+  constructor(protected flags: EaCRuntimeInstallerFlags) {}
 
   public async Run(): Promise<void> {
     console.log(`Installing Fathym's EaC Runtime...`);
 
+    const filesRes = await fetch(
+      import.meta
+        .resolve('../../config/installFiles.jsonc'),
+    );
+
+    const fileSets = parseJsonc(await filesRes.text()) as Record<
+      string,
+      [string, string, ((contents: string) => string)?][]
+    >;
+
+    const filesToCreate = fileSets[this.flags.template ?? 'core'];
+
+    filesToCreate
+      .find(([_fromFile, toFile]) => toFile === './deno.jsonc')
+      ?.push((contents: string) => this.ensureDenoConfigSetup(contents));
+
     const installDirectory = path.resolve('.');
 
-    await this.ensureFilesCreated(installDirectory);
-
-    const devTs = Deno.readTextFileSync(path.resolve('./dev.ts'));
-
-    console.log(devTs);
+    await this.ensureFilesCreated(installDirectory, filesToCreate);
   }
 
   protected async copyTemplateFile(
@@ -165,8 +161,11 @@ export class InstallCommand implements Command {
     return configStr;
   }
 
-  protected async ensureFilesCreated(installDirectory: string): Promise<void> {
-    for (const [inputFile, outputFile, transformer] of this.filesToCreate) {
+  protected async ensureFilesCreated(
+    installDirectory: string,
+    filesToCreate: [string, string, ((contents: string) => string)?][],
+  ): Promise<void> {
+    for (const [inputFile, outputFile, transformer] of filesToCreate) {
       await this.copyTemplateFile(
         installDirectory,
         inputFile,
