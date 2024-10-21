@@ -160,40 +160,41 @@
       "./apps/tailwind/tailwind.config.ts"
     ]
   ],
-  "golden-core": [
-    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
-    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+  "golden-atomic": [
+    ["../files/atomic/deno.template.jsonc", "./deno.jsonc"],
     ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
-    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/.library/launch.json", "./.vscode/launch.json"],
     ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
     ["../files/.shared/README.md", "./README.md"],
-    ["../files/.shared/.dockerignore", "./.dockerignore"],
     ["../files/.shared/.gitignore", "./.gitignore"],
     [
-      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
-      "./src/logging/RuntimeLoggingProvider.ts"
+      "../files/.shared/.github/workflows/.build/build.yaml",
+      "./.github/workflows/build.yaml"
     ],
-    [
-      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
-      "./.github/workflows/container.deploy.yml"
-    ],
-    [
-      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
-      "./.github/workflows/deno.deploy.yml"
-    ],
-    ["../files/.shared/dev.ts.template", "./dev.ts"],
-    ["../files/.shared/main.ts.template", "./main.ts"],
     ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
-
+    ["../files/atomic/mod.ts.template", "./mod.ts"],
+    ["../files/atomic/tailwind.config.js", "./tailwind.config.js"],
+    ["../files/atomic/src/src.deps.ts.template", "./src/src.deps.ts"],
     [
-      "../files/golden-core/configs/eac-runtime.config.ts.template",
-      "./configs/eac-runtime.config.ts"
+      "../files/atomic/src/atoms/forms/.exports.ts.template",
+      "./src/atoms/forms/.exports.ts"
+    ],
+    ["../files/atomic/src/atoms/.exports.ts.template", "./src/atoms/.exports.ts"],
+    [
+      "../files/atomic/src/molecules/.exports.ts.template",
+      "./src/molecules/.exports.ts"
     ],
     [
-      "../files/golden-core/src/plugins/RuntimePlugin.ts.template",
-      "./src/plugins/RuntimePlugin.ts"
-    ]
+      "../files/atomic/src/organisms/.exports.ts.template",
+      "./src/organisms/.exports.ts"
+    ],
+    [
+      "../files/atomic/src/templates/.exports.ts.template",
+      "./src/templates/.exports.ts"
+    ],
+    ["../files/atomic/src/utils/.exports.ts.template", "./src/utils/.exports.ts"],
+    ["../files/atomic/src/.exports.ts.template", "./src/.exports.ts"]
   ],
   "golden-api": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -293,6 +294,64 @@
     ["../files/sink/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
     ["../files/sink/apps/api/index.ts.template", "./apps/api/index.ts"],
     ["../files/sink/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
+  ],
+  "golden-core": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+
+    [
+      "../files/golden-core/configs/eac-runtime.config.ts.template",
+      "./configs/eac-runtime.config.ts"
+    ],
+    [
+      "../files/golden-core/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
+    ]
+  ],
+  "golden-ref-arch": [
+    ["../files/golden-ref-arch/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.library/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/.github/workflows/.build/build.yaml",
+      "./.github/workflows/build.yaml"
+    ],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    
+    ["../files/golden-ref-arch/mod.ts.template", "./mod.ts"],
+    ["../files/golden-ref-arch/src/eac/.exports.ts.template", "./src/eac/.exports.ts"],
+    ["../files/golden-ref-arch/src/.exports.ts.template", "./src/.exports.ts"],
+    ["../files/golden-ref-arch/src/src.deps.ts.template", "./src/src.deps.ts"],
+    [
+      "../files/golden-ref-arch/src/eac/EverythingAsCodeCompany.ts.template",
+      "./src/eac/EverythingAsCodeCompany.ts"
+    ]
   ],
   "golden-synaptic": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -503,8 +562,9 @@
       "../files/.shared/.github/workflows/.build/build.yaml",
       "./.github/workflows/build.yaml"
     ],
-    ["../files/library/tests/tests.ts.template", "./tests/tests.ts"],
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+    
+    ["../files/library/tests/tests.ts.template", "./tests/tests.ts"],
     ["../files/library/tests/utils/.tests.ts.template", "./tests/utils/.tests.ts"],
     [
       "../files/library/tests/utils/sampleFunction.tests.ts.template",
