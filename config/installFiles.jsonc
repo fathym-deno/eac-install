@@ -26,9 +26,9 @@
     ],
     ["../files/.shared/dev.ts.template", "./dev.ts"],
     ["../files/.shared/main.ts.template", "./main.ts"],
-
     ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
+
     [
       "../files/api/src/plugins/MyCoreRuntimePlugin.ts.template",
       "./src/plugins/MyCoreRuntimePlugin.ts"
@@ -217,83 +217,34 @@
       "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
       "./.github/workflows/deno.deploy.yml"
     ],
-    [
-      "../files/sink/configs/eac-runtime.config.ts.template",
-      "./configs/eac-runtime.config.ts"
-    ],
     ["../files/.shared/dev.ts.template", "./dev.ts"],
     ["../files/.shared/main.ts.template", "./main.ts"],
+    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
+    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
 
-    ["../files/sink/tests/tests.ts.template", "./tests/tests.ts"],
-    ["../files/sink/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
-    ["../files/sink/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
-    ["../files/sink/tests/circuits/.tests.ts.template", "./tests/circuits/.tests.ts"],
     [
-      "../files/sink/tests/circuits/simple-tool.tests.ts.template",
-      "./tests/circuits/simple-tool.tests.ts"
+      "../files/golden-api/configs/eac-runtime.config.ts.template",
+      "./configs/eac-runtime.config.ts"
     ],
     [
-      "../files/sink/src/plugins/RuntimePlugin.ts.template",
+      "../files/golden-api/src/plugins/RuntimePlugin.ts.template",
       "./src/plugins/RuntimePlugin.ts"
     ],
     [
-      "../files/sink/src/plugins/SynapticPlugin.ts.template",
-      "./src/plugins/SynapticPlugin.ts"
-    ],
-    [
-      "../files/sink/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
-      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
-    ],
-    [
-      "../files/sink/src/state/CompanyAPIState.ts.template",
+      "../files/golden-api/src/state/CompanyAPIState.ts.template",
       "./src/state/CompanyAPIState.ts"
     ],
     [
-      "../files/sink/src/state/CompanyWebState.ts.template",
-      "./src/state/CompanyWebState.ts"
-    ],
-    [
-      "../files/sink/src/circuits/company-chat/CompanyChatCircuitInput.ts.template",
-      "./src/circuits/company-chat/CompanyChatCircuitInput.ts"
-    ],
-    [
-      "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts.template",
-      "./src/circuits/company-chat/CompanyChatGraphState.ts"
-    ],
-    ["../files/sink/circuits/simple/index.ts.template", "./circuits/simple/index.ts"],
-    [
-      "../files/sink/circuits/company-chat/index.ts.template",
-      "./circuits/company-chat/index.ts"
-    ],
-    [
-      "../files/sink/circuits/company-chat/rag.ts.template",
-      "./circuits/company-chat/rag.ts"
-    ],
-    [
-      "../files/sink/apps/components/Button.tsx.template",
-      "./apps/components/Button.tsx"
-    ],
-    ["../files/sink/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
-    [
-      "../files/sink/apps/islands/organisms/CompanyThinky.tsx.template",
-      "./apps/islands/organisms/CompanyThinky.tsx"
-    ],
-    ["../files/sink/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
-    ["../files/sink/apps/home/_middleware.ts.template", "./apps/home/_middleware.ts"],
-    ["../files/sink/apps/home/index.tsx.template", "./apps/home/index.tsx"],
-    ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
-    ["../files/sink/tailwind.config.ts.template", "./tailwind.config.ts"],
-    [
-      "../files/sink/apps/api/[slug]/_middleware.ts.template",
+      "../files/golden-api/apps/api/[slug]/_middleware.ts.template",
       "./apps/api/[slug]/_middleware.ts"
     ],
     [
-      "../files/sink/apps/api/[slug]/another.ts.template",
+      "../files/golden-api/apps/api/[slug]/another.ts.template",
       "./apps/api/[slug]/another.ts"
     ],
-    ["../files/sink/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
-    ["../files/sink/apps/api/index.ts.template", "./apps/api/index.ts"],
-    ["../files/sink/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
+    ["../files/golden-api/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    ["../files/golden-api/apps/api/index.ts.template", "./apps/api/index.ts"],
+    ["../files/golden-api/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
   ],
   "golden-core": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
