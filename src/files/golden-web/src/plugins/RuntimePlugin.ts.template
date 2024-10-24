@@ -15,6 +15,7 @@ import {
 } from '@fathym/eac/dfs';
 import { EaCDenoKVDatabaseDetails } from '@fathym/eac/databases';
 import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
+import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
 import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
 import { IoCContainer } from '@fathym/ioc';
 
@@ -24,7 +25,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
   public Setup(config: EaCRuntimeConfig) {
     const pluginConfig: EaCRuntimePluginConfig = {
       Name: RuntimePlugin.name,
-      Plugins: [],
+      Plugins: [new FathymAtomicIconsPlugin()],
       IoC: new IoCContainer(),
       EaC: {
         Projects: {
