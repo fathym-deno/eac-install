@@ -3,6 +3,8 @@ import {
   EaCRuntimePlugin,
   EverythingAsCode,
   EverythingAsCodeSynaptic,
+  FathymDFSFileHandlerPlugin,
+  FathymEaCServicesPlugin,
 } from './tests.deps.ts';
 import RuntimePlugin from '../src/plugins/RuntimePlugin.ts';
 
@@ -12,14 +14,18 @@ const testEaC = {} as EverythingAsCodeSynaptic;
 
 export async function buildTestIoC(
   eac: EverythingAsCode,
-  plugins: EaCRuntimePlugin[] = [new RuntimePlugin()],
+  plugins: EaCRuntimePlugin[] = [
+    new FathymEaCServicesPlugin(),
+    new FathymDFSFileHandlerPlugin(),
+    new RuntimePlugin(),
+  ],
   useDefault = true,
-  useDefaultPlugins = false,
+  useDefaultPlugins = false
 ) {
   return await buildEaCTestIoC(
     useDefault ? testEaC : {},
     eac,
     plugins,
-    useDefaultPlugins,
+    useDefaultPlugins
   );
 }
