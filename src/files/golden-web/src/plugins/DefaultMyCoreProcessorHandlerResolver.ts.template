@@ -6,7 +6,6 @@ import {
 } from '@fathym/eac-runtime';
 import { IoCContainer } from '@fathym/ioc';
 import { DefaultAtomicIconsProcessorHandlerResolver } from '@fathym/atomic-icons/plugin';
-import { DefaultSynapticProcessorHandlerResolver } from '@fathym/synaptic';
 
 export class DefaultMyCoreProcessorHandlerResolver implements ProcessorHandlerResolver {
   public async Resolve(
@@ -14,15 +13,9 @@ export class DefaultMyCoreProcessorHandlerResolver implements ProcessorHandlerRe
     appProcCfg: EaCApplicationProcessorConfig,
     eac: EaCRuntimeEaC,
   ) {
-    const synapticResolver = new DefaultSynapticProcessorHandlerResolver();
+    const atomicIconResolver = new DefaultAtomicIconsProcessorHandlerResolver();
 
-    let resolver = await synapticResolver.Resolve(ioc, appProcCfg, eac);
-
-    if (!resolver) {
-      const atomicIconResolver = new DefaultAtomicIconsProcessorHandlerResolver();
-
-      resolver = await atomicIconResolver.Resolve(ioc, appProcCfg, eac);
-    }
+    let resolver = await atomicIconResolver.Resolve(ioc, appProcCfg, eac);
 
     if (!resolver) {
       const defaultResolver = new DefaultProcessorHandlerResolver();
