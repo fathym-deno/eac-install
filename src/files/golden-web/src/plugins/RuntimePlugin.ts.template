@@ -1,14 +1,9 @@
 import {
   EaCRuntimeConfig,
-  EaCRuntimeEaC,
   EaCRuntimePlugin,
   EaCRuntimePluginConfig,
-  FathymAzureContainerCheckPlugin,
-  FathymDFSFileHandlerPlugin,
-  FathymEaCServicesPlugin,
 } from '@fathym/eac-runtime';
 import {
-  EaCAPIProcessor,
   EaCBaseHREFModifierDetails,
   EaCKeepAliveModifierDetails,
   EaCPreactAppProcessor,
@@ -21,14 +16,8 @@ import {
 import { EaCDenoKVDatabaseDetails } from '@fathym/eac/databases';
 import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
 import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
-import {
-  EaCSynapticCircuitsProcessor,
-  EverythingAsCodeSynaptic,
-  FathymSynapticPlugin,
-} from '@fathym/synaptic';
 import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
 import { IoCContainer } from '@fathym/ioc';
-import SynapticPlugin from './SynapticPlugin.ts';
 
 export default class RuntimePlugin implements EaCRuntimePlugin {
   constructor() {}
@@ -36,14 +25,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
   public Setup(config: EaCRuntimeConfig) {
     const pluginConfig: EaCRuntimePluginConfig = {
       Name: RuntimePlugin.name,
-      Plugins: [
-        new FathymAzureContainerCheckPlugin(),
-        new FathymEaCServicesPlugin(),
-        new FathymDFSFileHandlerPlugin(),
-        new FathymAtomicIconsPlugin(),
-        new SynapticPlugin(),
-        new FathymSynapticPlugin(),
-      ],
+      Plugins: [],
       IoC: new IoCContainer(),
       EaC: {
         Projects: {
@@ -69,17 +51,9 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               },
             },
             ApplicationResolvers: {
-              api: {
-                PathPattern: '/api*',
-                Priority: 100,
-              },
               atomicIcons: {
                 PathPattern: '/icons*',
                 Priority: 200,
-              },
-              circuits: {
-                PathPattern: '/circuits*',
-                Priority: 100,
               },
               home: {
                 PathPattern: '*',
@@ -93,16 +67,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
           },
         },
         Applications: {
-          api: {
-            Details: {
-              Name: 'Local API',
-              Description: 'Default local APIs.',
-            },
-            Processor: {
-              Type: 'API',
-              DFSLookup: 'local:apps/api',
-            } as EaCAPIProcessor,
-          },
           atomicIcons: {
             Details: {
               Name: 'Atomic Icons',
@@ -119,17 +83,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
                 SpriteSheet: '/iconset',
               },
             } as EaCAtomicIconsProcessor,
-          },
-          circuits: {
-            Details: {
-              Name: 'Circuits',
-              Description: 'The API for accessing circuits',
-            },
-            ModifierResolvers: {},
-            Processor: {
-              Type: 'SynapticCircuits',
-              IsCodeDriven: true,
-            } as EaCSynapticCircuitsProcessor,
           },
           home: {
             Details: {
@@ -175,10 +128,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
             } as EaCTailwindProcessor,
           },
         },
-        AIs: {},
-        Circuits: {
-          $circuitsDFSLookups: ['local:circuits'],
-        },
         Databases: {
           thinky: {
             Details: {
@@ -190,14 +139,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
           },
         },
         DFSs: {
-          'local:apps/api': {
-            Details: {
-              Type: 'Local',
-              FileRoot: './apps/api/',
-              DefaultFile: 'index.ts',
-              Extensions: ['ts'],
-            } as EaCLocalDistributedFileSystemDetails,
-          },
           'local:apps/components': {
             Details: {
               Type: 'Local',
@@ -218,16 +159,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'Local',
               FileRoot: './apps/islands/',
               Extensions: ['tsx'],
-            } as EaCLocalDistributedFileSystemDetails,
-          },
-          'local:circuits': {
-            Details: {
-              Type: 'Local',
-              FileRoot: './circuits/',
-              Extensions: ['.ts'],
-              WorkerPath: import.meta.resolve(
-                '@fathym/eac-runtime/workers/local',
-              ),
             } as EaCLocalDistributedFileSystemDetails,
           },
           'jsr:@fathym/atomic': {
@@ -268,7 +199,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
             } as EaCKeepAliveModifierDetails,
           },
         },
-      } as EaCRuntimeEaC | EverythingAsCodeSynaptic,
+      },
     };
 
     pluginConfig.IoC!.Register(DefaultMyCoreProcessorHandlerResolver, {
