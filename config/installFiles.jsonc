@@ -368,18 +368,6 @@
       "./tests/tests.deps.ts"
     ],
     [
-      "../files/golden-synaptic/tests/test-eac-setup.ts.template",
-      "./tests/test-eac-setup.ts"
-    ],
-    [
-      "../files/golden-synaptic/tests/circuits/.tests.ts.template",
-      "./tests/circuits/.tests.ts"
-    ],
-    [
-      "../files/golden-synaptic/tests/circuits/simple-tool.tests.ts.template",
-      "./tests/circuits/simple-tool.tests.ts"
-    ],
-    [
       "../files/golden-synaptic/src/plugins/RuntimePlugin.ts.template",
       "./src/plugins/RuntimePlugin.ts"
     ],
