@@ -37,8 +37,14 @@
       "../files/api/apps/api/[slug]/_middleware.ts.template",
       "./apps/api/[slug]/_middleware.ts"
     ],
-    ["../files/api/apps/api/[slug]/another.ts.template", "./apps/api/[slug]/another.ts"],
-    ["../files/api/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    [
+      "../files/api/apps/api/[slug]/another.ts.template",
+      "./apps/api/[slug]/another.ts"
+    ],
+    [
+      "../files/api/apps/api/_middleware.ts.template",
+      "./apps/api/_middleware.ts"
+    ],
     ["../files/api/apps/api/index.ts.template", "./apps/api/index.ts"]
   ],
   "atomic": [
@@ -61,7 +67,10 @@
       "../files/atomic/src/atoms/forms/.exports.ts.template",
       "./src/atoms/forms/.exports.ts"
     ],
-    ["../files/atomic/src/atoms/.exports.ts.template", "./src/atoms/.exports.ts"],
+    [
+      "../files/atomic/src/atoms/.exports.ts.template",
+      "./src/atoms/.exports.ts"
+    ],
     [
       "../files/atomic/src/molecules/.exports.ts.template",
       "./src/molecules/.exports.ts"
@@ -74,7 +83,10 @@
       "../files/atomic/src/templates/.exports.ts.template",
       "./src/templates/.exports.ts"
     ],
-    ["../files/atomic/src/utils/.exports.ts.template", "./src/utils/.exports.ts"],
+    [
+      "../files/atomic/src/utils/.exports.ts.template",
+      "./src/utils/.exports.ts"
+    ],
     ["../files/atomic/src/.exports.ts.template", "./src/.exports.ts"]
   ],
   "core": [
@@ -142,7 +154,10 @@
       "../files/demo/apps/api/[slug]/another.ts.template",
       "./apps/api/[slug]/another.ts"
     ],
-    ["../files/demo/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    [
+      "../files/demo/apps/api/_middleware.ts.template",
+      "./apps/api/_middleware.ts"
+    ],
     ["../files/demo/apps/api/index.ts.template", "./apps/api/index.ts"],
     [
       "../files/demo/apps/components/Button.tsx.template",
@@ -180,7 +195,10 @@
       "../files/atomic/src/atoms/forms/.exports.ts.template",
       "./src/atoms/forms/.exports.ts"
     ],
-    ["../files/atomic/src/atoms/.exports.ts.template", "./src/atoms/.exports.ts"],
+    [
+      "../files/atomic/src/atoms/.exports.ts.template",
+      "./src/atoms/.exports.ts"
+    ],
     [
       "../files/atomic/src/molecules/.exports.ts.template",
       "./src/molecules/.exports.ts"
@@ -193,7 +211,10 @@
       "../files/atomic/src/templates/.exports.ts.template",
       "./src/templates/.exports.ts"
     ],
-    ["../files/atomic/src/utils/.exports.ts.template", "./src/utils/.exports.ts"],
+    [
+      "../files/atomic/src/utils/.exports.ts.template",
+      "./src/utils/.exports.ts"
+    ],
     ["../files/atomic/src/.exports.ts.template", "./src/.exports.ts"]
   ],
   "golden-api": [
@@ -242,9 +263,15 @@
       "../files/golden-api/apps/api/[slug]/another.ts.template",
       "./apps/api/[slug]/another.ts"
     ],
-    ["../files/golden-api/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    [
+      "../files/golden-api/apps/api/_middleware.ts.template",
+      "./apps/api/_middleware.ts"
+    ],
     ["../files/golden-api/apps/api/index.ts.template", "./apps/api/index.ts"],
-    ["../files/golden-api/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
+    [
+      "../files/golden-api/apps/api/state/index.ts.template",
+      "./apps/api/state/index.ts"
+    ]
   ],
   "golden-core": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -294,9 +321,12 @@
     ],
     ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
-    
+
     ["../files/golden-ref-arch/mod.ts.template", "./mod.ts"],
-    ["../files/golden-ref-arch/src/eac/.exports.ts.template", "./src/eac/.exports.ts"],
+    [
+      "../files/golden-ref-arch/src/eac/.exports.ts.template",
+      "./src/eac/.exports.ts"
+    ],
     ["../files/golden-ref-arch/src/.exports.ts.template", "./src/.exports.ts"],
     ["../files/golden-ref-arch/src/src.deps.ts.template", "./src/src.deps.ts"],
     [
@@ -333,9 +363,18 @@
       "./configs/eac-runtime.config.ts"
     ],
     ["../files/golden-synaptic/tests/tests.ts.template", "./tests/tests.ts"],
-    ["../files/golden-synaptic/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
-    ["../files/golden-synaptic/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
-    ["../files/golden-synaptic/tests/circuits/.tests.ts.template", "./tests/circuits/.tests.ts"],
+    [
+      "../files/golden-synaptic/tests/tests.deps.ts.template",
+      "./tests/tests.deps.ts"
+    ],
+    [
+      "../files/golden-synaptic/tests/test-eac-setup.ts.template",
+      "./tests/test-eac-setup.ts"
+    ],
+    [
+      "../files/golden-synaptic/tests/circuits/.tests.ts.template",
+      "./tests/circuits/.tests.ts"
+    ],
     [
       "../files/golden-synaptic/tests/circuits/simple-tool.tests.ts.template",
       "./tests/circuits/simple-tool.tests.ts"
@@ -360,7 +399,10 @@
       "../files/golden-synaptic/src/circuits/company-chat/CompanyChatGraphState.ts.template",
       "./src/circuits/company-chat/CompanyChatGraphState.ts"
     ],
-    ["../files/golden-synaptic/circuits/simple/index.ts.template", "./circuits/simple/index.ts"],
+    [
+      "../files/golden-synaptic/circuits/simple/index.ts.template",
+      "./circuits/simple/index.ts"
+    ],
     [
       "../files/golden-synaptic/circuits/company-chat/index.ts.template",
       "./circuits/company-chat/index.ts"
@@ -368,7 +410,7 @@
     [
       "../files/golden-synaptic/circuits/company-chat/rag.ts.template",
       "./circuits/company-chat/rag.ts"
-    ],
+    ]
   ],
   "golden-web": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -397,35 +439,41 @@
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
 
     [
-      "../files/sink/configs/eac-runtime.config.ts.template",
+      "../files/golden-web/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     [
-      "../files/sink/tests/circuits/simple-tool.tests.ts.template",
+      "../files/golden-web/tests/circuits/simple-tool.tests.ts.template",
       "./tests/circuits/simple-tool.tests.ts"
     ],
     [
-      "../files/sink/src/plugins/RuntimePlugin.ts.template",
+      "../files/golden-web/src/plugins/RuntimePlugin.ts.template",
       "./src/plugins/RuntimePlugin.ts"
     ],
     [
-      "../files/sink/src/state/CompanyWebState.ts.template",
+      "../files/golden-web/src/state/CompanyWebState.ts.template",
       "./src/state/CompanyWebState.ts"
     ],
     [
-      "../files/sink/apps/components/Button.tsx.template",
+      "../files/golden-web/apps/components/Button.tsx.template",
       "./apps/components/Button.tsx"
     ],
-    ["../files/sink/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
     [
-      "../files/sink/apps/islands/organisms/CompanyThinky.tsx.template",
+      "../files/golden-web/apps/islands/Counter.tsx.template",
+      "./apps/islands/Counter.tsx"
+    ],
+    [
+      "../files/golden-web/apps/islands/organisms/CompanyThinky.tsx.template",
       "./apps/islands/organisms/CompanyThinky.tsx"
     ],
-    ["../files/sink/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
-    ["../files/sink/apps/home/_middleware.ts.template", "./apps/home/_middleware.ts"],
-    ["../files/sink/apps/home/index.tsx.template", "./apps/home/index.tsx"],
-    ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
-    ["../files/sink/tailwind.config.ts.template", "./tailwind.config.ts"]
+    ["../files/golden-web/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
+    [
+      "../files/golden-web/apps/home/_middleware.ts.template",
+      "./apps/home/_middleware.ts"
+    ],
+    ["../files/golden-web/apps/home/index.tsx.template", "./apps/home/index.tsx"],
+    ["../files/golden-web/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
+    ["../files/golden-web/tailwind.config.ts.template", "./tailwind.config.ts"]
   ],
   "library": [
     ["../files/library/deno.template.jsonc", "./deno.jsonc"],
@@ -439,15 +487,21 @@
       "./.github/workflows/build.yaml"
     ],
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
-    
+
     ["../files/library/tests/tests.ts.template", "./tests/tests.ts"],
-    ["../files/library/tests/utils/.tests.ts.template", "./tests/utils/.tests.ts"],
+    [
+      "../files/library/tests/utils/.tests.ts.template",
+      "./tests/utils/.tests.ts"
+    ],
     [
       "../files/library/tests/utils/sampleFunction.tests.ts.template",
       "./tests/utils/sampleFunction.tests.ts"
     ],
     ["../files/library/mod.ts.template", "./mod.ts"],
-    ["../files/library/src/utils/.exports.ts.template", "./src/utils/.exports.ts"],
+    [
+      "../files/library/src/utils/.exports.ts.template",
+      "./src/utils/.exports.ts"
+    ],
     [
       "../files/library/src/utils/sampleFunction.ts.template",
       "./src/utils/sampleFunction.ts"
@@ -497,8 +551,14 @@
       "../files/preact/apps/components/Button.tsx.template",
       "./apps/components/Button.tsx"
     ],
-    ["../files/preact/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
-    ["../files/preact/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
+    [
+      "../files/preact/apps/islands/Counter.tsx.template",
+      "./apps/islands/Counter.tsx"
+    ],
+    [
+      "../files/preact/apps/home/_layout.tsx.template",
+      "./apps/home/_layout.tsx"
+    ],
     ["../files/preact/apps/home/index.tsx.template", "./apps/home/index.tsx"],
     ["../files/preact/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
     ["../files/preact/tailwind.config.ts.template", "./tailwind.config.ts"]
@@ -533,8 +593,14 @@
 
     ["../files/sink/tests/tests.ts.template", "./tests/tests.ts"],
     ["../files/sink/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
-    ["../files/sink/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
-    ["../files/sink/tests/circuits/.tests.ts.template", "./tests/circuits/.tests.ts"],
+    [
+      "../files/sink/tests/test-eac-setup.ts.template",
+      "./tests/test-eac-setup.ts"
+    ],
+    [
+      "../files/sink/tests/circuits/.tests.ts.template",
+      "./tests/circuits/.tests.ts"
+    ],
     [
       "../files/sink/tests/circuits/simple-tool.tests.ts.template",
       "./tests/circuits/simple-tool.tests.ts"
@@ -567,7 +633,10 @@
       "../files/sink/src/circuits/company-chat/CompanyChatGraphState.ts.template",
       "./src/circuits/company-chat/CompanyChatGraphState.ts"
     ],
-    ["../files/sink/circuits/simple/index.ts.template", "./circuits/simple/index.ts"],
+    [
+      "../files/sink/circuits/simple/index.ts.template",
+      "./circuits/simple/index.ts"
+    ],
     [
       "../files/sink/circuits/company-chat/index.ts.template",
       "./circuits/company-chat/index.ts"
@@ -580,13 +649,19 @@
       "../files/sink/apps/components/Button.tsx.template",
       "./apps/components/Button.tsx"
     ],
-    ["../files/sink/apps/islands/Counter.tsx.template", "./apps/islands/Counter.tsx"],
+    [
+      "../files/sink/apps/islands/Counter.tsx.template",
+      "./apps/islands/Counter.tsx"
+    ],
     [
       "../files/sink/apps/islands/organisms/CompanyThinky.tsx.template",
       "./apps/islands/organisms/CompanyThinky.tsx"
     ],
     ["../files/sink/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
-    ["../files/sink/apps/home/_middleware.ts.template", "./apps/home/_middleware.ts"],
+    [
+      "../files/sink/apps/home/_middleware.ts.template",
+      "./apps/home/_middleware.ts"
+    ],
     ["../files/sink/apps/home/index.tsx.template", "./apps/home/index.tsx"],
     ["../files/sink/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
     ["../files/sink/tailwind.config.ts.template", "./tailwind.config.ts"],
@@ -598,9 +673,15 @@
       "../files/sink/apps/api/[slug]/another.ts.template",
       "./apps/api/[slug]/another.ts"
     ],
-    ["../files/sink/apps/api/_middleware.ts.template", "./apps/api/_middleware.ts"],
+    [
+      "../files/sink/apps/api/_middleware.ts.template",
+      "./apps/api/_middleware.ts"
+    ],
     ["../files/sink/apps/api/index.ts.template", "./apps/api/index.ts"],
-    ["../files/sink/apps/api/state/index.ts.template", "./apps/api/state/index.ts"]
+    [
+      "../files/sink/apps/api/state/index.ts.template",
+      "./apps/api/state/index.ts"
+    ]
   ],
   "synaptic": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
@@ -632,7 +713,10 @@
 
     ["../files/synaptic/tests/tests.ts.template", "./tests/tests.ts"],
     ["../files/synaptic/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
-    ["../files/synaptic/tests/test-eac-setup.ts.template", "./tests/test-eac-setup.ts"],
+    [
+      "../files/synaptic/tests/test-eac-setup.ts.template",
+      "./tests/test-eac-setup.ts"
+    ],
     [
       "../files/synaptic/tests/circuits/.tests.ts.template",
       "./tests/circuits/.tests.ts"
