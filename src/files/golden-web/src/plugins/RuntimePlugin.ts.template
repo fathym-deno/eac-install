@@ -31,8 +31,8 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
         Projects: {
           core: {
             Details: {
-              Name: 'Sink Micro Applications',
-              Description: 'The Kitchen Sink Micro Applications to use.',
+              Name: 'Golden Path Web Runtime',
+              Description: 'The Golden Path Web Runtime to use.',
               Priority: 100,
             },
             ResolverConfigs: {
