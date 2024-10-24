@@ -451,6 +451,10 @@
       "./src/plugins/RuntimePlugin.ts"
     ],
     [
+      "../files/golden-web/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
+      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
+    ],
+    [
       "../files/golden-web/src/state/CompanyWebState.ts.template",
       "./src/state/CompanyWebState.ts"
     ],
