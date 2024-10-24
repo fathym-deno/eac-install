@@ -15,7 +15,6 @@ import {
 } from '@fathym/eac/dfs';
 import { EaCDenoKVDatabaseDetails } from '@fathym/eac/databases';
 import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
-import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
 import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
 import { IoCContainer } from '@fathym/ioc';
 
