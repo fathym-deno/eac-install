@@ -5,7 +5,8 @@ import * as _htmlToText from 'npm:html-to-text@9.0.5';
 export * from '@std/assert';
 
 export * from '@fathym/eac';
-export * from '@fathym/eac-runtime';
+export type { EaCRuntimePlugin } from '@fathym/eac/runtime/plugins';
+export * from '@fathym/eac-applications';
 export * from '@fathym/synaptic';
 
 export * from './test-eac-setup.ts';

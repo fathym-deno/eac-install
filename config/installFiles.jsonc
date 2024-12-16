@@ -21,7 +21,7 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/api/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     ["../files/.shared/dev.ts.template", "./dev.ts"],
@@ -30,8 +30,8 @@
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
 
     [
-      "../files/api/src/plugins/MyCoreRuntimePlugin.ts.template",
-      "./src/plugins/MyCoreRuntimePlugin.ts"
+      "../files/api/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
     ],
     [
       "../files/api/apps/api/[slug]/_middleware.ts.template",
@@ -116,63 +116,12 @@
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
 
     [
-      "../files/core/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     [
-      "../files/core/src/plugins/MyCoreRuntimePlugin.ts.template",
-      "./src/plugins/MyCoreRuntimePlugin.ts"
-    ]
-  ],
-  "demo": [
-    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
-    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
-    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
-    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
-    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
-    ["../files/.shared/README.md", "./README.md"],
-    ["../files/.shared/.dockerignore", "./.dockerignore"],
-    ["../files/.shared/.gitignore", "./.gitignore"],
-    [
-      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
-      "./src/logging/RuntimeLoggingProvider.ts"
-    ],
-    [
-      "../files/demo/configs/eac-runtime.config.ts.template",
-      "./configs/eac-runtime.config.ts"
-    ],
-    ["../files/.shared/dev.ts.template", "./dev.ts"],
-    ["../files/.shared/main.ts.template", "./main.ts"],
-
-    ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
-    ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
-    [
-      "../files/demo/apps/api/[slug]/_middleware.ts.template",
-      "./apps/api/[slug]/_middleware.ts"
-    ],
-    [
-      "../files/demo/apps/api/[slug]/another.ts.template",
-      "./apps/api/[slug]/another.ts"
-    ],
-    [
-      "../files/demo/apps/api/_middleware.ts.template",
-      "./apps/api/_middleware.ts"
-    ],
-    ["../files/demo/apps/api/index.ts.template", "./apps/api/index.ts"],
-    [
-      "../files/demo/apps/components/Button.tsx.template",
-      "./apps/components/Button.tsx"
-    ],
-    [
-      "../files/demo/apps/components/Counter.tsx.template",
-      "./apps/components/Counter.tsx"
-    ],
-    ["../files/demo/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
-    ["../files/demo/apps/home/index.tsx.template", "./apps/home/index.tsx"],
-    ["../files/demo/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
-    [
-      "../files/demo/apps/tailwind/tailwind.config.ts.template",
-      "./apps/tailwind/tailwind.config.ts"
+      "../files/core/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
     ]
   ],
   "golden-atomic": [
@@ -244,7 +193,7 @@
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
 
     [
-      "../files/golden-api/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     [
@@ -300,7 +249,7 @@
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
 
     [
-      "../files/golden-core/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     [
@@ -359,7 +308,7 @@
     ["../files/.shared/main.ts.template", "./main.ts"],
 
     [
-      "../files/golden-synaptic/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     ["../files/golden-synaptic/tests/tests.ts.template", "./tests/tests.ts"],
@@ -427,12 +376,8 @@
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
 
     [
-      "../files/golden-web/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
-    ],
-    [
-      "../files/golden-web/tests/circuits/simple-tool.tests.ts.template",
-      "./tests/circuits/simple-tool.tests.ts"
     ],
     [
       "../files/golden-web/src/plugins/RuntimePlugin.ts.template",
@@ -523,7 +468,7 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/preact/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     ["../files/.shared/dev.ts.template", "./dev.ts"],
@@ -532,8 +477,8 @@
     ["../files/.shared/tests/tests.ts.template", "./tests/tests.ts"],
     ["../files/.shared/tests/tests.deps.ts.template", "./tests/tests.deps.ts"],
     [
-      "../files/preact/src/plugins/MyCoreRuntimePlugin.ts.template",
-      "./src/plugins/MyCoreRuntimePlugin.ts"
+      "../files/preact/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
     ],
     [
       "../files/preact/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
@@ -577,7 +522,7 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/sink/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     ["../files/.shared/dev.ts.template", "./dev.ts"],
@@ -697,7 +642,7 @@
       "./.github/workflows/deno.deploy.yml"
     ],
     [
-      "../files/synaptic/configs/eac-runtime.config.ts.template",
+      "../files/.shared/configs/eac-runtime.config.ts.template",
       "./configs/eac-runtime.config.ts"
     ],
     ["../files/.shared/dev.ts.template", "./dev.ts"],
@@ -718,12 +663,12 @@
       "./tests/circuits/simple-tool.tests.ts"
     ],
     [
-      "../files/synaptic/src/plugins/MyCoreRuntimePlugin.ts.template",
-      "./src/plugins/MyCoreRuntimePlugin.ts"
+      "../files/synaptic/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
     ],
     [
-      "../files/synaptic/src/plugins/MyCoreSynapticPlugin.ts.template",
-      "./src/plugins/MyCoreSynapticPlugin.ts"
+      "../files/synaptic/src/plugins/SynapticPlugin.ts.template",
+      "./src/plugins/SynapticPlugin.ts"
     ],
     [
       "../files/synaptic/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",

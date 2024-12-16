@@ -1,45 +1,44 @@
-import {
-  EaCRuntimeConfig,
-  EaCRuntimeEaC,
-  EaCRuntimePlugin,
-  EaCRuntimePluginConfig,
-  FathymAzureContainerCheckPlugin,
-  FathymDFSFileHandlerPlugin,
-  FathymEaCServicesPlugin,
-} from '@fathym/eac-runtime';
+// deno-lint-ignore-file no-explicit-any
+import * as _azureSearch from 'npm:@azure/search-documents@12.1.0';
+import * as _parse from 'npm:pdf-parse@1.1.1';
+import * as _htmlToText from 'npm:html-to-text@9.0.5';
+import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
+import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
+import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
+import { IoCContainer } from '@fathym/ioc';
+import { EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac/runtime/plugins';
+import { EaCRuntimeConfig } from '@fathym/eac/runtime/config';
+import { EverythingAsCode } from '@fathym/eac';
+import { EverythingAsCodeApplications } from '@fathym/eac-applications';
 import {
   EaCAPIProcessor,
-  EaCBaseHREFModifierDetails,
-  EaCKeepAliveModifierDetails,
   EaCPreactAppProcessor,
   EaCTailwindProcessor,
-} from '@fathym/eac/applications';
+} from '@fathym/eac-applications/processors';
+import { EaCDenoKVDetails, EverythingAsCodeDenoKV } from '@fathym/eac-deno-kv';
 import {
   EaCJSRDistributedFileSystemDetails,
   EaCLocalDistributedFileSystemDetails,
-} from '@fathym/eac/dfs';
-import { EaCDenoKVDatabaseDetails } from '@fathym/eac/databases';
-import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
-import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
+} from '@fathym/eac-dfs';
 import {
-  EaCSynapticCircuitsProcessor,
-  EverythingAsCodeSynaptic,
-  FathymSynapticPlugin,
-} from '@fathym/synaptic';
-import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
-import { IoCContainer } from '@fathym/ioc';
+  EaCBaseHREFModifierDetails,
+  EaCKeepAliveModifierDetails,
+} from '@fathym/eac-applications/modifiers';
+import { EaCSynapticCircuitsProcessor, EverythingAsCodeSynaptic, FathymSynapticPlugin } from '@fathym/synaptic';
 import SynapticPlugin from './SynapticPlugin.ts';
 
 export default class RuntimePlugin implements EaCRuntimePlugin {
   constructor() {}
 
   public Setup(config: EaCRuntimeConfig) {
-    const pluginConfig: EaCRuntimePluginConfig = {
+    const pluginConfig: EaCRuntimePluginConfig<
+      & EverythingAsCode
+      & EverythingAsCodeApplications
+      & EverythingAsCodeDenoKV
+      & EverythingAsCodeSynaptic
+    > = {
       Name: RuntimePlugin.name,
       Plugins: [
-        new FathymAzureContainerCheckPlugin(),
-        new FathymEaCServicesPlugin(),
-        new FathymDFSFileHandlerPlugin(),
         new FathymAtomicIconsPlugin(),
         new SynapticPlugin(),
         new FathymSynapticPlugin(),
@@ -178,15 +177,15 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
         AIs: {},
         Circuits: {
           $circuitsDFSLookups: ['local:circuits'],
-        },
-        Databases: {
+        } as any,
+        DenoKVs: {
           thinky: {
             Details: {
               Type: 'DenoKV',
               Name: 'Thinky',
               Description: 'The Deno KV database to use for thinky',
               DenoKVPath: Deno.env.get('THINKY_DENO_KV_PATH') || undefined,
-            } as EaCDenoKVDatabaseDetails,
+            } as EaCDenoKVDetails,
           },
         },
         DFSs: {
@@ -225,9 +224,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'Local',
               FileRoot: './circuits/',
               Extensions: ['.ts'],
-              WorkerPath: import.meta.resolve(
-                '@fathym/eac-runtime/workers/local',
-              ),
+              WorkerPath: import.meta.resolve('@fathym/eac-dfs/workers/local'),
             } as EaCLocalDistributedFileSystemDetails,
           },
           'jsr:@fathym/atomic': {
@@ -235,9 +232,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'JSR',
               Package: '@fathym/atomic',
               Version: '',
-              WorkerPath: import.meta.resolve(
-                '@fathym/eac-runtime/workers/jsr',
-              ),
+              WorkerPath: import.meta.resolve('@fathym/eac-dfs/workers/jsr'),
             } as EaCJSRDistributedFileSystemDetails,
           },
           'jsr:@fathym/atomic-design-kit': {
@@ -245,9 +240,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'JSR',
               Package: '@fathym/atomic-design-kit',
               Version: '',
-              WorkerPath: import.meta.resolve(
-                '@fathym/eac-runtime/workers/jsr',
-              ),
+              WorkerPath: import.meta.resolve('@fathym/eac-dfs/workers/jsr'),
             } as EaCJSRDistributedFileSystemDetails,
           },
         },
@@ -268,7 +261,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
             } as EaCKeepAliveModifierDetails,
           },
         },
-      } as EaCRuntimeEaC | EverythingAsCodeSynaptic,
+      },
     };
 
     pluginConfig.IoC!.Register(DefaultMyCoreProcessorHandlerResolver, {

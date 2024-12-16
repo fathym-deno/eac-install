@@ -1,15 +1,16 @@
-import {
-  EaCRuntimeConfig,
-  EaCRuntimePlugin,
-  EaCRuntimePluginConfig,
-} from '@fathym/eac-runtime';
-import { EaCProxyProcessor } from '@fathym/eac/applications';
+import { EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac/runtime/plugins';
+import { EaCRuntimeConfig } from '@fathym/eac/runtime/config';
+import { EverythingAsCode } from '@fathym/eac';
+import { EverythingAsCodeApplications } from '@fathym/eac-applications';
+import { EaCProxyProcessor } from '@fathym/eac-applications/processors';
 
 export default class RuntimePlugin implements EaCRuntimePlugin {
   constructor() {}
 
   public Setup(config: EaCRuntimeConfig) {
-    const pluginConfig: EaCRuntimePluginConfig = {
+    const pluginConfig: EaCRuntimePluginConfig<
+      EverythingAsCode & EverythingAsCodeApplications
+    > = {
       Name: RuntimePlugin.name,
       Plugins: [],
       EaC: {

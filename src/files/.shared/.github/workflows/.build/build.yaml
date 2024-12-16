@@ -7,7 +7,7 @@ permissions:
 on:
   push:
   workflow_dispatch:
-  
+
 env:
   MainBranch: main
   MainFormat: '${major}.${minor}.${patch}'

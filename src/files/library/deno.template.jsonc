@@ -4,6 +4,7 @@
   "exports": {
     ".": "./mod.ts"
   },
+  "license": "MIT",
   "tasks": {
     "build": "deno task build:fmt && deno task build:lint && deno task publish:check && deno task test",
     "build:fmt": "deno fmt",
@@ -15,7 +16,7 @@
     "version": "deno run -A jsr:@fathym/common@0/build/version"
   },
   "imports": {},
-  "exclude": ["**/_eac-runtime/*"],
+  "exclude": ["**/_eac-runtime/*", "!src/**/.exports.ts", "!mod.ts"],
   "lint": {
     "include": ["apps/", "configs/", "src/", "tests/"],
     "exclude": [],

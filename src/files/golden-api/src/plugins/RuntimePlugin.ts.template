@@ -1,17 +1,18 @@
-import {
-  EaCRuntimeConfig,
-  EaCRuntimePlugin,
-  EaCRuntimePluginConfig,
-} from '@fathym/eac-runtime';
-import { EaCAPIProcessor } from '@fathym/eac/applications';
-import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
 import { IoCContainer } from '@fathym/ioc';
+import { EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac/runtime/plugins';
+import { EaCRuntimeConfig } from '@fathym/eac/runtime/config';
+import { EverythingAsCode } from '@fathym/eac';
+import { EverythingAsCodeApplications } from '@fathym/eac-applications';
+import { EaCAPIProcessor } from '@fathym/eac-applications/processors';
+import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac-dfs';
 
 export default class RuntimePlugin implements EaCRuntimePlugin {
   constructor() {}
 
   public Setup(config: EaCRuntimeConfig) {
-    const pluginConfig: EaCRuntimePluginConfig = {
+    const pluginConfig: EaCRuntimePluginConfig<
+      EverythingAsCode & EverythingAsCodeApplications
+    > = {
       Name: RuntimePlugin.name,
       Plugins: [],
       IoC: new IoCContainer(),

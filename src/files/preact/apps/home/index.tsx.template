@@ -1,7 +1,8 @@
-import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac-runtime';
+import { EaCRuntimeHandlerSet } from '@fathym/eac/runtime/pipelines';
+import { PageProps } from '@fathym/eac-applications/runtime/preact';
 import Counter from '../islands/Counter.tsx';
 
-export const handler: EaCRuntimeHandlerResult = {
+export const handler: EaCRuntimeHandlerSet = {
   GET: (_req, ctx) => {
     return ctx.Render({
       Title: 'Fathym EaC Runtime',

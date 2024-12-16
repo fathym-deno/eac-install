@@ -1,27 +1,32 @@
-import {
-  EaCRuntimeConfig,
-  EaCRuntimeEaC,
-  EaCRuntimePlugin,
-  EaCRuntimePluginConfig,
-} from '@fathym/eac-runtime';
-import {
-  EaCLocalDistributedFileSystemDetails,
-} from '@fathym/eac/dfs';
-import { EaCDenoKVDatabaseDetails } from '@fathym/eac/databases';
+// deno-lint-ignore-file no-explicit-any
+import * as _azureSearch from 'npm:@azure/search-documents@12.1.0';
+import * as _parse from 'npm:pdf-parse@1.1.1';
+import * as _htmlToText from 'npm:html-to-text@9.0.5';
 import {
   EaCSynapticCircuitsProcessor,
   EverythingAsCodeSynaptic,
   FathymSynapticPlugin,
 } from '@fathym/synaptic';
-import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
 import { IoCContainer } from '@fathym/ioc';
+import { EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac/runtime/plugins';
+import { EaCRuntimeConfig } from '@fathym/eac/runtime/config';
+import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac-dfs';
+import { EverythingAsCode } from '@fathym/eac';
+import { EaCDenoKVDetails, EverythingAsCodeDenoKV } from '@fathym/eac-deno-kv';
+import { EverythingAsCodeApplications } from '@fathym/eac-applications';
+import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
 import SynapticPlugin from './SynapticPlugin.ts';
 
 export default class RuntimePlugin implements EaCRuntimePlugin {
   constructor() {}
 
   public Setup(config: EaCRuntimeConfig) {
-    const pluginConfig: EaCRuntimePluginConfig = {
+    const pluginConfig: EaCRuntimePluginConfig<
+      & EverythingAsCode
+      & EverythingAsCodeSynaptic
+      & EverythingAsCodeApplications
+      & EverythingAsCodeDenoKV
+    > = {
       Name: RuntimePlugin.name,
       Plugins: [
         new SynapticPlugin(),
@@ -70,15 +75,15 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
         AIs: {},
         Circuits: {
           $circuitsDFSLookups: ['local:circuits'],
-        },
-        Databases: {
+        } as any,
+        DenoKVs: {
           thinky: {
             Details: {
               Type: 'DenoKV',
               Name: 'Thinky',
               Description: 'The Deno KV database to use for thinky',
               DenoKVPath: Deno.env.get('THINKY_DENO_KV_PATH') || undefined,
-            } as EaCDenoKVDatabaseDetails,
+            } as EaCDenoKVDetails,
           },
         },
         DFSs: {
@@ -88,12 +93,12 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               FileRoot: './circuits/',
               Extensions: ['.ts'],
               WorkerPath: import.meta.resolve(
-                '@fathym/eac-runtime/workers/local',
+                '@fathym/eac-dfs/workers/local',
               ),
             } as EaCLocalDistributedFileSystemDetails,
           },
         },
-      } as EaCRuntimeEaC | EverythingAsCodeSynaptic,
+      },
     };
 
     pluginConfig.IoC!.Register(DefaultMyCoreProcessorHandlerResolver, {

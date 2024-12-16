@@ -1,4 +1,4 @@
-import { DenoConfig } from 'jsr:@fathym/common@0.2.160/build';
+import { DenoConfig } from 'jsr:@fathym/common@0.2.168/build';
 import { EaCRuntimeInstallerFlags } from '../../install.ts';
 import { exists, existsSync, mergeWithArrays, parseJsonc, path, toText } from '../install.deps.ts';
 import { Command } from './Command.ts';

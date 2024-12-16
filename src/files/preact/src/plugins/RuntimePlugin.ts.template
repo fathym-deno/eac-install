@@ -1,22 +1,30 @@
-import { EaCRuntimeConfig, EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac-runtime';
+import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
+import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
+import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
+import { IoCContainer } from '@fathym/ioc';
+import { EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac/runtime/plugins';
+import { EaCRuntimeConfig } from '@fathym/eac/runtime/config';
+import { EverythingAsCode } from '@fathym/eac';
+import { EverythingAsCodeApplications } from '@fathym/eac-applications';
+import {
+  EaCPreactAppProcessor,
+  EaCTailwindProcessor,
+} from '@fathym/eac-applications/processors';
+import { EverythingAsCodeDenoKV } from '@fathym/eac-deno-kv';
+import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac-dfs';
 import {
   EaCBaseHREFModifierDetails,
   EaCKeepAliveModifierDetails,
-  EaCPreactAppProcessor,
-  EaCTailwindProcessor,
-} from '@fathym/eac/applications';
-import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
-import { EaCAtomicIconsProcessor } from '@fathym/atomic-icons';
-import { DefaultMyCoreProcessorHandlerResolver } from './DefaultMyCoreProcessorHandlerResolver.ts';
-import { IoCContainer } from '@fathym/ioc';
-import { FathymAtomicIconsPlugin } from '@fathym/atomic-icons/plugin';
+} from '@fathym/eac-applications/modifiers';
 
-export default class MyCoreRuntimePlugin implements EaCRuntimePlugin {
+export default class RuntimePlugin implements EaCRuntimePlugin {
   constructor() {}
 
   public Setup(config: EaCRuntimeConfig) {
-    const pluginConfig: EaCRuntimePluginConfig = {
-      Name: MyCoreRuntimePlugin.name,
+    const pluginConfig: EaCRuntimePluginConfig<
+      EverythingAsCode & EverythingAsCodeApplications & EverythingAsCodeDenoKV
+    > = {
+      Name: RuntimePlugin.name,
       Plugins: [new FathymAtomicIconsPlugin()],
       IoC: new IoCContainer(),
       EaC: {

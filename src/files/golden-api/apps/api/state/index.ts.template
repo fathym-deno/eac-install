@@ -1,4 +1,4 @@
-import { EaCRuntimeHandlers } from '@fathym/eac-runtime';
+import { EaCRuntimeHandlers } from '@fathym/eac/runtime/pipelines';
 import { CompanyAPIState } from '../../../src/state/CompanyAPIState.ts';
 
 export default {
