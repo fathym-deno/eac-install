@@ -403,13 +403,22 @@
       "../files/golden-web/apps/islands/organisms/CompanyThinky.tsx.template",
       "./apps/islands/organisms/CompanyThinky.tsx"
     ],
-    ["../files/golden-web/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
+    [
+      "../files/golden-web/apps/home/_layout.tsx.template",
+      "./apps/home/_layout.tsx"
+    ],
     [
       "../files/golden-web/apps/home/_middleware.ts.template",
       "./apps/home/_middleware.ts"
     ],
-    ["../files/golden-web/apps/home/index.tsx.template", "./apps/home/index.tsx"],
-    ["../files/golden-web/apps/tailwind/styles.css", "./apps/tailwind/styles.css"],
+    [
+      "../files/golden-web/apps/home/index.tsx.template",
+      "./apps/home/index.tsx"
+    ],
+    [
+      "../files/golden-web/apps/tailwind/styles.css",
+      "./apps/tailwind/styles.css"
+    ],
     ["../files/golden-web/tailwind.config.ts.template", "./tailwind.config.ts"]
   ],
   "library": [
@@ -619,6 +628,92 @@
       "../files/sink/apps/api/state/index.ts.template",
       "./apps/api/state/index.ts"
     ]
+  ],
+  "sink-empty": [
+    ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],
+    ["../files/.shared/DOCKERFILE", "./DOCKERFILE"],
+    ["../files/.shared/.vscode/extensions.json", "./.vscode/extensions.json"],
+    ["../files/.shared/.vscode/.app/launch.json", "./.vscode/launch.json"],
+    ["../files/.shared/.vscode/settings.json", "./.vscode/settings.json"],
+    ["../files/.shared/README.md", "./README.md"],
+    ["../files/.shared/.dockerignore", "./.dockerignore"],
+    ["../files/.shared/.gitignore", "./.gitignore"],
+    [
+      "../files/.shared/src/logging/RuntimeLoggingProvider.ts.template",
+      "./src/logging/RuntimeLoggingProvider.ts"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/container.deploy.yml",
+      "./.github/workflows/container.deploy.yml"
+    ],
+    [
+      "../files/.shared/.github/workflows/.deploy/deno.deploy.yml",
+      "./.github/workflows/deno.deploy.yml"
+    ],
+    [
+      "../files/.shared/configs/eac-runtime.config.ts.template",
+      "./configs/eac-runtime.config.ts"
+    ],
+    ["../files/.shared/dev.ts.template", "./dev.ts"],
+    ["../files/.shared/main.ts.template", "./main.ts"],
+
+    ["../files/sink-empty/tests/tests.ts.template", "./tests/tests.ts"],
+    [
+      "../files/sink-empty/tests/tests.deps.ts.template",
+      "./tests/tests.deps.ts"
+    ],
+    [
+      "../files/sink-empty/tests/test-eac-setup.ts.template",
+      "./tests/test-eac-setup.ts"
+    ],
+    [
+      "../files/sink-empty/tests/circuits/.tests.ts.template",
+      "./tests/circuits/.tests.ts"
+    ],
+    [
+      "../files/sink-empty/src/plugins/RuntimePlugin.ts.template",
+      "./src/plugins/RuntimePlugin.ts"
+    ],
+    [
+      "../files/sink-empty/src/plugins/SynapticPlugin.ts.template",
+      "./src/plugins/SynapticPlugin.ts"
+    ],
+    [
+      "../files/sink-empty/src/plugins/DefaultMyCoreProcessorHandlerResolver.ts.template",
+      "./src/plugins/DefaultMyCoreProcessorHandlerResolver.ts"
+    ],
+    [
+      "../files/sink-empty/src/state/CompanyAPIState.ts.template",
+      "./src/state/CompanyAPIState.ts"
+    ],
+    [
+      "../files/sink-empty/src/state/CompanyWebState.ts.template",
+      "./src/state/CompanyWebState.ts"
+    ],
+    [
+      "../files/sink-empty/apps/islands/organisms/CompanyThinky.tsx.template",
+      "./apps/islands/organisms/CompanyThinky.tsx"
+    ],
+    [
+      "../files/sink-empty/apps/home/_layout.tsx.template",
+      "./apps/home/_layout.tsx"
+    ],
+    [
+      "../files/sink-empty/apps/home/_middleware.ts.template",
+      "./apps/home/_middleware.ts"
+    ],
+    [
+      "../files/sink-empty/apps/home/index.tsx.template",
+      "./apps/home/index.tsx"
+    ],
+    [
+      "../files/sink-empty/apps/tailwind/styles.css",
+      "./apps/tailwind/styles.css"
+    ],
+    ["../files/sink-empty/tailwind.config.ts.template", "./tailwind.config.ts"],
+    ["../files/sink-empty/apps/api/.gitkeep", "./apps/api/.gitkeep"],
+    ["../files/sink-empty/apps/components/.gitkeep", "./apps/components/.gitkeep"],
+    ["../files/sink-empty/circuits/.gitkeep", "./circuits/.gitkeep"]
   ],
   "synaptic": [
     ["../files/.shared/deno.template.jsonc", "./deno.jsonc"],

@@ -1,0 +1,41 @@
+import { EaCRuntimePlugin, EaCRuntimePluginConfig } from '@fathym/eac/runtime/plugins';
+import { EaCRuntimeConfig } from '@fathym/eac/runtime/config';
+import { EverythingAsCode } from '@fathym/eac';
+import {
+  EaCAzureOpenAIEmbeddingsDetails,
+  EaCAzureOpenAILLMDetails,
+  EaCLLMNeuron,
+  EaCPassthroughNeuron,
+  EaCRecursiveCharacterTextSplitterDetails,
+  EaCStringOutputParserNeuron,
+  EverythingAsCodeSynaptic,
+} from '@fathym/synaptic';
+import { MessagesPlaceholder } from '@langchain/core/prompts';
+
+export default class SynapticPlugin implements EaCRuntimePlugin {
+  constructor() {}
+
+  public Setup(_config: EaCRuntimeConfig) {
+    const pluginConfig: EaCRuntimePluginConfig<EverythingAsCode & EverythingAsCodeSynaptic> = {
+      Name: SynapticPlugin.name,
+      Plugins: [],
+      EaC: {
+        AIs: {
+          [SynapticPlugin.name]: { },
+        },
+        Circuits: {
+          $neurons: {
+            $pass: {
+              Type: 'Passthrough',
+            } as EaCPassthroughNeuron,
+            '$string-output': {
+              Type: 'StringOutputParser',
+            } as EaCStringOutputParserNeuron,
+          },
+        },
+      },
+    };
+
+    return Promise.resolve(pluginConfig);
+  }
+}
