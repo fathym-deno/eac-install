@@ -10,6 +10,8 @@ export const config = defineEaCApplicationsConfig(
   new RuntimeLoggingProvider(),
 );
 
-export function configure(_rt: EaCRuntime): Promise<void> {
-  return Promise.resolve();
+export function configure(
+  _rt: EaCRuntime,
+): Promise<EaCRuntimeHandlerRouteGroup[] | undefined> {
+  return Promise.resolve([]);
 }
