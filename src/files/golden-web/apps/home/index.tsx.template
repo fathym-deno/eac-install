@@ -1,6 +1,6 @@
 import { ChatSet } from '@fathym/atomic';
 import { EaCRuntimeHandlerSet } from '@fathym/eac/runtime/pipelines';
-import { PageProps } from '@fathym/eac-applications/runtime/preact';
+import { PageProps } from '@fathym/eac-applications/preact';
 import Counter from '../islands/Counter.tsx';
 import CompanyThinky from '../islands/organisms/CompanyThinky.tsx';
 import { CompanyWebState } from '../../src/state/CompanyWebState.ts';

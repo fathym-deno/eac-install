@@ -603,6 +603,18 @@
       "../files/sink/apps/islands/organisms/CompanyThinky.tsx.template",
       "./apps/islands/organisms/CompanyThinky.tsx"
     ],
+    [
+      "../files/sink/apps/dashboard/_layout.tsx.template",
+      "./apps/dashboard/_layout.tsx"
+    ],
+    [
+      "../files/sink/apps/dashboard/_middleware.ts.template",
+      "./apps/dashboard/_middleware.ts"
+    ],
+    [
+      "../files/sink/apps/dashboard/index.tsx.template",
+      "./apps/dashboard/index.tsx"
+    ],
     ["../files/sink/apps/home/_layout.tsx.template", "./apps/home/_layout.tsx"],
     [
       "../files/sink/apps/home/_middleware.ts.template",
@@ -712,7 +724,10 @@
     ],
     ["../files/sink-empty/tailwind.config.ts.template", "./tailwind.config.ts"],
     ["../files/sink-empty/apps/api/.gitkeep", "./apps/api/.gitkeep"],
-    ["../files/sink-empty/apps/components/.gitkeep", "./apps/components/.gitkeep"],
+    [
+      "../files/sink-empty/apps/components/.gitkeep",
+      "./apps/components/.gitkeep"
+    ],
     ["../files/sink-empty/circuits/.gitkeep", "./circuits/.gitkeep"]
   ],
   "synaptic": [

@@ -24,7 +24,11 @@ import {
   EaCBaseHREFModifierDetails,
   EaCKeepAliveModifierDetails,
 } from '@fathym/eac-applications/modifiers';
-import { EaCSynapticCircuitsProcessor, EverythingAsCodeSynaptic, FathymSynapticPlugin } from '@fathym/synaptic';
+import {
+  EaCSynapticCircuitsProcessor,
+  EverythingAsCodeSynaptic,
+  FathymSynapticPlugin,
+} from '@fathym/synaptic';
 import SynapticPlugin from './SynapticPlugin.ts';
 
 export default class RuntimePlugin implements EaCRuntimePlugin {
@@ -55,15 +59,15 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
             ResolverConfigs: {
               localhost: {
                 Hostname: 'localhost',
-                Port: config.Server.port || 8000,
+                Port: config.Servers![0].port || 8000,
               },
               '127.0.0.1': {
                 Hostname: '127.0.0.1',
-                Port: config.Server.port || 8000,
+                Port: config.Servers![0].port || 8000,
               },
               'host.docker.internal': {
                 Hostname: 'host.docker.internal',
-                Port: config.Server.port || 8000,
+                Port: config.Servers![0].port || 8000,
               },
             },
             ModifierResolvers: {
@@ -74,15 +78,19 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
             ApplicationResolvers: {
               api: {
                 PathPattern: '/api*',
-                Priority: 100,
+                Priority: 500,
               },
               atomicIcons: {
                 PathPattern: '/icons*',
-                Priority: 200,
+                Priority: 500,
               },
               circuits: {
                 PathPattern: '/circuits*',
-                Priority: 100,
+                Priority: 500,
+              },
+              dashboard: {
+                PathPattern: '/dashboard*',
+                Priority: 500,
               },
               home: {
                 PathPattern: '*',
@@ -133,6 +141,28 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'SynapticCircuits',
               IsCodeDriven: true,
             } as EaCSynapticCircuitsProcessor,
+          },
+          dashboard: {
+            Details: {
+              Name: 'Dashboard - Secured Site',
+              Description: 'Dashboard - Secured Site.',
+            },
+            ModifierResolvers: {
+              baseHref: {
+                Priority: 10000,
+              },
+            },
+            Processor: {
+              Type: 'PreactApp',
+              AppDFSLookup: 'local:apps/dashboard',
+              ComponentDFSLookups: [
+                ['local:apps/components', ['tsx']],
+                ['local:apps/dashboard', ['tsx']],
+                ['local:apps/islands', ['tsx']],
+                ['jsr:@fathym/atomic', ['tsx']],
+                ['jsr:@fathym/atomic-design-kit', ['tsx']],
+              ],
+            } as EaCPreactAppProcessor,
           },
           home: {
             Details: {
@@ -208,6 +238,14 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Extensions: ['tsx'],
             } as EaCLocalDistributedFileSystemDetails,
           },
+          'local:apps/dashboard': {
+            Details: {
+              Type: 'Local',
+              FileRoot: './apps/dashboard/',
+              DefaultFile: 'index.tsx',
+              Extensions: ['tsx'],
+            } as EaCLocalDistributedFileSystemDetails,
+          },
           'local:apps/home': {
             Details: {
               Type: 'Local',
@@ -265,6 +303,11 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
             } as EaCKeepAliveModifierDetails,
           },
         },
+        $GlobalOptions: {
+          DFSs: {
+            PreventWorkers: true
+          }
+        }
       },
     };
 

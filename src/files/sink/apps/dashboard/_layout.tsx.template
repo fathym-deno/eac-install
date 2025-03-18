@@ -1,6 +1,6 @@
 import { PageProps } from '@fathym/eac-applications/preact';
 
-export default function HomeLayout({
+export default function DashboardLayout({
   Data: _Data,
   Component,
   Revision,
