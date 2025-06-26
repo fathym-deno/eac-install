@@ -10,7 +10,7 @@ import {
 import { IoCContainer } from '@fathym/ioc';
 import { EaCRuntimeConfig, EaCRuntimePluginConfig } from '@fathym/eac/runtime/config';
 import { EaCRuntimePlugin } from '@fathym/eac/runtime/plugins';
-import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac-dfs';
+import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
 import { EverythingAsCode } from '@fathym/eac';
 import { EaCDenoKVDetails, EverythingAsCodeDenoKV } from '@fathym/eac-deno-kv';
 import { EverythingAsCodeApplications } from '@fathym/eac-applications';
@@ -97,7 +97,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               FileRoot: './circuits/',
               Extensions: ['.ts'],
               WorkerPath: import.meta.resolve(
-                '@fathym/eac-dfs/workers/local',
+                '@fathym/eac/dfs/workers/local',
               ),
             } as EaCLocalDistributedFileSystemDetails,
           },

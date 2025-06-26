@@ -14,7 +14,7 @@ import { EaCDenoKVDetails, EverythingAsCodeDenoKV } from '@fathym/eac-deno-kv';
 import {
   EaCJSRDistributedFileSystemDetails,
   EaCLocalDistributedFileSystemDetails,
-} from '@fathym/eac-dfs';
+} from '@fathym/eac/dfs';
 import {
   EaCBaseHREFModifierDetails,
   EaCKeepAliveModifierDetails,
@@ -174,7 +174,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Package: '@fathym/atomic',
               Version: '',
               WorkerPath: import.meta.resolve(
-                '@fathym/eac-dfs/workers/jsr',
+                '@fathym/eac/dfs/workers/jsr',
               ),
             } as EaCJSRDistributedFileSystemDetails,
           },
@@ -184,7 +184,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Package: '@fathym/atomic-design-kit',
               Version: '',
               WorkerPath: import.meta.resolve(
-                '@fathym/eac-dfs/workers/jsr',
+                '@fathym/eac/dfs/workers/jsr',
               ),
             } as EaCJSRDistributedFileSystemDetails,
           },

@@ -4,7 +4,7 @@ import { EaCRuntimePlugin } from '@fathym/eac/runtime/plugins';
 import { EverythingAsCode } from '@fathym/eac';
 import { EverythingAsCodeApplications } from '@fathym/eac-applications';
 import { EaCAPIProcessor } from '@fathym/eac-applications/processors';
-import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac-dfs';
+import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
 
 export default class RuntimePlugin implements EaCRuntimePlugin {
   constructor() {}

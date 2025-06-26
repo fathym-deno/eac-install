@@ -11,7 +11,7 @@ import {
   EaCTailwindProcessor,
 } from '@fathym/eac-applications/processors';
 import { EverythingAsCodeDenoKV } from '@fathym/eac-deno-kv';
-import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac-dfs';
+import { EaCLocalDistributedFileSystemDetails } from '@fathym/eac/dfs';
 import {
   EaCBaseHREFModifierDetails,
   EaCKeepAliveModifierDetails,
