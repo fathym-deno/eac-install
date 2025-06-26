@@ -12,6 +12,7 @@ import { EverythingAsCode } from '@fathym/eac';
 import { EverythingAsCodeApplications } from '@fathym/eac-applications';
 import {
   EaCAPIProcessor,
+  EaCDFSProcessor,
   EaCPreactAppProcessor,
   EaCTailwindProcessor,
 } from '@fathym/eac-applications/processors';
@@ -80,6 +81,10 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
                 PathPattern: '/api*',
                 Priority: 500,
               },
+              assets: {
+                PathPattern: '/assets*',
+                Priority: 500,
+              },
               atomicIcons: {
                 PathPattern: '/icons*',
                 Priority: 500,
@@ -113,6 +118,24 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'API',
               DFSLookup: 'local:apps/api',
             } as EaCAPIProcessor,
+          },
+          assets: {
+            Details: {
+              Name: 'Assets',
+              Description: 'The static assets to use.',
+            },
+            ModifierResolvers: {},
+            Processor: {
+              Type: 'DFS',
+              DFSLookup: 'local:apps/assets',
+              CacheControl: {
+                'text\\/html': `private, max-age=${60 * 5}`,
+                'image\\/': `public, max-age=${60 * 60 * 24 * 365}, immutable`,
+                'application\\/javascript': `public, max-age=${60 * 60 * 24 * 365}, immutable`,
+                'application\\/typescript': `public, max-age=${60 * 60 * 24 * 365}, immutable`,
+                'text\\/css': `public, max-age=${60 * 60 * 24 * 365}, immutable`,
+              },
+            } as EaCDFSProcessor,
           },
           atomicIcons: {
             Details: {
@@ -231,6 +254,12 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Extensions: ['ts'],
             } as EaCLocalDistributedFileSystemDetails,
           },
+          'local:apps/assets': {
+            Details: {
+              Type: 'Local',
+              FileRoot: './apps/assets/',
+            } as EaCLocalDistributedFileSystemDetails,
+          },
           'local:apps/components': {
             Details: {
               Type: 'Local',
@@ -305,9 +334,9 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
         },
         $GlobalOptions: {
           DFSs: {
-            PreventWorkers: true
-          }
-        }
+            PreventWorkers: true,
+          },
+        },
       },
     };
 

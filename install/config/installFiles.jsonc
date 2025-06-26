@@ -592,6 +592,10 @@
       "./circuits/company-chat/rag.ts"
     ],
     [
+      "../files/.shared/apps/assets/thinky.png",
+      "./apps/assets/thinky.png"
+    ],
+    [
       "../files/sink/apps/components/Button.tsx.template",
       "./apps/components/Button.tsx"
     ],
