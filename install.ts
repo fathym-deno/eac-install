@@ -22,7 +22,7 @@ const flags: EaCRuntimeInstallerFlags = parseArgs(Deno.args, {
     force: undefined,
     preact: true,
     tailwind: true,
-    template: 'demo',
+    template: 'core',
   },
   alias: {
     force: 'f',

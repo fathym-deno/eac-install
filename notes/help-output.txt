@@ -1,0 +1,35 @@
+
+EaC Runtime Installer
+
+Install a new EaC Runtime project in the current directory.
+
+USAGE:
+  deno run -A install.ts [--template <name>] [--force] [--preact=<bool>] [--tailwind=<bool>]
+
+OPTIONS:
+  -h, --help           Show this message
+  -f, --force          Overwrite existing files
+  --template <name>    Select template (default: core)
+  --preact=<bool>      Control inclusion of Preact assets (default: true)
+  --tailwind=<bool>    Control inclusion of Tailwind assets (default: true)
+
+AVAILABLE TEMPLATES:
+  - api
+  - atomic
+  - core
+  - golden-api
+  - golden-atomic
+  - golden-core
+  - golden-ref-arch
+  - golden-synaptic
+  - golden-web
+  - library
+  - preact
+  - sink
+  - sink-empty
+  - synaptic
+
+EXAMPLES:
+  deno run -A install.ts --template core
+  deno run -A install.ts --template sink --force
+

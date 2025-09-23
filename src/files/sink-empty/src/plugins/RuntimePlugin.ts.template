@@ -151,8 +151,8 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
                 // ['local:apps/components', ['tsx']],
                 ['local:apps/home', ['tsx']],
                 ['local:apps/islands', ['tsx']],
-                ['jsr:@fathym/atomic', ['tsx']],
-                ['jsr:@fathym/atomic-design-kit', ['tsx']],
+                ['jsr:@fathym/atomic@0.0.185', ['tsx']],
+                ['jsr:@fathym/atomic-design-kit@0.0.243', ['tsx']],
               ],
             } as EaCPreactAppProcessor,
           },
@@ -167,8 +167,8 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
                 'local:apps/components',
                 'local:apps/home',
                 'local:apps/islands',
-                'jsr:@fathym/atomic',
-                'jsr:@fathym/atomic-design-kit',
+                'jsr:@fathym/atomic@0.0.185',
+                'jsr:@fathym/atomic-design-kit@0.0.243',
               ],
               ConfigPath: './tailwind.config.ts',
               StylesTemplatePath: './apps/tailwind/styles.css',
@@ -231,7 +231,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               WorkerPath: import.meta.resolve('@fathym/eac/dfs/workers/local'),
             } as EaCLocalDistributedFileSystemDetails,
           },
-          'jsr:@fathym/atomic': {
+          'jsr:@fathym/atomic@0.0.185': {
             Details: {
               Type: 'JSR',
               Package: '@fathym/atomic',
@@ -239,7 +239,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               WorkerPath: import.meta.resolve('@fathym/eac/dfs/workers/jsr'),
             } as EaCJSRDistributedFileSystemDetails,
           },
-          'jsr:@fathym/atomic-design-kit': {
+          'jsr:@fathym/atomic-design-kit@0.0.243': {
             Details: {
               Type: 'JSR',
               Package: '@fathym/atomic-design-kit',
@@ -280,3 +280,4 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
     return Promise.resolve(pluginConfig);
   }
 }
+

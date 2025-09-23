@@ -1,0 +1,72 @@
+[
+    {
+        "Template":  "api",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "atomic",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "core",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "golden-atomic",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "golden-api",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "golden-core",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "golden-ref-arch",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "golden-synaptic",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "golden-web",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "library",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "preact",
+        "InstallExit":  0,
+        "BuildExit":  0
+    },
+    {
+        "Template":  "sink",
+        "InstallExit":  0,
+        "BuildExit":  1
+    },
+    {
+        "Template":  "sink-empty",
+        "InstallExit":  0,
+        "BuildExit":  1
+    },
+    {
+        "Template":  "synaptic",
+        "InstallExit":  0,
+        "BuildExit":  1
+    }
+]

@@ -1,13 +1,13 @@
 {
   "api": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6"
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.23",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14"
     }
   },
   "atomic": {
@@ -21,12 +21,12 @@
   },
   "core": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6"
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14"
     }
   },
   "golden-atomic": {
@@ -40,59 +40,59 @@
   },
   "golden-api": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6"
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.23",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14"
     }
   },
   "golden-core": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6"
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14"
     }
   },
   "golden-ref-arch": {},
   "golden-synaptic": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
-      "@fathym/synaptic": "jsr:@fathym/synaptic@0",
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.23",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.291",
       "html-to-text": "npm:html-to-text@9.0.5",
-      "@langchain/community": "npm:@langchain/community@0.3.0",
-      "@langchain/core": "npm:@langchain/core@0.3.1",
-      "@langchain/langgraph": "npm:@langchain/langgraph@0.2.3",
+      "@langchain/community": "npm:@langchain/community@0.3.51",
+      "@langchain/core": "npm:@langchain/core@0.3.71",
+      "@langchain/langgraph": "npm:@langchain/langgraph@0.4.5",
       "pdf-parse": "npm:pdf-parse@1.1.1",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6",
-      "zod": "npm:zod@3.23.8"
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14",
+      "zod": "npm:zod@3.25.76"
     }
   },
   "golden-web": {
     "imports": {
-      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0",
-      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0",
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.101",
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.23",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
       "preact": "npm:preact@10.20.1",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6",
-      "tailwindcss": "npm:tailwindcss@3.4.1",
-      "tailwindcss/": "npm:/tailwindcss@3.4.1/",
-      "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14",
+      "tailwindcss": "npm:tailwindcss@3.4.17",
+      "tailwindcss/": "npm:/tailwindcss@3.4.17/",
+      "tailwindcss/plugin": "npm:/tailwindcss@3.4.17/plugin.js",
       "tailwindcss/unimportant": "npm:tailwindcss-unimportant@2.1.1"
     },
     "compilerOptions": {
@@ -103,19 +103,19 @@
   "library": {},
   "preact": {
     "imports": {
-      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0",
-      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0",
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
+      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.101",
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.23",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
       "preact": "npm:preact@10.20.1",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6",
-      "tailwindcss": "npm:tailwindcss@3.4.1",
-      "tailwindcss/": "npm:/tailwindcss@3.4.1/",
-      "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14",
+      "tailwindcss": "npm:tailwindcss@3.4.17",
+      "tailwindcss/": "npm:/tailwindcss@3.4.17/",
+      "tailwindcss/plugin": "npm:/tailwindcss@3.4.17/plugin.js",
       "tailwindcss/unimportant": "npm:tailwindcss-unimportant@2.1.1"
     },
     "compilerOptions": {
@@ -125,28 +125,28 @@
   },
   "sink": {
     "imports": {
-      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0",
-      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0",
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
-      "@fathym/synaptic": "jsr:@fathym/synaptic@0",
+      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.101",
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.23",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.291",
       "html-to-text": "npm:html-to-text@9.0.5",
-      "@langchain": "npm:@langchain@0.3.9",
-      "@langchain/community": "npm:@langchain/community@0.3.22",
-      "@langchain/core": "npm:@langchain/core@0.3.27",
-      "@langchain/langgraph": "npm:@langchain/langgraph@0.2.39",
+      "@langchain": "npm:langchain@0.3.30",
+      "@langchain/community": "npm:@langchain/community@0.3.51",
+      "@langchain/core": "npm:@langchain/core@0.3.71",
+      "@langchain/langgraph": "npm:@langchain/langgraph@0.4.5",
       "pdf-parse": "npm:pdf-parse@1.1.1",
       "preact": "npm:preact@10.20.1",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6",
-      "tailwindcss": "npm:tailwindcss@3.4.1",
-      "tailwindcss/": "npm:/tailwindcss@3.4.1/",
-      "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14",
+      "tailwindcss": "npm:tailwindcss@3.4.17",
+      "tailwindcss/": "npm:/tailwindcss@3.4.17/",
+      "tailwindcss/plugin": "npm:/tailwindcss@3.4.17/plugin.js",
       "tailwindcss/unimportant": "npm:tailwindcss-unimportant@2.1.1",
-      "zod": "npm:zod@3.23.8"
+      "zod": "npm:zod@3.25.76"
     },
     "compilerOptions": {
       "jsx": "react-jsx",
@@ -155,28 +155,28 @@
   },
   "sink-empty": {
     "imports": {
-      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0",
-      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0",
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
-      "@fathym/synaptic": "jsr:@fathym/synaptic@0",
+      "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.101",
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.23",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.291",
       "html-to-text": "npm:html-to-text@9.0.5",
-      "@langchain": "npm:@langchain@0.3.9",
-      "@langchain/community": "npm:@langchain/community@0.3.22",
-      "@langchain/core": "npm:@langchain/core@0.3.27",
-      "@langchain/langgraph": "npm:@langchain/langgraph@0.2.39",
+      "@langchain": "npm:langchain@0.3.30",
+      "@langchain/community": "npm:@langchain/community@0.3.51",
+      "@langchain/core": "npm:@langchain/core@0.3.71",
+      "@langchain/langgraph": "npm:@langchain/langgraph@0.4.5",
       "pdf-parse": "npm:pdf-parse@1.1.1",
       "preact": "npm:preact@10.20.1",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6",
-      "tailwindcss": "npm:tailwindcss@3.4.1",
-      "tailwindcss/": "npm:/tailwindcss@3.4.1/",
-      "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14",
+      "tailwindcss": "npm:tailwindcss@3.4.17",
+      "tailwindcss/": "npm:/tailwindcss@3.4.17/",
+      "tailwindcss/plugin": "npm:/tailwindcss@3.4.17/plugin.js",
       "tailwindcss/unimportant": "npm:tailwindcss-unimportant@2.1.1",
-      "zod": "npm:zod@3.23.8"
+      "zod": "npm:zod@3.25.76"
     },
     "compilerOptions": {
       "jsx": "react-jsx",
@@ -185,21 +185,24 @@
   },
   "synaptic": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0",
-      "@fathym/eac": "jsr:@fathym/eac@0",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0",
-      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0",
-      "@fathym/ioc": "jsr:@fathym/ioc@0",
-      "@fathym/synaptic": "jsr:@fathym/synaptic@0",
+      "@fathym/common": "jsr:@fathym/common@0.2.267",
+      "@fathym/eac": "jsr:@fathym/eac@0.2.122",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.191",
+      "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.23",
+      "@fathym/ioc": "jsr:@fathym/ioc@0.0.14",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.291",
       "html-to-text": "npm:html-to-text@9.0.5",
-      "@langchain": "npm:@langchain@0.3.9",
-      "@langchain/community": "npm:@langchain/community@0.3.22",
-      "@langchain/core": "npm:@langchain/core@0.3.27",
-      "@langchain/langgraph": "npm:@langchain/langgraph@0.2.39",
+      "@langchain": "npm:langchain@0.3.30",
+      "@langchain/community": "npm:@langchain/community@0.3.51",
+      "@langchain/core": "npm:@langchain/core@0.3.71",
+      "@langchain/langgraph": "npm:@langchain/langgraph@0.4.5",
       "pdf-parse": "npm:pdf-parse@1.1.1",
-      "@std/assert": "jsr:@std/assert@1.0.6",
-      "@std/log": "jsr:@std/log@0.224.6",
-      "zod": "npm:zod@3.23.8"
+      "@std/assert": "jsr:@std/assert@1.0.14",
+      "@std/log": "jsr:@std/log@0.224.14",
+      "zod": "npm:zod@3.25.76"
     }
   }
 }
+
+
+

@@ -1,4 +1,4 @@
-import { marked } from 'npm:marked@15.0.1';
+import { marked } from 'npm:marked@16.3.0';
 import { Thinky, type ThinkyProps } from '@fathym/atomic';
 
 export const IsIsland = true;
@@ -16,3 +16,4 @@ export default function CompanyThinky(props: CompanyThinkyProps) {
     />
   );
 }
+
