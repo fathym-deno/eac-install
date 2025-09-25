@@ -12,3 +12,8 @@ denoKv/
 # Testing
 cov/
 local_test/
+# Installer harness artifacts
+/tests/tmp/
+/tests/reports/
+
+test/

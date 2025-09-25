@@ -28,6 +28,18 @@
         "${workspaceFolder}/install.ts"
       ],
       "attachSimplePort": 9229
+    },
+    {
+      "request": "launch",
+      "name": "Installer Test Harness",
+      "type": "node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "deno.exe",
+      "runtimeArgs": [
+        "task",
+        "test:installer"
+      ],
+      "attachSimplePort": 9229
     }
   ]
 }
