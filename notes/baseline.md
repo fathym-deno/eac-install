@@ -10,7 +10,7 @@
 - jsr:@std/jsonc@1.0.1
 - jsr:@std/path@1.0.1
 - jsr:@std/streams@1.0.9/to-text
-- jsr:@fathym/common@0.2.273 (path, merge, build types)
+- jsr:@fathym/common@0.2.178 (path, merge, build types)
 
 ## config/denoConfigOverrides.jsonc
 - Most templates pin @fathym packages to jsr:@fathym/*@0

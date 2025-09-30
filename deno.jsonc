@@ -13,7 +13,7 @@
     "publish:check": "deno publish --dry-run --allow-dirty",
     "test": "deno test -A ./tests/tests.ts --coverage=cov",
     "test:installer": "deno run -A tests/installer/main.ts --all",
-    "version": "deno run -A jsr:@fathym/common@0/build/version"
+    "version": "deno run -A jsr:@fathym/common@0.2.267/build/version"
   },
   "imports": {},
   "exclude": ["**/_eac-runtime/*"],

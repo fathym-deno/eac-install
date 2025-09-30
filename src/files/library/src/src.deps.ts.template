@@ -1,1 +1,1 @@
-export * from 'jsr:@fathym/common@0.2.273';
+export * from 'jsr:@fathym/common@0.2.267';
