@@ -13,7 +13,7 @@
     "deploy": "npx rimraf cov && deno task build && ftm git",
     "publish:check": "deno publish --dry-run --allow-dirty",
     "test": "npx rimraf cov && deno test -A ./tests/tests.ts --coverage=cov",
-    "version": "deno run -A jsr:@fathym/common@0.2.267/build/version"
+    "version": "deno run -A jsr:@fathym/common@0/build/version"
   },
   "imports": {},
   "exclude": ["**/_eac-runtime/*", "!src/**/.exports.ts", "!mod.ts"],
