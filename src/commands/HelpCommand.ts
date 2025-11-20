@@ -14,12 +14,13 @@ export class HelpCommand implements Command {
 Install a new EaC Runtime project in the current directory.
 
 USAGE:
-  deno run -A install.ts [--template <name>] [--force] [--preact=<bool>] [--tailwind=<bool>]
+  deno run -A install.ts [--template <name>] [--dir <path>] [--force] [--preact=<bool>] [--tailwind=<bool>]
 
 OPTIONS:
   -h, --help           Show this message
   -f, --force          Overwrite existing files
   --template <name>    Select template (default: core)
+  --dir <path>         Target install directory (default: --dir if set, else PWD, else cwd)
   --preact=<bool>      Control inclusion of Preact assets (default: true)
   --tailwind=<bool>    Control inclusion of Tailwind assets (default: true)
 
