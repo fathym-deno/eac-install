@@ -1,6 +1,7 @@
 # Dependency Targets (2025-09-23)
 
 ## JSR
+
 - @fathym/common: 0.2.267
 - @fathym/eac: 0.2.122
 - @fathym/eac-applications: 0.0.191
@@ -20,6 +21,7 @@
 - @std/log: 0.224.14
 
 ## npm
+
 - preact: 10.27.2
 - tailwindcss: 3.4.17 (stay on v3 for compatibility)
 - tailwindcss-unimportant: 2.1.1 (latest)
@@ -32,4 +34,3 @@
 - @langchain/langgraph: 0.4.5
 - langchain: 0.3.30 (use instead of invalid @langchain alias)
 - @azure/search-documents: 12.1.0 (latest)
-

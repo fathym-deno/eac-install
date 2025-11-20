@@ -1,9 +1,9 @@
-import { parseJsonc } from '../install.deps.ts';
-import { Command } from './Command.ts';
+import { parseJsonc } from "../install.deps.ts";
+import { Command } from "./Command.ts";
 
 export class HelpCommand implements Command {
   public async Run(): Promise<void> {
-    const installFilesUrl = import.meta.resolve('../../config/installFiles.jsonc');
+    const installFilesUrl = import.meta.resolve("../../config/installFiles.jsonc");
     const installFilesResp = await fetch(installFilesUrl);
     const installFileSets = parseJsonc(await installFilesResp.text()) as Record<string, unknown>;
 
@@ -24,7 +24,7 @@ OPTIONS:
   --tailwind=<bool>    Control inclusion of Tailwind assets (default: true)
 
 AVAILABLE TEMPLATES:
-  ${templates.map((name) => `- ${name}`).join('\n  ')}
+  ${templates.map((name) => `- ${name}`).join("\n  ")}
 
 EXAMPLES:
   deno run -A install.ts --template core
