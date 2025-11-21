@@ -6,9 +6,9 @@ import {
   parseJsonc,
   path,
   toText,
-} from '../install.deps.ts';
-import { EaCRuntimeInstallerFlags } from '../../install.ts';
-import { Command } from './Command.ts';
+} from "../install.deps.ts";
+import { EaCRuntimeInstallerFlags } from "../../install.ts";
+import { Command } from "./Command.ts";
 
 export class InstallCommand implements Command {
   constructor(protected flags: EaCRuntimeInstallerFlags) {}
@@ -17,15 +17,15 @@ export class InstallCommand implements Command {
     console.log(`Installing Fathym's EaC Runtime...`);
 
     const configOverridesResp = await fetch(
-      import.meta.resolve('../../config/denoConfigOverrides.jsonc')
+      import.meta.resolve("../../config/denoConfigOverrides.jsonc"),
     );
 
     const configOverrides = parseJsonc(
-      await configOverridesResp.text()
+      await configOverridesResp.text(),
     ) as Record<string, Record<string, DenoConfig>>;
 
     const filesRes = await fetch(
-      import.meta.resolve('../../config/installFiles.jsonc')
+      import.meta.resolve("../../config/installFiles.jsonc"),
     );
 
     const fileSets = parseJsonc(await filesRes.text()) as Record<
@@ -33,12 +33,12 @@ export class InstallCommand implements Command {
       [string, string, ((contents: string) => string)?][]
     >;
 
-    const configToOverride = configOverrides[this.flags.template ?? 'core'];
+    const configToOverride = configOverrides[this.flags.template ?? "core"];
 
-    const filesToCreate = fileSets[this.flags.template ?? 'core'];
+    const filesToCreate = fileSets[this.flags.template ?? "core"];
 
     filesToCreate
-      .find(([_fromFile, toFile]) => toFile === './deno.jsonc')
+      .find(([_fromFile, toFile]) => toFile === "./deno.jsonc")
       ?.push((contents: string) =>
         this.ensureDenoConfigSetup(contents, configToOverride)
       );
@@ -52,18 +52,18 @@ export class InstallCommand implements Command {
     installDirectory: string,
     filePath: string,
     outputFilePath: string,
-    transformer?: (contents: string) => string
+    transformer?: (contents: string) => string,
   ): Promise<void> {
     const outputTo = path.join(installDirectory, outputFilePath);
 
     if (!(await exists(outputTo))) {
       const dir = await path.dirname(outputTo);
 
-      dir.split('\\').reduce((path, next) => {
+      dir.split("\\").reduce((path, next) => {
         path.push(next);
 
-        if (!existsSync(path.join('\\'))) {
-          Deno.mkdirSync(path.join('\\'));
+        if (!existsSync(path.join("\\"))) {
+          Deno.mkdirSync(path.join("\\"));
         }
 
         return path;
@@ -74,8 +74,8 @@ export class InstallCommand implements Command {
       let fileContents = await toText(file);
 
       fileContents = fileContents
-        .replaceAll('.ts.template', '.ts')
-        .replaceAll('.tsx.template', '.tsx');
+        .replaceAll(".ts.template", ".ts")
+        .replaceAll(".tsx.template", ".tsx");
 
       if (transformer) {
         const transformed = transformer(fileContents);
@@ -97,41 +97,41 @@ export class InstallCommand implements Command {
 
   protected ensureDenoConfigSetup(
     contents: string,
-    denoConfigOverrides: Record<string, unknown>
+    denoConfigOverrides: Record<string, unknown>,
   ): string {
     // Is there a Deno type that represents the configuration file?
     let config: Record<string, unknown> = JSON.parse(contents);
 
     config = mergeWithArrays(config, denoConfigOverrides ?? {});
 
-    const configStr = JSON.stringify(config, null, 2) + '\n';
+    const configStr = JSON.stringify(config, null, 2) + "\n";
 
     return configStr;
   }
 
   protected async ensureFilesCreated(
     installDirectory: string,
-    filesToCreate: [string, string, ((contents: string) => string)?][]
+    filesToCreate: [string, string, ((contents: string) => string)?][],
   ): Promise<void> {
     for (const [inputFile, outputFile, transformer] of filesToCreate) {
       await this.copyTemplateFile(
         installDirectory,
         inputFile,
         outputFile,
-        transformer
+        transformer,
       );
     }
   }
 
   protected async openTemplateFile(
-    filePath: string
+    filePath: string,
   ): Promise<ReadableStream<Uint8Array>> {
     const fileUrl = new URL(filePath, import.meta.url);
 
-    if (fileUrl.protocol.startsWith('http')) {
+    if (fileUrl.protocol.startsWith("http")) {
       const fileResp = await fetch(fileUrl, {
         headers: {
-          'user-agent': 'Deno\\',
+          "user-agent": "Deno\\",
         },
       });
 
@@ -146,7 +146,7 @@ export class InstallCommand implements Command {
   }
 
   protected async ensureInstallDirectoryExists(
-    installDirectory: string
+    installDirectory: string,
   ): Promise<void> {
     if (!(await exists(installDirectory))) {
       await Deno.mkdir(installDirectory, { recursive: true });
@@ -162,7 +162,7 @@ export class InstallCommand implements Command {
       return resolved;
     }
 
-    const pwd = Deno.env.get('PWD');
+    const pwd = Deno.env.get("PWD");
 
     if (pwd) {
       // Respect the user's original shell directory when running via deno task
@@ -173,7 +173,7 @@ export class InstallCommand implements Command {
       return resolved;
     }
 
-    const resolved = path.resolve('.');
+    const resolved = path.resolve(".");
 
     await this.ensureInstallDirectoryExists(resolved);
 

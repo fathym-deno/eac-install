@@ -108,7 +108,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
                 ['local:apps/components', ['tsx']],
                 ['local:apps/home', ['tsx']],
                 ['local:apps/islands', ['tsx']],
-                ['jsr:@fathym/atomic@0.0.185', ['tsx']],
+                ['jsr:@fathym/atomic@0.0.188-integration', ['tsx']],
                 ['jsr:@fathym/atomic-design-kit@0.0.243', ['tsx']],
               ],
             } as EaCPreactAppProcessor,
@@ -124,7 +124,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
                 'local:apps/components',
                 'local:apps/home',
                 'local:apps/islands',
-                'jsr:@fathym/atomic@0.0.185',
+                'jsr:@fathym/atomic@0.0.188-integration',
                 'jsr:@fathym/atomic-design-kit@0.0.243',
               ],
               ConfigPath: './tailwind.config.ts',
@@ -168,7 +168,7 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Extensions: ['tsx'],
             } as EaCLocalDistributedFileSystemDetails,
           },
-          'jsr:@fathym/atomic@0.0.185': {
+          'jsr:@fathym/atomic@0.0.188-integration': {
             Details: {
               Type: 'JSR',
               Package: '@fathym/atomic',

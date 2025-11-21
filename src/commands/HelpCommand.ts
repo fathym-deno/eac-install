@@ -3,9 +3,14 @@ import { Command } from "./Command.ts";
 
 export class HelpCommand implements Command {
   public async Run(): Promise<void> {
-    const installFilesUrl = import.meta.resolve("../../config/installFiles.jsonc");
+    const installFilesUrl = import.meta.resolve(
+      "../../config/installFiles.jsonc",
+    );
     const installFilesResp = await fetch(installFilesUrl);
-    const installFileSets = parseJsonc(await installFilesResp.text()) as Record<string, unknown>;
+    const installFileSets = parseJsonc(await installFilesResp.text()) as Record<
+      string,
+      unknown
+    >;
 
     const templates = Object.keys(installFileSets).sort();
 

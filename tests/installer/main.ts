@@ -96,12 +96,16 @@ async function checkCleanWorkingTree(allowDirty: boolean) {
     if (result.code !== 0) {
       const stderr = decoder.decode(result.stderr).trim();
       const stdout = decoder.decode(result.stdout).trim();
-      throw new Error(`git status failed (${result.code}): ${stderr || stdout}`);
+      throw new Error(
+        `git status failed (${result.code}): ${stderr || stdout}`,
+      );
     }
 
     const stdout = decoder.decode(result.stdout).trim();
     if (stdout.length > 0) {
-      throw new Error("Working tree is dirty. Commit, stash, or rerun with --allow-dirty.");
+      throw new Error(
+        "Working tree is dirty. Commit, stash, or rerun with --allow-dirty.",
+      );
     }
   } catch (error) {
     if (error instanceof Error && error.message.includes("git")) {
@@ -261,7 +265,9 @@ async function main() {
 
   console.log("\nSummary report:", reportPath);
   for (const result of templateResults) {
-    const checks = [result.install, result.build].filter(Boolean) as StepResult[];
+    const checks = [result.install, result.build].filter(
+      Boolean,
+    ) as StepResult[];
     const ok = checks.every((step) => step.status === "pass");
     console.log(`${ok ? "OK" : "FAIL"} ${result.name}`);
   }
