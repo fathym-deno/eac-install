@@ -3,7 +3,7 @@
     "imports": {
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
       "@std/assert": "jsr:@std/assert@1.0.14",
@@ -23,7 +23,7 @@
     "imports": {
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
       "@std/assert": "jsr:@std/assert@1.0.14",
       "@std/log": "jsr:@std/log@0.224.14"
@@ -42,7 +42,7 @@
     "imports": {
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
       "@std/assert": "jsr:@std/assert@1.0.14",
@@ -53,7 +53,7 @@
     "imports": {
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
       "@std/assert": "jsr:@std/assert@1.0.14",
       "@std/log": "jsr:@std/log@0.224.14"
@@ -64,10 +64,10 @@
     "imports": {
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
-      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.293",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.306-hmis",
       "html-to-text": "npm:html-to-text@9.0.5",
       "@langchain/community": "npm:@langchain/community@0.3.51",
       "@langchain/core": "npm:@langchain/core@0.3.71",
@@ -81,10 +81,10 @@
   "golden-web": {
     "imports": {
       "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
-      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.103",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.109-integration",
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
       "preact": "npm:preact@10.20.1",
@@ -104,10 +104,10 @@
   "preact": {
     "imports": {
       "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
-      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.103",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.109-integration",
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
       "preact": "npm:preact@10.20.1",
@@ -126,13 +126,13 @@
   "sink": {
     "imports": {
       "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
-      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.103",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.109-integration",
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
-      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.293",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.306-hmis",
       "html-to-text": "npm:html-to-text@9.0.5",
       "@langchain": "npm:langchain@0.3.30",
       "@langchain/community": "npm:@langchain/community@0.3.51",
@@ -156,13 +156,13 @@
   "sink-empty": {
     "imports": {
       "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
-      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.103",
+      "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.109-integration",
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
-      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.293",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.306-hmis",
       "html-to-text": "npm:html-to-text@9.0.5",
       "@langchain": "npm:langchain@0.3.30",
       "@langchain/community": "npm:@langchain/community@0.3.51",
@@ -187,10 +187,10 @@
     "imports": {
       "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
-      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.242-mcp-processor",
+      "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
-      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.293",
+      "@fathym/synaptic": "jsr:@fathym/synaptic@0.0.306-hmis",
       "html-to-text": "npm:html-to-text@9.0.5",
       "@langchain": "npm:langchain@0.3.30",
       "@langchain/community": "npm:@langchain/community@0.3.51",
