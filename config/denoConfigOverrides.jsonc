@@ -1,7 +1,7 @@
 {
   "api": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
@@ -21,7 +21,7 @@
   },
   "core": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
@@ -40,7 +40,7 @@
   },
   "golden-api": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
@@ -51,7 +51,7 @@
   },
   "golden-core": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/ioc": "jsr:@fathym/ioc@0.0.21",
@@ -62,7 +62,7 @@
   "golden-ref-arch": {},
   "golden-synaptic": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
@@ -82,7 +82,7 @@
     "imports": {
       "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
       "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.109-integration",
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
@@ -105,7 +105,7 @@
     "imports": {
       "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
       "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.109-integration",
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
@@ -127,7 +127,7 @@
     "imports": {
       "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
       "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.109-integration",
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
@@ -157,7 +157,7 @@
     "imports": {
       "@fathym/atomic": "jsr:@fathym/atomic-design-kit@0.0.243",
       "@fathym/atomic-icons": "jsr:@fathym/atomic-icons@0.0.109-integration",
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
@@ -185,7 +185,7 @@
   },
   "synaptic": {
     "imports": {
-      "@fathym/common": "jsr:@fathym/common@0.2.289-integration",
+      "@fathym/common": "jsr:@fathym/common@0.2.292-integration",
       "@fathym/eac": "jsr:@fathym/eac@0.2.141-hmis",
       "@fathym/eac-applications": "jsr:@fathym/eac-applications@0.0.243-mcp-processor",
       "@fathym/eac-deno-kv": "jsr:@fathym/eac-deno-kv@0.0.29-integration",
