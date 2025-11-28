@@ -4,6 +4,6 @@ export { parse as parseJsonc } from "jsr:@std/jsonc@1.0.2";
 export * as path from "jsr:@std/path@1.1.2";
 export { toText } from "jsr:@std/streams@1.0.12/to-text";
 
-export * from "jsr:@fathym/common@0.2.297/path";
-export * from "jsr:@fathym/common@0.2.297/merge";
-export type { DenoConfig } from "jsr:@fathym/common@0.2.297/build";
+export * from "jsr:@fathym/common@0.2.299/path";
+export * from "jsr:@fathym/common@0.2.299/merge";
+export type { DenoConfig } from "jsr:@fathym/common@0.2.299/build";
