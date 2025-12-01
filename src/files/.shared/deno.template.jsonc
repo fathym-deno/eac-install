@@ -15,7 +15,7 @@
     "build:main": "deno run -A main.ts build",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "clean:docker": "docker stop www_xxx_yyy_zzz || true && docker rm www_xxx_yyy_zzz || true",
-    "deploy": "npx rimraf cov && deno task build && deno task test && npx fathym git",
+    "deploy": "npx rimraf cov && deno task build && deno task publish:check && deno task test && npx fathym git",
     "deploy:docker": "docker run --name www_xxx_yyy_zzz --network eac-runtimes --env-file .env.docker -dp 127.0.0.1:3000:3000 www_xxx_yyy_zzz",
     "dev": "deno run -A --watch=apps/,configs/,data/,routes/,src/,static/ dev.ts",
     "network:docker": "docker network create eac-runtimes || true",

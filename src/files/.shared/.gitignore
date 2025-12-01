@@ -11,3 +11,5 @@ denoKv/
 
 # Testing
 cov/
+
+.logs/runtime-*.jsonl

@@ -11,6 +11,8 @@ denoKv/
 
 # Testing
 cov/
+
+.logs/runtime-*.jsonl
 local_test/
 # Installer harness artifacts
 /tests/tmp/
