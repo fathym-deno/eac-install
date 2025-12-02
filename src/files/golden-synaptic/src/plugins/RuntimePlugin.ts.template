@@ -96,9 +96,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'Local',
               FileRoot: './circuits/',
               Extensions: ['.ts'],
-              WorkerPath: import.meta.resolve(
-                '@fathym/eac/dfs/workers/local',
-              ),
             } as EaCLocalDistributedFileSystemDetails,
           },
         },

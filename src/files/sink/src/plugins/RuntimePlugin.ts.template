@@ -266,7 +266,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'Local',
               FileRoot: './circuits/',
               Extensions: ['.ts'],
-              WorkerPath: import.meta.resolve('@fathym/eac/dfs/workers/local'),
             } as EaCLocalDistributedFileSystemDetails,
           },
           'jsr:@fathym/atomic@0.0.188-integration': {
@@ -274,7 +273,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'JSR',
               Package: '@fathym/atomic',
               Version: '',
-              WorkerPath: import.meta.resolve('@fathym/eac/dfs/workers/jsr'),
             } as EaCJSRDistributedFileSystemDetails,
           },
           'jsr:@fathym/atomic-design-kit@0.0.243': {
@@ -282,7 +280,6 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
               Type: 'JSR',
               Package: '@fathym/atomic-design-kit',
               Version: '',
-              WorkerPath: import.meta.resolve('@fathym/eac/dfs/workers/jsr'),
             } as EaCJSRDistributedFileSystemDetails,
           },
         },
