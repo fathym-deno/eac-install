@@ -28,7 +28,7 @@
 - marked: 16.3.0
 - html-to-text: 9.0.5 (latest)
 - pdf-parse: 1.1.1 (latest)
-- zod: 3.25.76 (latest v3)
+- zod: 4.1.13 (latest v3)
 - @langchain/community: 0.3.51
 - @langchain/core: 0.3.71
 - @langchain/langgraph: 0.4.5

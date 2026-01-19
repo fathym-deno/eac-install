@@ -271,15 +271,13 @@ export default class RuntimePlugin implements EaCRuntimePlugin {
           'jsr:@fathym/atomic@0.0.188-integration': {
             Details: {
               Type: 'JSR',
-              Package: '@fathym/atomic',
-              Version: '',
+              Specifier: '@fathym/atomic',
             } as EaCJSRDistributedFileSystemDetails,
           },
           'jsr:@fathym/atomic-design-kit@0.0.243': {
             Details: {
               Type: 'JSR',
-              Package: '@fathym/atomic-design-kit',
-              Version: '',
+              Specifier: '@fathym/atomic-design-kit',
             } as EaCJSRDistributedFileSystemDetails,
           },
         },

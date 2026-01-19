@@ -5,7 +5,8 @@
     ".": "./install.ts"
   },
   "tasks": {
-    "build": "deno task build:fmt && deno task build:lint && deno task publish:check && deno task test",
+    "build": "deno task build:fmt && deno task build:lint && deno task build:check && deno task publish:check && deno task test",
+    "build:check": "deno check **/*.ts && deno check **/*.tsx",
     "build:fmt": "deno fmt",
     "build:lint": "deno lint",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
@@ -13,7 +14,7 @@
     "publish:check": "deno publish --dry-run --allow-dirty",
     "test": "deno test -A ./tests/tests.ts --coverage=cov",
     "test:installer": "deno run -A tests/installer/main.ts --all",
-    "version": "deno run -A jsr:@fathym/common@0.2.299/build/version"
+    "version": "deno run -A jsr:@fathym/common@0.2.310-common-release/build/version"
   },
   "imports": {},
   "exclude": ["**/_eac-runtime/*"],

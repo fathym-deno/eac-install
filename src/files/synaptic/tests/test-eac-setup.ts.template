@@ -1,12 +1,13 @@
 import {
-  buildEaCTestIoC,
   EaCRuntimePlugin,
   EverythingAsCode,
   EverythingAsCodeSynaptic,
 } from './tests.deps.ts';
+import {
+  AI_LOOKUP,
+  buildTestIoC as baseBuildTestIoC,
+} from '@fathym/eac-apps-pack/testing/test-eac-setup.ts';
 import RuntimePlugin from '../src/plugins/RuntimePlugin.ts';
-
-export const AI_LOOKUP = 'core';
 
 const testEaC = {} as EverythingAsCodeSynaptic;
 
@@ -16,7 +17,7 @@ export async function buildTestIoC(
   useDefault = true,
   useDefaultPlugins = false,
 ) {
-  return await buildEaCTestIoC(
+  return await baseBuildTestIoC(
     useDefault ? testEaC : {},
     eac,
     plugins,

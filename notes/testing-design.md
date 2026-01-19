@@ -2,7 +2,8 @@
 
 ## CLI Sketch
 
-- Entry: `deno run -A tests/installer/main.ts [--template <name>] [--all] [--keep] [--json <path>]`
+- Entry:
+  `deno run -A tests/installer/main.ts [--template <name>] [--all] [--keep] [--json <path>]`
 - Defaults:
   - If neither `--template` nor `--all` is provided, run core template.
   - `--keep` skips cleanup for debugging.
@@ -31,7 +32,8 @@
 ## Cleanup Strategy
 
 - Create runs under `tests/tmp/<timestamp>/<template>`.
-- Remove directories on success; retain when `--keep` or on failure for inspection.
+- Remove directories on success; retain when `--keep` or on failure for
+  inspection.
 - Ensure `tests/tmp/` and `tests/reports/` are git-ignored.
 
 ## Safety Rails
