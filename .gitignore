@@ -11,6 +11,7 @@ denoKv/
 
 # Testing
 cov/
+tests/.temp/
 
 .logs/runtime-*.jsonl
 local_test/

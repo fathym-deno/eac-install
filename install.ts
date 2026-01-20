@@ -1,50 +1,15 @@
-import { colors, parseArgs } from "./src/install.deps.ts";
-import { Command } from "./src/commands/Command.ts";
-import { HelpCommand } from "./src/commands/HelpCommand.ts";
-import { InstallCommand } from "./src/commands/InstallCommand.ts";
+/**
+ * Entry point for the EaC Install CLI.
+ *
+ * This module runs the ftm-eac-install CLI when executed directly.
+ * It can be invoked with: `deno run -A jsr:@fathym/eac-install`
+ *
+ * @module
+ */
 
-export const fathymGreen: colors.Rgb = { r: 74, g: 145, b: 142 };
+import CLI from './.cli.ts';
+import { Execute, Runner } from '@fathym/cli';
 
-// TODO(mcgear): Check that minimum deno version is met
-
-export type EaCRuntimeInstallerFlags = {
-  dir?: string;
-  force?: boolean;
-  help?: boolean;
-  preact?: boolean;
-  tailwind?: boolean;
-  template?: string;
-};
-
-const flags: EaCRuntimeInstallerFlags = parseArgs(Deno.args, {
-  boolean: ["force", "help", "preact", "tailwind"],
-  string: ["dir", "template"],
-  default: {
-    force: undefined,
-    preact: true,
-    tailwind: true,
-    template: "core",
-  },
-  alias: {
-    force: "f",
-    help: "h",
-  },
-});
-
-console.log();
-console.log(colors.bgRgb24(" 🐙 EaC Runtime Installer ", fathymGreen));
-console.log();
-
-let command: Command | undefined;
-
-if (flags.help) {
-  command = new HelpCommand();
-} else {
-  command = new InstallCommand(flags);
-}
-
-if (command) {
-  await command.Run();
-}
-
-Deno.exit(0);
+await Runner()
+  .FromModuleBuilder(CLI, Deno.args)
+  .Run(Execute());

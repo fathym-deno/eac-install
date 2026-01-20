@@ -1,10 +1,10 @@
-import { parse as parseJsonc } from "jsr:@std/jsonc@1.0.2";
-import { ensureDir } from "jsr:@std/fs@1.0.3/ensure-dir";
-import { dirname, join } from "jsr:@std/path@1.1.2";
+import { parse as parseJsonc } from 'jsr:@std/jsonc@1.0.2';
+import { ensureDir } from 'jsr:@std/fs@1.0.3/ensure-dir';
+import { dirname, join } from 'jsr:@std/path@1.1.2';
 
 const decoder = new TextDecoder();
 
-type StepStatus = "pass" | "fail";
+type StepStatus = 'pass' | 'fail';
 
 interface Options {
   templates?: string[];
@@ -47,30 +47,30 @@ function parseArgs(argv: string[]): Options {
   for (let idx = 0; idx < argv.length; idx++) {
     const arg = argv[idx];
     switch (arg) {
-      case "--template": {
+      case '--template': {
         opts.templates ??= [];
         const value = argv[++idx];
         if (!value) {
-          throw new Error("--template requires a value");
+          throw new Error('--template requires a value');
         }
         opts.templates.push(value);
         break;
       }
-      case "--all":
+      case '--all':
         opts.all = true;
         break;
-      case "--keep":
+      case '--keep':
         opts.keep = true;
         break;
-      case "--json": {
+      case '--json': {
         const value = argv[++idx];
         if (!value) {
-          throw new Error("--json requires a value");
+          throw new Error('--json requires a value');
         }
         opts.jsonPath = value;
         break;
       }
-      case "--allow-dirty":
+      case '--allow-dirty':
         opts.allowDirty = true;
         break;
       default:
@@ -87,10 +87,10 @@ async function checkCleanWorkingTree(allowDirty: boolean) {
   }
 
   try {
-    const gitStatus = new Deno.Command("git", {
-      args: ["status", "--porcelain"],
-      stdout: "piped",
-      stderr: "piped",
+    const gitStatus = new Deno.Command('git', {
+      args: ['status', '--porcelain'],
+      stdout: 'piped',
+      stderr: 'piped',
     });
     const result = await gitStatus.output();
     if (result.code !== 0) {
@@ -104,11 +104,11 @@ async function checkCleanWorkingTree(allowDirty: boolean) {
     const stdout = decoder.decode(result.stdout).trim();
     if (stdout.length > 0) {
       throw new Error(
-        "Working tree is dirty. Commit, stash, or rerun with --allow-dirty.",
+        'Working tree is dirty. Commit, stash, or rerun with --allow-dirty.',
       );
     }
   } catch (error) {
-    if (error instanceof Error && error.message.includes("git")) {
+    if (error instanceof Error && error.message.includes('git')) {
       console.warn(`??  Unable to verify git status: ${error.message}`);
       return;
     }
@@ -117,7 +117,7 @@ async function checkCleanWorkingTree(allowDirty: boolean) {
 }
 
 async function loadTemplateNames(): Promise<string[]> {
-  const raw = await Deno.readTextFile("config/installFiles.jsonc");
+  const raw = await Deno.readTextFile('config/installFiles.jsonc');
   const parsed = parseJsonc(raw) as Record<string, unknown>;
   return Object.keys(parsed).sort();
 }
@@ -132,8 +132,8 @@ async function runCommand(
   const command = new Deno.Command(executable, {
     args,
     cwd,
-    stdout: "piped",
-    stderr: "piped",
+    stdout: 'piped',
+    stderr: 'piped',
   });
 
   const output = await command.output();
@@ -142,15 +142,15 @@ async function runCommand(
   const stderr = decoder.decode(output.stderr);
 
   const logBody = [
-    `command: ${[executable, ...args].join(" ")}`,
+    `command: ${[executable, ...args].join(' ')}`,
     `cwd: ${cwd}`,
     `exitCode: ${output.code}`,
-    "--- stdout ---",
+    '--- stdout ---',
     stdout.trimEnd(),
-    "--- stderr ---",
+    '--- stderr ---',
     stderr.trimEnd(),
-    "",
-  ].join("\n");
+    '',
+  ].join('\n');
 
   await Deno.writeTextFile(logPath, logBody, { create: true });
 
@@ -159,7 +159,7 @@ async function runCommand(
 
 function toStepResult(logPath: string, result: CommandResult): StepResult {
   return {
-    status: result.code === 0 ? "pass" : "fail",
+    status: result.code === 0 ? 'pass' : 'fail',
     code: result.code,
     durationMs: Math.round(result.durationMs),
     logPath,
@@ -181,7 +181,7 @@ async function main() {
   const options = parseArgs(Deno.args);
   const startedAt = new Date().toISOString();
   const repoRoot = Deno.cwd();
-  const installScript = join(repoRoot, "install.ts");
+  const installScript = join(repoRoot, 'install.ts');
 
   await checkCleanWorkingTree(options.allowDirty);
 
@@ -191,31 +191,31 @@ async function main() {
       if (options.all) {
         return availableTemplates;
       }
-      const fallback = availableTemplates[0] ?? "core";
+      const fallback = availableTemplates[0] ?? 'core';
       return [fallback];
     }
     return options.templates;
   })();
 
-  const runId = startedAt.replace(/[:.]/g, "-");
-  const tmpRoot = join("tests", "tmp", runId);
+  const runId = startedAt.replace(/[:.]/g, '-');
+  const tmpRoot = join('tests', 'tmp', runId);
   await ensureDir(tmpRoot);
 
   const templateResults: TemplateResult[] = [];
 
   for (const template of templates) {
     const templateRoot = join(tmpRoot, template);
-    const workDir = join(templateRoot, "work");
+    const workDir = join(templateRoot, 'work');
     await ensureDir(workDir);
     const logsDir = templateRoot;
 
     const notes: string[] = [];
 
     console.log(`\n[${template}] install`);
-    const installLog = join(logsDir, "install.log");
+    const installLog = join(logsDir, 'install.log');
     const installResult = await runCommand(
-      "deno",
-      ["run", "-A", installScript, "--template", template, "--force"],
+      'deno',
+      ['run', '-A', installScript, '--template', template, '--force'],
       workDir,
       installLog,
     );
@@ -223,24 +223,24 @@ async function main() {
 
     let buildStep: StepResult | undefined;
 
-    if (installStep.status === "pass") {
+    if (installStep.status === 'pass') {
       console.log(`[${template}] build`);
-      const buildLog = join(logsDir, "build.log");
+      const buildLog = join(logsDir, 'build.log');
       const buildResult = await runCommand(
-        "deno",
-        ["task", "build"],
+        'deno',
+        ['task', 'build'],
         workDir,
         buildLog,
       );
       buildStep = toStepResult(buildLog, buildResult);
 
-      if (buildStep.status === "pass" && !options.keep) {
+      if (buildStep.status === 'pass' && !options.keep) {
         await removeDirectory(workDir);
-      } else if (buildStep.status === "fail") {
-        notes.push("Build failed; work directory retained for inspection.");
+      } else if (buildStep.status === 'fail') {
+        notes.push('Build failed; work directory retained for inspection.');
       }
     } else {
-      notes.push("Install failed; build step skipped.");
+      notes.push('Install failed; build step skipped.');
     }
 
     templateResults.push({
@@ -258,23 +258,23 @@ async function main() {
     templates: templateResults,
   };
 
-  const defaultReportPath = join("tests", "reports", `${runId}.json`);
+  const defaultReportPath = join('tests', 'reports', `${runId}.json`);
   const reportPath = options.jsonPath ?? defaultReportPath;
   await ensureDir(dirname(reportPath));
   await Deno.writeTextFile(reportPath, JSON.stringify(summary, null, 2));
 
-  console.log("\nSummary report:", reportPath);
+  console.log('\nSummary report:', reportPath);
   for (const result of templateResults) {
     const checks = [result.install, result.build].filter(
       Boolean,
     ) as StepResult[];
-    const ok = checks.every((step) => step.status === "pass");
-    console.log(`${ok ? "OK" : "FAIL"} ${result.name}`);
+    const ok = checks.every((step) => step.status === 'pass');
+    console.log(`${ok ? 'OK' : 'FAIL'} ${result.name}`);
   }
 
   const anyFailures = templateResults.some((result) => {
-    if (result.install.status === "fail") return true;
-    if (result.build && result.build.status === "fail") return true;
+    if (result.install.status === 'fail') return true;
+    if (result.build && result.build.status === 'fail') return true;
     return false;
   });
 
