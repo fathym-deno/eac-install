@@ -18,7 +18,7 @@
     "version": "deno run -A jsr:@fathym/common@0.2.310-common-release/build/version"
   },
   "imports": {
-    "@fathym/cli": "jsr:@fathym/cli@0.0.247-InitCommand",
+    "@fathym/cli": "jsr:@fathym/cli@0.0.252-InitCommand",
     "zod": "npm:zod@4.1.13",
     "@std/path": "jsr:@std/path@1.0.9"
   },
