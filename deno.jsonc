@@ -2,17 +2,19 @@
   "name": "@fathym/eac-install",
   "version": "0.0.0",
   "exports": {
-    ".": "./install.ts",
-    "./ftm-eac-install": "./.exports.ts",
-    "./ftm-eac-install/commands": "./.dist/commands.exports.ts"
+    ".": "./.dist/cli.exports.ts",
+    "./commands": "./.dist/commands.exports.ts"
   },
   "tasks": {
-    "build": "deno task build:fmt && deno task build:lint && deno task build:check && deno task publish:check && deno task test",
-    "build:check": "deno check install.ts src/**/*.ts commands/**/*.ts intents/**/*.ts tests/*.ts tests/installer/*.ts .dist/*.ts",
+    "build": "deno task build:fmt && deno task build:lint && deno task ftm:build && deno task build:check && deno task publish:check && deno task test",
+    "build:check": "deno check install.ts src/**/*.ts commands/**/*.ts intents/**/*.ts tests/*.ts tests/installer/*.ts",
     "build:fmt": "deno fmt",
     "build:lint": "deno lint",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "deploy": "deno task build && fathym git",
+    "ftm:build": "ftm-cli build --config=./.cli.ts",
+    "ftm:compile": "ftm-cli compile --all --entry=./.build/main.ts",
+    "ftm:install": "ftm-cli install --useHome --to=.bin",
     "publish:check": "deno publish --dry-run --allow-dirty --allow-slow-types",
     "test": "deno test -A ./tests/.tests.ts --coverage=cov",
     "test:installer": "deno run -A tests/installer/main.ts --all",
@@ -23,19 +25,46 @@
     "zod": "npm:zod@4.1.13",
     "@std/path": "jsr:@std/path@1.0.9"
   },
-  "exclude": ["**/_eac-runtime/*", "**/install/local_test/*", "**/templates/*", "tests/.temp/*"],
+  "exclude": [
+    "**/_eac-runtime/*",
+    "**/install/local_test/*",
+    "**/templates/*",
+    "tests/.temp/*"
+  ],
   "lint": {
-    "include": ["apps/", "configs/", "src/", "tests/", "commands/", "intents/"],
-    "exclude": ["tests/.temp/"],
+    "include": [
+      "apps/",
+      "configs/",
+      "src/",
+      "tests/",
+      "commands/",
+      "intents/"
+    ],
+    "exclude": [
+      "tests/.temp/"
+    ],
     "rules": {
-      "tags": ["recommended"],
-      "include": ["ban-untagged-todo"],
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo"
+      ],
       "exclude": []
     }
   },
   "fmt": {
-    "include": ["apps/", "configs/", "src/", "tests/", "commands/", "intents/"],
-    "exclude": ["tests/.temp/"],
+    "include": [
+      "apps/",
+      "configs/",
+      "src/",
+      "tests/",
+      "commands/",
+      "intents/"
+    ],
+    "exclude": [
+      "tests/.temp/"
+    ],
     "indentWidth": 2,
     "lineWidth": 100,
     "proseWrap": "preserve",
@@ -43,6 +72,8 @@
     "singleQuote": true,
     "useTabs": false
   },
-  "unstable": ["kv"],
+  "unstable": [
+    "kv"
+  ],
   "lock": false
 }

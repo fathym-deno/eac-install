@@ -13,10 +13,17 @@ denoKv/
 cov/
 tests/.temp/
 
-.logs/runtime-*.jsonl
 local_test/
 # Installer harness artifacts
 /tests/tmp/
 /tests/reports/
-
 test/
+
+.logs/runtime-*.jsonl
+
+.dist/exe/
+.build/
+.temp/
+
+# Generated API documentation (regenerates on build)
+docs/api.generated.docs.json
