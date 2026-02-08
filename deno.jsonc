@@ -3,16 +3,17 @@
   "version": "0.0.0",
   "exports": {
     ".": "./install.ts",
-    "./ftm-eac-install": "./.exports.ts"
+    "./ftm-eac-install": "./.exports.ts",
+    "./ftm-eac-install/commands": "./.dist/commands.exports.ts"
   },
   "tasks": {
     "build": "deno task build:fmt && deno task build:lint && deno task build:check && deno task publish:check && deno task test",
-    "build:check": "deno check install.ts src/**/*.ts commands/**/*.ts intents/**/*.ts tests/*.ts tests/installer/*.ts",
+    "build:check": "deno check install.ts src/**/*.ts commands/**/*.ts intents/**/*.ts tests/*.ts tests/installer/*.ts .dist/*.ts",
     "build:fmt": "deno fmt",
     "build:lint": "deno lint",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "deploy": "deno task build && fathym git",
-    "publish:check": "deno publish --dry-run --allow-dirty",
+    "publish:check": "deno publish --dry-run --allow-dirty --allow-slow-types",
     "test": "deno test -A ./tests/.tests.ts --coverage=cov",
     "test:installer": "deno run -A tests/installer/main.ts --all",
     "version": "deno run -A jsr:@fathym/common@0.2.310-common-release/build/version"
