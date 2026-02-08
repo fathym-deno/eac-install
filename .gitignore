@@ -21,7 +21,7 @@ test/
 
 .logs/runtime-*.jsonl
 
-.dist/exe/
+.dist/
 .build/
 .temp/
 
