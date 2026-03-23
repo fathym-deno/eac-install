@@ -1,4 +1,4 @@
-FROM denoland/deno:latest
+FROM denoland/deno:2.6.4
 ARG VERSION
 # ENV DENO_DEPLOYMENT_ID=${VERSION}
 ENV PORT=3000

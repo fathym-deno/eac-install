@@ -89,34 +89,36 @@ ExecutionBlockers: []
 
 ## Document Info
 
-| Field | Value |
-|-------|-------|
-| Status | **In Progress** |
-| Current Phase | Phase 6: Release & Cascade |
-| Phases | 6 |
-| Total Deliverables | 28 |
-| Completed | 25 |
-| Pending | 6.3, 6.4, 6.5 |
-| Risks | 4 (all mitigated) |
-| Blockers | None |
+| Field              | Value                      |
+| ------------------ | -------------------------- |
+| Status             | **In Progress**            |
+| Current Phase      | Phase 6: Release & Cascade |
+| Phases             | 6                          |
+| Total Deliverables | 28                         |
+| Completed          | 25                         |
+| Pending            | 6.3, 6.4, 6.5              |
+| Risks              | 4 (all mitigated)          |
+| Blockers           | None                       |
 
 ## Overview
 
-Migrate the custom-built eac-install CLI to use the @fathym/cli framework, enabling it to work as:
+Migrate the custom-built eac-install CLI to use the @fathym/cli framework,
+enabling it to work as:
+
 1. **Standalone CLI** (`ftm-eac-install`) - like ftm-cli
 2. **Plugin in fathym-cli** - composed at `ftm eac install`
 
 ## Key Decisions
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| CLI name | `ftm-eac-install` | Follows Fathym naming pattern |
-| Project structure | eac-install/ root = CLI root | No nested folder - project is dedicated to this CLI |
-| Template format | Handlebars `.hbs` | Aligns with @fathym/cli framework |
-| Migration approach | Full migration | Clean break - new architecture only, no legacy code |
-| Command approach | Single command + enum + registry | Less files, easy expansion, Zod validates type at parse time |
-| Command structure | `ftm eac install <type> [name]` | Enum arg for type, registry defines per-type flags |
-| Scaffolding services | Use built-in TemplateLocator/TemplateScaffolder | No custom services - same pattern as ftm-cli init |
+| Decision             | Choice                                          | Rationale                                                    |
+| -------------------- | ----------------------------------------------- | ------------------------------------------------------------ |
+| CLI name             | `ftm-eac-install`                               | Follows Fathym naming pattern                                |
+| Project structure    | eac-install/ root = CLI root                    | No nested folder - project is dedicated to this CLI          |
+| Template format      | Handlebars `.hbs`                               | Aligns with @fathym/cli framework                            |
+| Migration approach   | Full migration                                  | Clean break - new architecture only, no legacy code          |
+| Command approach     | Single command + enum + registry                | Less files, easy expansion, Zod validates type at parse time |
+| Command structure    | `ftm eac install <type> [name]`                 | Enum arg for type, registry defines per-type flags           |
+| Scaffolding services | Use built-in TemplateLocator/TemplateScaffolder | No custom services - same pattern as ftm-cli init            |
 
 ## Target Structure
 
@@ -173,7 +175,8 @@ Flags:
 
 ### Deliverables
 
-- [x] 1.1: Create `.cli.ts` at project root with CLI() fluent API (name: 'EaC Install CLI', command: 'ftm-eac-install')
+- [x] 1.1: Create `.cli.ts` at project root with CLI() fluent API (name: 'EaC
+      Install CLI', command: 'ftm-eac-install')
 - [x] 1.2: Create `.exports.ts` barrel export (export EaCInstallCLI)
 - [x] 1.3: Create `.deps.ts` with dependencies (@fathym/cli, zod, etc.)
 - [x] 1.4: Create `commands/.group.ts` root group
@@ -201,67 +204,77 @@ Flags:
 - [x] 2.6: Migrate `src/files/library/` → `templates/library/`
 - [x] 2.7: Migrate `src/files/preact/` → `templates/preact/`
 - [x] 2.8: Migrate `src/files/sink/` → `templates/sink/`
-- [x] 2.9: Migrate shared templates (`src/files/.shared/` → `templates/.shared/`)
+- [x] 2.9: Migrate shared templates (`src/files/.shared/` →
+      `templates/.shared/`)
 - [x] 2.10: Test each template type loads correctly
 
-**Note:** Golden templates (golden-*) can be added as a `--golden` flag in Phase 3
+**Note:** Golden templates (golden-*) can be added as a `--golden` flag in Phase
+3
 
-**Verification:** ✓ All 7 template directories + .shared exist under `templates/` with .hbs files
+**Verification:** ✓ All 7 template directories + .shared exist under
+`templates/` with .hbs files
 
 ---
 
 ## Phase 3: Command Implementation
 
-**Goal:** Implement install command using single command + enum + registry pattern
+**Goal:** Implement install command using single command + enum + registry
+pattern
 
 **Status:** ✓ Complete
 
 ### Deliverables
 
-- [x] 3.1: Create `src/TemplateRegistry.ts` - Template type enum and per-template flag definitions
-- [x] 3.2: Create `commands/install.ts` - Single install command with enum type argument
+- [x] 3.1: Create `src/TemplateRegistry.ts` - Template type enum and
+      per-template flag definitions
+- [x] 3.2: Create `commands/install.ts` - Single install command with enum type
+      argument
 - [x] 3.3: Create `commands/list.ts` - List available templates from registry
-- [x] 3.4: Add runtime validation for template-specific flags (warn if inapplicable)
+- [x] 3.4: Add runtime validation for template-specific flags (warn if
+      inapplicable)
 
 ### Template Registry Pattern
 
 ```typescript
 // src/TemplateRegistry.ts
-import { z } from 'zod';
+import { z } from "zod";
 
 export const TemplateRegistry = {
   runtime: {
-    description: 'Standard web runtime (proxy)',
-    flags: ['tailwind', 'preact'] as const,
+    description: "Standard web runtime (proxy)",
+    flags: ["tailwind", "preact"] as const,
   },
   api: {
-    description: 'API-focused project',
-    flags: ['tailwind'] as const,
+    description: "API-focused project",
+    flags: ["tailwind"] as const,
   },
   synaptic: {
-    description: 'AI/synaptic runtime',
+    description: "AI/synaptic runtime",
     flags: [] as const,
   },
   atomic: {
-    description: 'Atomic components library',
+    description: "Atomic components library",
     flags: [] as const,
   },
   library: {
-    description: 'Reusable library',
+    description: "Reusable library",
     flags: [] as const,
   },
   preact: {
-    description: 'Preact-based project',
-    flags: ['tailwind'] as const,
+    description: "Preact-based project",
+    flags: ["tailwind"] as const,
   },
   sink: {
-    description: 'Full-featured sink project',
-    flags: ['tailwind', 'preact'] as const,
+    description: "Full-featured sink project",
+    flags: ["tailwind", "preact"] as const,
   },
 } as const;
 
 export const TemplateType = z.enum(
-  Object.keys(TemplateRegistry) as [keyof typeof TemplateRegistry, ...Array<keyof typeof TemplateRegistry>]
+  Object.keys(TemplateRegistry) as [
+    keyof typeof TemplateRegistry,
+    ...Array<keyof typeof TemplateRegistry>,
+  ],
 );
 ```
 
@@ -287,7 +300,8 @@ export const TemplateType = z.enum(
 
 **Integration File:** `projects/open-source/fathym-cli/.cli.ts`
 
-**Verification:** ✓ Plugin integrated with CommandRoot: 'eac' in fathym-cli/.cli.ts
+**Verification:** ✓ Plugin integrated with CommandRoot: 'eac' in
+fathym-cli/.cli.ts
 
 ---
 
@@ -299,14 +313,16 @@ export const TemplateType = z.enum(
 
 ### Deliverables
 
-- [x] 5.1: Create `intents/install.intents.ts` - test suite for install command (all template types)
+- [x] 5.1: Create `intents/install.intents.ts` - test suite for install command
+      (all template types)
 - [x] 5.2: Create `intents/list.intents.ts` - test suite for list command
 - [x] 5.3: Add tests for template-specific flag validation warnings
 - [ ] 5.4: Update eac-install README.md with new CLI usage (optional)
 - [ ] 5.5: Update eac-install AGENTS.md (optional)
 - [ ] 5.6: Add ftm-eac-install to eac-install GUIDE.md (optional)
 
-**Verification:** ✓ `ftm task @fathym/eac-install build` passes (14 tests, 96.9% coverage)
+**Verification:** ✓ `ftm task @fathym/eac-install build` passes (14 tests, 96.9%
+coverage)
 
 ---
 
@@ -331,8 +347,8 @@ export const TemplateType = z.enum(
 
 ## Agent Notes
 
-| Date | Context | Lesson |
-|------|---------|--------|
+| Date       | Context             | Lesson                                                                                      |
+| ---------- | ------------------- | ------------------------------------------------------------------------------------------- |
 | 2026-01-19 | Workstream creation | Single command + enum + registry pattern chosen over dedicated commands for maintainability |
 
 ---
@@ -344,6 +360,7 @@ export const TemplateType = z.enum(
 **Focus:** Workstream Creation
 
 **Completed:**
+
 - [x] Plan approved with single command + enum + registry pattern
 - [x] Created .workstreams directory
 - [x] Created EaCInstallCLIMigration.Workstream.md
@@ -355,8 +372,10 @@ export const TemplateType = z.enum(
 **Focus:** Full CLI Migration Implementation
 
 **Completed:**
+
 - [x] Phase 1: Created .cli.ts, .exports.ts, .deps.ts, commands/.group.ts
-- [x] Phase 2: Migrated all templates to Handlebars format in templates/ directory
+- [x] Phase 2: Migrated all templates to Handlebars format in templates/
+      directory
 - [x] Phase 3: Implemented install.ts, list.ts, TemplateRegistry.ts
 - [x] Phase 4: Integrated EaCInstallCLI plugin into fathym-cli
 - [x] Phase 5: Created intent tests (install.intents.ts, list.intents.ts)

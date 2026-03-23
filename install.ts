@@ -7,9 +7,9 @@
  * @module
  */
 
-import CLI from './.cli.ts';
-import { Execute, Runner } from '@fathym/cli';
+import CLI from "./.cli.ts";
+import { CLIRunner, Execute } from "@fathym/cli";
 
-await Runner()
+await CLIRunner()
   .FromModuleBuilder(CLI, Deno.args)
   .Run(Execute());

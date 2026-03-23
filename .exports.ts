@@ -4,5 +4,5 @@
  * @module
  */
 
-export { default } from './.cli.ts';
-export { default as EaCInstallCLI } from './.cli.ts';
+export { default } from "./.cli.ts";
+export { default as EaCInstallCLI } from "./.cli.ts";

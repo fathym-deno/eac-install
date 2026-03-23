@@ -104,14 +104,17 @@ CommandIntentSuite('EaC Install Command Suite', InstallCommand, CLI)
   // ═══════════════════════════════════════════════════════════════════════════
   // Flag validation tests
   // ═══════════════════════════════════════════════════════════════════════════
-  .Intent('Warn when using inapplicable flags (tailwind on library)', (int) =>
-    int
-      .Args(['library', `${TEMP_DIR}/test-library-flags`])
-      .Flags({ force: false, tailwind: true, preact: false })
-      .ExpectLogs(
-        'Flag --tailwind is not applicable', // Warning for inapplicable flag
-      )
-      .ExpectExit(0))
+  .Intent(
+    'Warn when using inapplicable flags (tailwind on library)',
+    (int) =>
+      int
+        .Args(['library', `${TEMP_DIR}/test-library-flags`])
+        .Flags({ force: false, tailwind: true, preact: false })
+        .ExpectLogs(
+          'Flag --tailwind is not applicable', // Warning for inapplicable flag
+        )
+        .ExpectExit(0),
+  )
   .Intent('Warn when using inapplicable flags (preact on api)', (int) =>
     int
       .Args(['api', `${TEMP_DIR}/test-api-flags`])

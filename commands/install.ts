@@ -233,7 +233,9 @@ export default Command('install', 'Install a new EaC project from templates')
     };
   })
   .Run(
-    async ({ Params, Log, Services }): Promise<CommandStatus<InstallResult>> => {
+    async (
+      { Params, Log, Services },
+    ): Promise<CommandStatus<InstallResult>> => {
       const { Type, Name, Tailwind, Preact } = Params;
 
       // Validate flags against template type
